@@ -8,9 +8,9 @@ class Dashboard extends CI_Controller {
 		$this->load->view('admin/dashboard');
     }
     
-    public function view_operator()
+    public function view_perusahaan()
 	{
-		$this->load->view('operator/dashboard');
+		$this->load->view('perusahaan/dashboard');
     }
     
     public function view_user()
