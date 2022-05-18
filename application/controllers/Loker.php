@@ -9,6 +9,23 @@ class Loker extends CI_Controller {
 	{
 		$this->load->view('perusahaan/loker');
     }
+
+    public function tambah_loker()
+    {
+
+    }
+
+    public function update_loker()
+    {
+        
+    }
+
+    public function hapus_loker()
+    {
+        
+    }
+
+    
     
    
 

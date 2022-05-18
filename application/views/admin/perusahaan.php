@@ -73,7 +73,7 @@
                                                 <td>X</td>
                                             </tr>
                                         </tbody>
-                                       
+
                                     </table>
                                 </div>
                                 <!-- /.card-body -->
