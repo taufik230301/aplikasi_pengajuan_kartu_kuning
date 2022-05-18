@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <?php $this->load->view("perusahaan/components/header.php") ?>
+    <?php $this->load->view("admin/components/header.php") ?>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -15,11 +15,11 @@
         </div>
 
         <!-- Navbar -->
-        <?php $this->load->view("perusahaan/components/navbar.php") ?>
+        <?php $this->load->view("admin/components/navbar.php") ?>
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
-        <?php $this->load->view("perusahaan/components/sidebar.php") ?>
+        <?php $this->load->view("admin/components/sidebar.php") ?>
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
@@ -73,7 +73,7 @@
                                                 <td>X</td>
                                             </tr>
                                         </tbody>
-
+                                       
                                     </table>
                                 </div>
                                 <!-- /.card-body -->
@@ -101,7 +101,7 @@
     </div>
     <!-- ./wrapper -->
 
-    <?php $this->load->view("perusahaan/components/js.php") ?>
+    <?php $this->load->view("admin/components/js.php") ?>
 </body>
 
 </html>
