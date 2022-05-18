@@ -137,6 +137,20 @@ class Login extends CI_Controller {
 
 	}
 
+	public function log_out_user(){
+		$this->session->unset_userdata('logged_in');
+		$this->session->unset_userdata('id_user');
+        $this->session->set_flashdata('success_log_out','success_log_out');
+        redirect('Login/login_user');
+	}
+
+	public function log_out_perusahaan(){
+		$this->session->unset_userdata('logged_in');
+		$this->session->unset_userdata('id_user');
+        $this->session->set_flashdata('success_log_out','success_log_out');
+        redirect('Login/login_perusahaan');
+	}
+
 	
 
 }

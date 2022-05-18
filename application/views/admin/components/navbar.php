@@ -16,7 +16,7 @@
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                 <a href="#" class="dropdown-item dropdown-footer" type="button" data-toggle="modal"
                     data-target="#exampleModal">Settings</a>
-                <a href="#" class="dropdown-item dropdown-footer">Logout</a>
+                <a href="<?=base_url();?>Login/log_out_user" class="dropdown-item dropdown-footer">Logout</a>
             </div>
         </li>
         <li class="nav-item">
