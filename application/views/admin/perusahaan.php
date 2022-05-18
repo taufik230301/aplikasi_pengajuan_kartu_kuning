@@ -56,24 +56,45 @@
                                     <table id="example1" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
-                                                <th>Rendering engine</th>
-                                                <th>Browser</th>
-                                                <th>Platform(s)</th>
-                                                <th>Engine version</th>
-                                                <th>CSS grade</th>
+                                                <th>No</th>
+                                                <th>Username</th>
+                                                <th>Email</th>
+                                                <th>Nama Perusahaan</th>
+                                                <th>Jenis Perusahaan</th>
+                                                <th>NPWP Perusahaan</th>
+                                                <th>Provinsi</th>
+                                                <th>Kota</th>
+                                                <th>Alamat</th>
+                                                <th>Kode Pos</th>
+                                                <th>Deskripsi</th>
+                                                <th>Nomor Telepon</th>
+                                                <th>Tanggal Daftar</th>
+                                                <th>Logo Perusahaan</th>
+                                                <th>Status Perusahaan</th>
+                                                <th>Status Aktif</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <td>Trident</td>
-                                                <td>Internet Explorer 4.0
-                                                </td>
+                                                <td>Trident</td>
+                                                <td>Internet Explorer 4.0 </td>
+                                                <td>Win 95+</td>
+                                                <td> 4</td>
+                                                <td>X</td>
+                                                <td>Trident</td>
+                                                <td>Internet Explorer 4.0 </td>
+                                                <td>Win 95+</td>
+                                                <td> 4</td>
+                                                <td>X</td>
+                                                <td>Trident</td>
+                                                <td>Internet Explorer 4.0 </td>
                                                 <td>Win 95+</td>
                                                 <td> 4</td>
                                                 <td>X</td>
                                             </tr>
                                         </tbody>
-                                       
+
                                     </table>
                                 </div>
                                 <!-- /.card-body -->

@@ -35,19 +35,19 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="<?=base_url();?>Dashboard/view_user" class="nav-link">
                         <i class="nav-icon far fa-circle text-danger"></i>
                         <p class="text">Dashboard</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="<?=base_url();?>Kartu_Kuning/view_user" class="nav-link">
                         <i class="nav-icon far fa-circle text-danger"></i>
                         <p class="text">Daftar AK1</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="<?=base_url();?>Perpanjang/view_user" class="nav-link">
                         <i class="nav-icon far fa-circle text-info"></i>
                         <p>Perpanjang</p>
                     </a>

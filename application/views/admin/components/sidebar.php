@@ -47,7 +47,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?=base_url();?>Pencaker/view_admin" class="nav-link">
+                    <a href="<?=base_url();?>Perusahaan/view_admin" class="nav-link">
                         <i class="nav-icon far fa-circle text-info"></i>
                         <p>Data Perusahaan</p>
                     </a>
