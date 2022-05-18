@@ -35,19 +35,19 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="<?=base_url();?>Dashboard/view_admin" class="nav-link">
                         <i class="nav-icon far fa-circle text-danger"></i>
                         <p class="text">Dashboard</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="<?=base_url();?>Pencaker/view_admin" class="nav-link">
                         <i class="nav-icon far fa-circle text-warning"></i>
                         <p>Data Pencaker</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="<?=base_url();?>Pencaker/view_admin" class="nav-link">
                         <i class="nav-icon far fa-circle text-info"></i>
                         <p>Data Perusahaan</p>
                     </a>
