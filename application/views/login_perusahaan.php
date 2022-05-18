@@ -19,6 +19,16 @@
 </head>
 
 <body>
+    <?php if($this->session->flashdata('success_log_out')){?>
+    <script>
+    swal({
+        title: "Success!",
+        text: "Anda Berhasil Log Out!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
     <?php if ($this->session->flashdata('input')){ ?>
     <script>
     swal({
@@ -38,6 +48,46 @@
     </script>
     <?php } ?>
 
+    <?php if($this->session->flashdata('loggin_err_no_user')){?>
+    <script>
+    swal({
+        title: "Error!",
+        text: "Anda Belum Terdaftar!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if($this->session->flashdata('loggin_err_pass')){?>
+    <script>
+    swal({
+        title: "Error!",
+        text: "Password Yang Anda Masukan Salah!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if($this->session->flashdata('loggin_err_no_access')){?>
+    <script>
+    swal({
+        title: "Error!",
+        text: "Anda Belum Memiliki Akses!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if($this->session->flashdata('loggin_err')){?>
+    <script>
+    swal({
+        title: "Error!",
+        text: "Sesi Anda Habis!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+    
     <div class="main">
         <!-- Sing in  Form -->
         <section class="sign-in">
@@ -52,7 +102,8 @@
 
                     <div class="signin-form">
                         <h2 class="form-title">Sign up</h2>
-                        <form method="POST" class="register-form" id="login-form" action="<?=base_url();?>Login/proses_perusahaan">
+                        <form method="POST" class="register-form" id="login-form"
+                            action="<?=base_url();?>Login/proses_perusahaan">
                             <div class="form-group">
                                 <label for="username"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="username" id="username" placeholder="Your Name" />
