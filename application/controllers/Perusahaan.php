@@ -26,7 +26,5 @@ class Perusahaan extends CI_Controller {
     }
 
     
-    
-   
 
 }

@@ -43,8 +43,8 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="<?= base_url();?>Settings/update_akun" method="POST">
-                    <input type="text" value="<?=$this->session->userdata('id_user');?>" name="id" hidden>
+                <form action="<?= base_url();?>Settings/update_akun_user" method="POST">
+                    <input type="text" value="<?=$this->session->userdata('id_user');?>" name="id_user" hidden>
                     <div class="form-group">
                         <label for="username">Username</label>
                         <input type="text" class="form-control" id="username" name="username"

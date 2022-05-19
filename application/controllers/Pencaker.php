@@ -10,6 +10,11 @@ class Pencaker extends CI_Controller {
 		$this->load->view('admin/pencaker');
     }
 
+    public function view_perusahaan()
+	{
+		$this->load->view('perusahaan/pencaker');
+    }
+
     public function tambah_pencaker()
     {
 

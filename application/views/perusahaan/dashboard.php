@@ -6,6 +6,26 @@
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
+    
+    <?php if ($this->session->flashdata('input')){ ?>
+    <script>
+    swal({
+        title: "Success!",
+        text: "Data Berhasil Diubah!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('eror_input')){ ?>
+    <script>
+    swal({
+        title: "Erorr!",
+        text: "Data Gagal Diubah!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
     <div class="wrapper">
 
         <!-- Preloader -->
@@ -41,8 +61,8 @@
             </div>
             <!-- /.content-header -->
 
-         <!-- Main content -->
-         <section class="content">
+            <!-- Main content -->
+            <section class="content">
                 <div class="container-fluid">
                     <!-- Small boxes (Stat box) -->
                     <div class="row">
@@ -120,7 +140,7 @@
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
-       
+
 
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">

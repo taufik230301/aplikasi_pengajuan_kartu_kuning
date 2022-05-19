@@ -6,6 +6,24 @@
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
+    <?php if ($this->session->flashdata('input')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Terdaftar!",
+        text: "Silahkan Anda Login!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+    <?php if ($this->session->flashdata('eror')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Terjadi Kesalahan Dalam Proses data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
     <div class="wrapper">
 
         <!-- Preloader -->
@@ -46,7 +64,8 @@
                 <div class="container-fluid">
                     <!-- Small boxes (Stat box) -->
                     <div class="col">
-                        <form action="<?=base_url();?>Kartu_Kuning/lengkapi_data" method="POST">
+                        <form action="<?=base_url();?>Daftar/lengkapi_data_user" enctype="multipart/form-data" method="POST">
+                        <input type="text" value="<?=$this->session->userdata('id_user')?>" name="id_user" hidden>
                             <div class="form-group">
                                 <label for="nik">NIK</label>
                                 <input type="text" class="form-control" id="nik" name="nik"

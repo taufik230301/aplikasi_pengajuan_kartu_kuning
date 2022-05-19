@@ -39,5 +39,43 @@ class M_user extends CI_Model
         
     }
 
+    public function update_account($id_user, $username, $password)
+    {
+        $this->db->trans_start();
+
+        $this->db->query("UPDATE user SET username='$username', password='$password' WHERE id_user='$id_user'");
+        
+        $this->db->trans_complete();
+        if($this->db->trans_status()==true)
+            return true;
+        else
+            return false;
+    }
+
+    public function update_user_detail($id_user, $no_pendaftaran, $nik, $nama_lengkap, 
+    $tempat_lahir, $tanggal_lahir, $jenis_kelamin, $agama, $status_perkawinan,
+     $tinggi_badan, $berat_badan, 
+    $pendidikan_terakhir, $jurusan, $pengalaman_kerja, $no_hp, $provinsi, $kota, 
+    $kode_pos, $alamat, $foto_saya, $foto_ktp, $foto_ijazah)
+    {
+
+        $this->db->trans_start();
+
+        $this->db->query("UPDATE user_detail SET no_pendaftaran='$no_pendaftaran', nik='$nik', nama_lengkap='$nama_lengkap', 
+        tempat_lahir='$tempat_lahir', tanggal_lahir='$tanggal_lahir', jenis_kelamin='$jenis_kelamin', agama='$agama', 
+        status_perkawinan='$status_perkawinan', 
+        tinggi_badan='$tinggi_badan', berat_badan='$berat_badan', pendidikan_terakhir='$pendidikan_terakhir', 
+        jurusan='$jurusan', pengalaman_kerja='$pengalaman_kerja', no_hp='$no_hp', provinsi='$provinsi', kota='$kota',
+         kode_pos='$kode_pos', alamat='$alamat', foto_saya='$foto_saya', foto_ktp='$foto_ktp', foto_ijazah='$foto_ijazah' 
+         WHERE id_user_detail='$id_user'");
+
+        $this->db->trans_complete();
+        if($this->db->trans_status()==true)
+            return true;
+        else
+            return false;
+
+    }
+
 
 }
