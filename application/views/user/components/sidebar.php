@@ -41,7 +41,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?=base_url();?>Daftar/view_user" class="nav-link">
+                    <a href="<?=base_url();?>Daftar/view_user/<?=$this->session->userdata('id_user');?>" class="nav-link">
                         <i class="nav-icon far fa-circle text-danger"></i>
                         <p class="text">Daftar AK1</p>
                     </a>

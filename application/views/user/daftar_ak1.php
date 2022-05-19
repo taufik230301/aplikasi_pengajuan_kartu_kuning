@@ -64,16 +64,28 @@
                 <div class="container-fluid">
                     <!-- Small boxes (Stat box) -->
                     <div class="col">
-                        <form action="<?=base_url();?>Daftar/lengkapi_data_user" enctype="multipart/form-data" method="POST">
-                        <input type="text" value="<?=$this->session->userdata('id_user')?>" name="id_user" hidden>
+                        <?php
+                                            $id = 0;
+                                            foreach($user as $i)
+                                            :
+                                            $id++;
+                                            $id_user = $i['id_user'];
+                                            $nik = $i['nik']; 
+                                            $nama_lengkap = $i['nama_lengkap']; 
+                                            
+
+                                            ?>
+                        <form action="<?=base_url();?>Daftar/lengkapi_data_user" enctype="multipart/form-data"
+                            method="POST">
+                            <input type="text" value="<?=$this->session->userdata('id_user')?>" name="id_user" hidden>
                             <div class="form-group">
                                 <label for="nik">NIK</label>
                                 <input type="text" class="form-control" id="nik" name="nik"
-                                    aria-describedby="emailHelp">
+                                    aria-describedby="emailHelp" value="<?=$nik?>">
                             </div>
                             <div class="form-group">
                                 <label for="nama_lengkap">Nama Lengkap</label>
-                                <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap">
+                                <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap" value="<?=$nama_lengkap?>">
                             </div>
                             <div class="form-group">
                                 <label for="tempat_lahir">Tempat lahir</label>
@@ -148,17 +160,21 @@
                             <div class="form-group">
                                 <label for="foto_saya">Foto</label>
                                 <input type="file" class="form-control" id="foto_saya" name="foto_saya">
+                                <input type="text" class="form-control" id="foto_saya" name="foto_saya_old" hidden>
                             </div>
                             <div class="form-group">
                                 <label for="foto_ktp">Foto KTP</label>
                                 <input type="file" class="form-control" id="foto_ktp" name="foto_ktp">
+                                <input type="text" class="form-control" id="foto_ktp" name="foto_ktp_old" hidden>
                             </div>
                             <div class="form-group">
                                 <label for="foto_ijazah">Foto Ijazah</label>
                                 <input type="file" class="form-control" id="foto_ijazah" name="foto_ijazah">
+                                <input type="text" class="form-control" id="foto_ijazah" name="foto_ijazah_old" hidden>
                             </div>
                             <button type="submit" class="btn btn-primary mb-3">Submit</button>
                         </form>
+                        <?php endforeach;?>
                     </div>
                     <!-- /.row -->
                     <!-- Main row -->

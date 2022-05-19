@@ -10,9 +10,11 @@ class Daftar extends CI_Controller {
     }
 
     
-    public function view_user()
+    public function view_user($id_user)
 	{
-		$this->load->view('user/daftar_ak1');
+        $data['user'] = $this->m_user->get_user_detail_by_id($id_user)->result_array();
+        
+		$this->load->view('user/daftar_ak1', $data);
     }
 
     public function view_perusahaan()
