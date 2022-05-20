@@ -9,6 +9,20 @@ class M_user extends CI_Model
         return $hasil;
     }
 
+    public function get_all_user()
+    {
+        $hasil = $this->db->query("SELECT * FROM user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail 
+         WHERE id_user_level = 3");
+        return $hasil;
+    }
+
+    public function get_all_perusahaan()
+    {
+        $hasil = $this->db->query("SELECT * FROM user JOIN perusahaan_detail ON user.id_user_detail = perusahaan_detail.id_perusahaan_detail 
+         WHERE id_user_level = 2");
+        return $hasil;
+    }
+
     public function pendaftaran_user($id, $username, $email, $password,  $id_user_level, $id_status_verifikasi, $id_status_aktif, $id_status_perpanjangan)
     {
        $this->db->trans_start();
@@ -62,7 +76,7 @@ class M_user extends CI_Model
     $tempat_lahir, $tanggal_lahir, $jenis_kelamin, $agama, $status_perkawinan,
      $tinggi_badan, $berat_badan, 
     $pendidikan_terakhir, $jurusan, $pengalaman_kerja, $no_hp, $provinsi, $kota, 
-    $kode_pos, $alamat, $foto_saya, $foto_ktp, $foto_ijazah)
+    $kode_pos, $alamat, $foto_saya, $foto_ktp, $foto_ijazah, $id_status_verifikasi, $id_status_perpanjangan, $id_status_aktif )
     {
 
         $this->db->trans_start();

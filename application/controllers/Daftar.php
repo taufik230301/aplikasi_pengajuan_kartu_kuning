@@ -44,6 +44,9 @@ class Daftar extends CI_Controller {
         $kode_pos = $this->input->post('kode_pos');
         $alamat = $this->input->post('alamat');
         $id = $this->input->post('id_user');
+        $id_status_verifikasi = 1; 
+        $id_status_perpanjangan = 1;
+        $id_status_aktif = 1;
         $foto_name = md5($nama_lengkap.$nik);
 
         $path = './assets/berkas/';
@@ -104,14 +107,17 @@ class Daftar extends CI_Controller {
         $hasil = $this->m_user->update_user_detail($id ,$no_pendaftaran, $nik, $nama_lengkap, $tempat_lahir,
         $tanggal_lahir, $jenis_kelamin, $agama, $status_perkawinan, $tinggi_badan, $berat_badan, 
         $pendidikan_terakhir, $jurusan, $pengalaman_kerja, $no_hp, $provinsi, $kota, $kode_pos, 
-        $alamat, $foto_saya['file_name'], $foto_ktp['file_name'], $foto_ijazah['file_name']);
+        $alamat, $foto_saya['file_name'], $foto_ktp['file_name'], $foto_ijazah['file_name'], $id_status_verifikasi, $id_status_perpanjangan, $id_status_aktif);
 
 			if($hasil==false){
                 $this->session->set_flashdata('eror','eror');
-                redirect('Daftar/view_user');
+                redirect('Daftar/view_user/'.$id);
 			}else{
+                @unlink($path.$this->input->post('foto_saya_old'));
+                @unlink($path.$this->input->post('foto_ktp_old'));
+                @unlink($path.$this->input->post('foto_ijazah_old'));
 				$this->session->set_flashdata('input','input');
-				redirect('Daftar/view_user');
+				redirect('Daftar/view_user/'.$id);
 			}
 
         

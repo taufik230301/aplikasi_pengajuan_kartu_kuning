@@ -36,19 +36,20 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item">
                     <a href="<?=base_url();?>Dashboard/view_user" class="nav-link">
-                        <i class="nav-icon far fa-circle text-danger"></i>
+                    
+                        <i class="nav-icon fas fa-tachometer-alt text-white"></i>
                         <p class="text">Dashboard</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="<?=base_url();?>Daftar/view_user/<?=$this->session->userdata('id_user');?>" class="nav-link">
-                        <i class="nav-icon far fa-circle text-danger"></i>
+                        <i class="nav-icon fas fa-edit"></i>
                         <p class="text">Daftar AK1</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?=base_url();?>Perpanjang/view_user" class="nav-link">
-                        <i class="nav-icon far fa-circle text-info"></i>
+                    <a href="<?=base_url();?>Perpanjang/view_user/<?=$this->session->userdata('id_user');?>" class="nav-link">
+                        <i class="nav-icon fas fa-book"></i>
                         <p>Perpanjang</p>
                     </a>
                 </li>

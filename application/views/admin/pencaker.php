@@ -59,7 +59,7 @@
                                                 <th>No</th>
                                                 <th>Username</th>
                                                 <th>Email</th>
-                                                <th>NO Pendaftar</th>
+                                                <th>No Pendaftar</th>
                                                 <th>NIK</th>
                                                 <th>Nama Lengkap</th>
                                                 <th>Tempat Lahir</th>
@@ -89,41 +89,155 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php
+                                            $id = 0;
+                                            foreach($user as $i)
+                                            :
+                                            $id++;
+                                            $username = $i['username'];
+                                            $email = $i['email'];
+                                            $id_user = $i['id_user'];
+                                            $nik = $i['nik']; 
+                                            $no_pendaftaran = $i['no_pendaftaran']; 
+                                            $nama_lengkap = $i['nama_lengkap']; 
+                                            $tempat_lahir = $i['tempat_lahir']; 
+                                            $tanggal_lahir = $i['tanggal_lahir']; 
+                                            $jenis_kelamin = $i['jenis_kelamin']; 
+                                            $agama = $i['agama']; 
+                                            $status_perkawinan = $i['status_perkawinan']; 
+                                            $tinggi_badan = $i['tinggi_badan'];
+                                            $berat_badan = $i['berat_badan'];
+                                            $pendidikan_terakhir = $i['pendidikan_terakhir']; 
+                                            $jurusan = $i['jurusan'];
+                                            $pengalaman_kerja = $i['pengalaman_kerja'];
+                                            $no_hp = $i['no_hp'];
+                                            $provinsi = $i['provinsi'];
+                                            $kota = $i['kota'];
+                                            $kode_pos = $i['kode_pos'];
+                                            $alamat = $i['alamat'];
+                                            $foto_saya = $i['foto_saya'];
+                                            $foto_ktp = $i['foto_ktp'];
+                                            $foto_ijazah = $i['foto_ijazah'];
+                                            $date_registered = $i['date_registered'];
+                                            $id_status_aktif = $i['id_status_aktif'];
+                                            $id_status_perpanjangan = $i['id_status_perpanjangan'];
+                                            $id_status_verifikasi = $i['id_status_verifikasi'];
+                                            $mulai_berlaku = $i['mulai_berlaku'];
+                                            $akhir_berlaku = $i['akhir_berlaku'];
+                                            
+
+                                            ?>
                                             <tr>
-                                                <td>Trident</td>
-                                                <td>Internet Explorer 4.0</td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                                <td>Trident</td>
-                                                <td>Internet Explorer 4.0</td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                                <td>Trident</td>
-                                                <td>Internet Explorer 4.0</td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                                <td>Trident</td>
-                                                <td>Internet Explorer 4.0</td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                                <td>Trident</td>
-                                                <td>Internet Explorer 4.0</td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                                <td>Trident</td>
-                                                <td>Internet Explorer 4.0</td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                                
+                                                <td><?=$id?></td>
+                                                <td><?=$username ?></td>
+                                                <td><?=$email?></td>
+                                                <td><?=$no_pendaftaran?></td>
+                                                <td><?=$nik?></td>
+                                                <td><?=$nama_lengkap?></td>
+                                                <td><?=$tempat_lahir?></td>
+                                                <td><?=$tanggal_lahir?></td>
+                                                <td><?=$jenis_kelamin?></td>
+                                                <td><?=$agama?></td>
+                                                <td><?=$status_perkawinan?></td>
+                                                <td><?=$tinggi_badan?></td>
+                                                <td><?=$berat_badan?></td>
+                                                <td><?=$pendidikan_terakhir?></td>
+                                                <td><?=$jurusan?></td>
+                                                <td><?=$pengalaman_kerja?></td>
+                                                <td><?=$no_hp?></td>
+                                                <td><?=$provinsi?></td>
+                                                <td> <?=$kota?></td>
+                                                <td><?=$kode_pos?></td>
+                                                <td><?=$alamat?></td>
+                                                <td>
+                                                    <center> <a
+                                                            href="<?= base_url();?>assets/berkas/<?php echo $foto_saya?>"
+                                                            target="_blank"><img
+                                                                src="<?= base_url();?>assets/berkas/<?php echo $foto_saya?>"
+                                                                style="width: 25%"> </a></center>
+                                                </td>
+                                                <td>
+                                                    <center> <a
+                                                            href="<?= base_url();?>assets/berkas/<?php echo $foto_ktp?>"
+                                                            target="_blank"><img
+                                                                src="<?= base_url();?>assets/berkas/<?php echo $foto_ktp?>"
+                                                                style="width: 25%"> </a></center>
+                                                </td>
+                                                <td>
+                                                    <center> <a
+                                                            href="<?= base_url();?>assets/berkas/<?php echo $foto_ijazah?>"
+                                                            target="_blank"><img
+                                                                src="<?= base_url();?>assets/berkas/<?php echo $foto_ijazah?>"
+                                                                style="width: 25%"> </a></center>
+                                                </td>
+                                                <td><?=$date_registered?></td>
+                                                <td><?php if($id_status_verifikasi == 1){ ?>
+                                                    <div class="table-responsive">
+                                                        <div class="table table-striped table-hover ">
+                                                            <a href="" class="btn btn-info" data-toggle="modal"
+                                                                data-target="#edit_data_pegawai">
+                                                                Belum Diverifikasi
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <?php }elseif($id_status_verifikasi == 2) {?>
+                                                    <div class="table-responsive">
+                                                        <div class="table table-striped table-hover ">
+                                                            <a href="" class="btn btn-info" data-toggle="modal"
+                                                                data-target="#edit_data_pegawai">
+                                                                Sudah Diverifikasi
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <?php }?>
+                                                </td>
+                                                <td><?php if($id_status_aktif == 1){ ?>
+                                                    <div class="table-responsive">
+                                                        <div class="table table-striped table-hover ">
+                                                            <a href="" class="btn btn-info" data-toggle="modal"
+                                                                data-target="#edit_data_pegawai">
+                                                                Belum Aktif
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <?php }elseif($id_status_aktif == 2) {?>
+                                                    <div class="table-responsive">
+                                                        <div class="table table-striped table-hover ">
+                                                            <a href="" class="btn btn-info" data-toggle="modal"
+                                                                data-target="#edit_data_pegawai">
+                                                                Selesai Aktif
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <?php }?>
+                                                </td>
+                                                <td><?php if($id_status_perpanjangan == 1){ ?>
+                                                    <div class="table-responsive">
+                                                        <div class="table table-striped table-hover ">
+                                                            <a href="" class="btn btn-info" data-toggle="modal"
+                                                                data-target="#edit_data_pegawai">
+                                                                Belum Membutuhkan Perpanjang
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <?php }elseif($id_status_perpanjangan == 2) {?>
+                                                    <div class="table-responsive">
+                                                        <div class="table table-striped table-hover ">
+                                                            <a href="" class="btn btn-info" data-toggle="modal"
+                                                                data-target="#edit_data_pegawai">
+                                                                Membutuhkan Perpanjangan
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <?php }?>
+                                                </td>
+                                                <td><?=$mulai_berlaku?></td>
+                                                <td><?=$akhir_berlaku?></td>
+
                                             </tr>
+                                            <?php endforeach;?>
                                         </tbody>
-                                       
+
                                     </table>
                                 </div>
                                 <!-- /.card-body -->

@@ -36,19 +36,21 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item">
                     <a href="<?=base_url();?>Dashboard/view_admin" class="nav-link">
-                        <i class="nav-icon far fa-circle text-danger"></i>
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p class="text">Dashboard</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="<?=base_url();?>Pencaker/view_admin" class="nav-link">
-                        <i class="nav-icon far fa-circle text-warning"></i>
+                    
+                        <i class="nav-icon fas fa-users"></i>
                         <p>Data Pencaker</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="<?=base_url();?>Perusahaan/view_admin" class="nav-link">
-                        <i class="nav-icon far fa-circle text-info"></i>
+                    
+                        <i class="nav-icon fas fa-building"></i>
                         <p>Data Perusahaan</p>
                     </a>
                 </li>

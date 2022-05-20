@@ -70,29 +70,93 @@
                                                 <th>Nomor Telepon</th>
                                                 <th>Tanggal Daftar</th>
                                                 <th>Logo Perusahaan</th>
-                                                <th>Status Perusahaan</th>
+                                                <th>Status Verifikasi</th>
                                                 <th>Status Aktif</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php
+                                            
+                                            $id = 0;
+                                            foreach($perusahaan as $i)
+                                            :
+                                            $id++;
+                                            $username = $i['username'];
+                                            $email = $i['email'];
+                                            $nama_perusahaan = $i['nama_perusahaan'];
+                                            $jenis_perusahaan = $i['jenis_perusahaan'];
+                                            $npwp_perusahaan = $i['npwp_perusahaan'];
+                                            $provinsi = $i['provinsi'];
+                                            $kota = $i['kota'];
+                                            $alamat = $i['alamat'];
+                                            $kode_pos = $i['kode_pos'];
+                                            $deskripsi = $i['deskripsi'];
+                                            $nomor_telepon = $i['nomor_telepon'];
+                                            $date_registered = $i['date_registered'];
+                                            $logo = $i['logo'];
+                                            $id_status_verifikasi = $i['id_status_verifikasi'];
+                                            $id_status_aktif = $i['id_status_aktif'];
+                                            
+                                            
+
+                                            ?>
                                             <tr>
-                                                <td>Trident</td>
-                                                <td>Trident</td>
-                                                <td>Internet Explorer 4.0 </td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                                <td>Trident</td>
-                                                <td>Internet Explorer 4.0 </td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                                <td>Trident</td>
-                                                <td>Internet Explorer 4.0 </td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
+                                                <td><?=$id?></td>
+                                                <td><?=$username?></td>
+                                                <td><?=$email?> </td>
+                                                <td><?=$nama_perusahaan?></td>
+                                                <td><?=$jenis_perusahaan?></td>
+                                                <td><?=$npwp_perusahaan?></td>
+                                                <td><?=$provinsi?></td>
+                                                <td><?=$kota?></td>
+                                                <td><?=$alamat?></td>
+                                                <td><?=$kode_pos?></td>
+                                                <td><?=$deskripsi?></td>
+                                                <td><?=$nomor_telepon?></td>
+                                                <td><?=$date_registered?></td>
+                                                <td><?=$logo?></td>
+                                                <td><?php if($id_status_verifikasi == 1){ ?>
+                                                    <div class="table-responsive">
+                                                        <div class="table table-striped table-hover ">
+                                                            <a href="" class="btn btn-info" data-toggle="modal"
+                                                                data-target="#edit_data_pegawai">
+                                                                Belum Diverifikasi
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <?php }elseif($id_status_verifikasi == 2) {?>
+                                                    <div class="table-responsive">
+                                                        <div class="table table-striped table-hover ">
+                                                            <a href="" class="btn btn-info" data-toggle="modal"
+                                                                data-target="#edit_data_pegawai">
+                                                                Sudah Diverifikasi
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <?php }?>
+                                                </td>
+                                                <td><?php if($id_status_aktif == 1){ ?>
+                                                    <div class="table-responsive">
+                                                        <div class="table table-striped table-hover ">
+                                                            <a href="" class="btn btn-info" data-toggle="modal"
+                                                                data-target="#edit_data_pegawai">
+                                                                Belum Aktif
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <?php }elseif($id_status_aktif == 2) {?>
+                                                    <div class="table-responsive">
+                                                        <div class="table table-striped table-hover ">
+                                                            <a href="" class="btn btn-info" data-toggle="modal"
+                                                                data-target="#edit_data_pegawai">
+                                                                Selesai Aktif
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <?php }?>
+                                                </td>
                                             </tr>
+                                            <?php endforeach;?>
                                         </tbody>
 
                                     </table>
