@@ -23,6 +23,13 @@ class M_user extends CI_Model
         return $hasil;
     }
 
+    public function get_all_perusahaan_by_id($id_user)
+    {
+        $hasil = $this->db->query("SELECT * FROM user JOIN perusahaan_detail ON user.id_user_detail = perusahaan_detail.id_perusahaan_detail 
+         WHERE id_user_level = 2 AND id_perusahaan_detail='$id_user'");
+        return $hasil;
+    }
+
     public function pendaftaran_user($id, $username, $email, $password,  $id_user_level, $id_status_verifikasi, $id_status_aktif, $id_status_perpanjangan)
     {
        $this->db->trans_start();
@@ -96,6 +103,25 @@ class M_user extends CI_Model
             return false;
 
     }
+
+    public function update_perusahaan_detail($id_user, $nama_perusahaan, 
+    $jenis_perusahaan, $npwp_perusahaan, $provinsi, $kota, $alamat, $kode_pos, $deskripsi, $nomor_telepon, $logo)
+    {
+        $this->db->trans_start();
+
+        $this->db->query("UPDATE perusahaan_detail SET nama_perusahaan='$nama_perusahaan', jenis_perusahaan='$nama_perusahaan', 
+        npwp_perusahaan='$npwp_perusahaan', provinsi='$provinsi', kota='$kota', alamat='$alamat', kode_pos='$kode_pos', deskripsi='$deskripsi',
+        nomor_telepon='$nomor_telepon',
+        logo='$logo'WHERE id_perusahaan_detail='$id_user'");
+
+        $this->db->trans_complete();
+        if($this->db->trans_status()==true)
+            return true;
+        else
+            return false;
+    }
+
+   
 
 
 }

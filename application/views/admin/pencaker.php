@@ -6,6 +6,69 @@
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
+    <?php if ($this->session->flashdata('error_send')){ ?>
+    <script>
+    swal({
+        title: "Gagal Diiupdate!",
+        text: "Pesan gagal dikirim!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+    <?php if ($this->session->flashdata('input_status_verifikasi')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Diiupdate!",
+        text: "Data Kartu Telah diverifikasi!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+    <?php if ($this->session->flashdata('eror_status_verifikasi')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Terjadi Kesalahan Dalam Proses data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+    <?php if ($this->session->flashdata('input_status_aktif')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Diiupdate!",
+        text: "Data Kartu Telah aktif!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+    <?php if ($this->session->flashdata('eror_status_aktif')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Terjadi Kesalahan Dalam Proses data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+    <?php if ($this->session->flashdata('input_status_perpanjangan')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Diiupdate!",
+        text: "Data Kartu Telah Diperpanjang!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+    <?php if ($this->session->flashdata('eror_status_perpanjangan')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Terjadi Kesalahan Dalam Proses data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
     <div class="wrapper">
 
         <!-- Preloader -->
@@ -56,6 +119,7 @@
                                     <table id="example1" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
+
                                                 <th>No</th>
                                                 <th>Username</th>
                                                 <th>Email</th>
@@ -82,10 +146,11 @@
                                                 <th>Foto Ijazah</th>
                                                 <th>Tanggal Daftar</th>
                                                 <th>Status Verifikasi</th>
-                                                <th>Status Perpanjangan</th>
                                                 <th>Status Aktif</th>
+                                                <th>Status Perpanjangan</th>
                                                 <th>Mulai Berlaku</th>
                                                 <th>Akhir Berlaku</th>
+                                                <th>Verifikasi Data</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -174,7 +239,7 @@
                                                 <td><?php if($id_status_verifikasi == 1){ ?>
                                                     <div class="table-responsive">
                                                         <div class="table table-striped table-hover ">
-                                                            <a href="" class="btn btn-info" data-toggle="modal"
+                                                            <a href="" class="btn btn-danger" data-toggle="modal"
                                                                 data-target="#edit_data_pegawai">
                                                                 Belum Diverifikasi
                                                             </a>
@@ -194,7 +259,7 @@
                                                 <td><?php if($id_status_aktif == 1){ ?>
                                                     <div class="table-responsive">
                                                         <div class="table table-striped table-hover ">
-                                                            <a href="" class="btn btn-info" data-toggle="modal"
+                                                            <a href="" class="btn btn-danger" data-toggle="modal"
                                                                 data-target="#edit_data_pegawai">
                                                                 Belum Aktif
                                                             </a>
@@ -214,7 +279,7 @@
                                                 <td><?php if($id_status_perpanjangan == 1){ ?>
                                                     <div class="table-responsive">
                                                         <div class="table table-striped table-hover ">
-                                                            <a href="" class="btn btn-info" data-toggle="modal"
+                                                            <a href="" class="btn btn-danger" data-toggle="modal"
                                                                 data-target="#edit_data_pegawai">
                                                                 Belum Membutuhkan Perpanjang
                                                             </a>
@@ -233,27 +298,215 @@
                                                 </td>
                                                 <td><?=$mulai_berlaku?></td>
                                                 <td><?=$akhir_berlaku?></td>
+                                                <td>
+                                                    <div class="table-responsive">
+                                                        <div class="table table-striped table-hover ">
+                                                            <a href="" class="btn btn-primary" data-toggle="modal"
+                                                                data-target="#verifikasi_data<?=$id_user?>">
+                                                                Verifikasi Data <i class="nav-icon fas fa-users"></i>
+                                                            </a>
 
+                                                        </div>
+                                                    </div>
+                                                    <div class="table-responsive">
+                                                        <div class="table table-striped table-hover ">
+                                                            <a href="" data-toggle="modal"
+                                                                data-target="#aktifkan_kartu<?=$id_user?>"
+                                                                class="btn btn-primary">Aktifkan Kartu <i
+                                                                    class="fas fa-check"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="table-responsive">
+                                                        <div class="table table-striped table-hover ">
+                                                            <a href="" data-toggle="modal"
+                                                                data-target="#ubah_status_perpanjangan<?=$id_user?>"
+                                                                class="btn btn-primary">Status Perpanjangan <i
+                                                                    class="fas fa-edit"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
                                             </tr>
-                                            <?php endforeach;?>
-                                        </tbody>
+                                            <!-- Modal Verfikasi Data -->
+                                            <div class="modal fade" id="verifikasi_data<?=$id_user?>" tabindex="-1"
+                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Verifikasi
+                                                                Data
+                                                            </h5>
+                                                            <button type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
 
-                                    </table>
+                                                        <div class="modal-body">
+                                                            <form action="<?=base_url();?>Pencaker/verifikasi_data"
+                                                                method="POST">
+                                                                <input type="text" name="email" value="<?=$email?>"
+                                                                    hidden>
+                                                                <input type="text" name="id_user" value="<?=$id_user?>"
+                                                                    hidden>
+                                                                <div class="form-group">
+                                                                    <label for="status_verifikasi">Status
+                                                                        Verifikasi</label>
+                                                                    <select class="form-control"
+                                                                        id="exampleFormControlSelect1"
+                                                                        name="status_verifikasi">
+                                                                        <?php
+                                                                        foreach($status_verifikasi_data as $i)
+                                                                        :
+                                                                        $id_status_verifikasi_option = $i['id_status_verifikasi'];
+                                                                        $status_verifikasi_option = $i['status_verifikasi'];
+                                                                        ?>
+                                                                        <option
+                                                                            value="<?=$id_status_verifikasi_option?>">
+                                                                            <?=$status_verifikasi_option?></option>
+                                                                        <?php endforeach;?>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="pesan">Pesan</label>
+                                                                    <textarea class="form-control" id="pesan" rows="3"
+                                                                        name="pesan"></textarea>
+                                                                </div>
+
+                                                                <button type="submit"
+                                                                    class="btn btn-primary">Submit</button>
+                                                            </form>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Modal Aktifkan Data -->
+                                            <div class="modal fade" id="aktifkan_kartu<?=$id_user?>" tabindex="-1"
+                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Aktifikan
+                                                                Data
+                                                            </h5>
+                                                            <button type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+
+                                                        <div class="modal-body">
+                                                            <form action="<?=base_url();?>Pencaker/aktif_data"
+                                                                method="POST">
+                                                                <input type="text" name="email" value="<?=$email?>"
+                                                                    hidden>
+                                                                <input type="text" name="id_user" value="<?=$id_user?>"
+                                                                    hidden>
+                                                                <div class="form-group">
+                                                                    <label for="status_aktif">Status
+                                                                        Aktif</label>
+                                                                    <select class="form-control"
+                                                                        id="exampleFormControlSelect1"
+                                                                        name="status_aktif">
+                                                                        <?php
+                                                                        foreach($status_aktif_data as $i)
+                                                                        :
+                                                                        $id_status_aktif_option = $i['id_status_aktif'];
+                                                                        $status_aktif_option = $i['status_aktif'];
+                                                                        ?>
+                                                                        <option value="<?=$id_status_aktif_option?>">
+                                                                            <?=$status_aktif_option?></option>
+                                                                        <?php endforeach;?>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="pesan">Pesan</label>
+                                                                    <textarea class="form-control" id="pesan" rows="3"
+                                                                        name="pesan"></textarea>
+                                                                </div>
+                                                                <button type="submit"
+                                                                    class="btn btn-primary">Submit</button>
+                                                            </form>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Modal Status Perpanjangan -->
+                                            <div class="modal fade" id="ubah_status_perpanjangan<?=$id_user?>" tabindex="-1"
+                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Status Perpanjangan
+                                                            </h5>
+                                                            <button type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+
+                                                        <div class="modal-body">
+                                                            <form action="<?=base_url();?>Pencaker/ubah_status_perpanjangan"
+                                                                method="POST">
+                                                                <input type="text" name="email" value="<?=$email?>"
+                                                                    hidden>
+                                                                <input type="text" name="id_user" value="<?=$id_user?>"
+                                                                    hidden>
+                                                                <div class="form-group">
+                                                                    <label for="status_perpanjangan">Status
+                                                                        Aktif</label>
+                                                                    <select class="form-control"
+                                                                        id="exampleFormControlSelect1"
+                                                                        name="status_perpanjangan">
+                                                                        <?php
+                                                                        foreach($status_perpanjangan_data as $i)
+                                                                        :
+                                                                        $id_status_perpanjangan_option = $i['id_status_perpanjangan'];
+                                                                        $status_perpanjangan_option = $i['status_perpanjangan'];
+                                                                        ?>
+                                                                        <option value="<?=$id_status_perpanjangan_option?>">
+                                                                            <?=$status_perpanjangan_option?></option>
+                                                                        <?php endforeach;?>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="pesan">Pesan</label>
+                                                                    <textarea class="form-control" id="pesan" rows="3"
+                                                                        name="pesan"></textarea>
+                                                                </div>
+                                                                <button type="submit"
+                                                                    class="btn btn-primary">Submit</button>
+                                                            </form>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
                                 </div>
-                                <!-- /.card-body -->
-                            </div>
-                            <!-- /.card -->
-                        </div>
-                        <!-- /.col -->
-                    </div>
-                    <!-- /.row -->
-                    <!-- Main row -->
+                                <?php endforeach;?>
+                                </tbody>
 
-                    <!-- /.row (main row) -->
-                </div><!-- /.container-fluid -->
-            </section>
-            <!-- /.content -->
-        </div>
+                                </table>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+                <!-- Main row -->
+
+                <!-- /.row (main row) -->
+        </div><!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+
         <!-- /.content-wrapper -->
 
 

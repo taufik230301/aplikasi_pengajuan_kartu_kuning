@@ -41,7 +41,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?=base_url();?>Daftar/view_perusahaan" class="nav-link">
+                    <a href="<?=base_url();?>Daftar/view_perusahaan/<?=$this->session->userdata('id_user');?>" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>Daftar</p>
                     </a>

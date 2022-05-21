@@ -65,49 +65,85 @@
             <section class="content">
                 <div class="container-fluid">
                     <div class="col">
-                        <form action="<?=base_url();?>Daftar/lengkapi_data_user" method="POST">
+                        <?php
+                                            
+                                            $id = 0;
+                                            foreach($perusahaan as $i)
+                                            :
+                                            $id++;
+                                            $id_perusahaan_detail = $i['id_perusahaan_detail'];
+                                            $nama_perusahaan = $i['nama_perusahaan'];
+                                            $jenis_perusahaan = $i['jenis_perusahaan'];
+                                            $npwp_perusahaan = $i['npwp_perusahaan'];
+                                            $provinsi = $i['provinsi'];
+                                            $kota = $i['kota'];
+                                            $alamat = $i['alamat'];
+                                            $kode_pos = $i['kode_pos'];
+                                            $deskripsi = $i['deskripsi'];
+                                            $nomor_telepon = $i['nomor_telepon'];
+                                            $logo = $i['logo'];
+                                          
+
+                                            
+                                            ?>
+                        <form action="<?=base_url();?>Daftar/lengkapi_data_perusahaan" method="POST"
+                            enctype="multipart/form-data">
+
+                            <input type="text" name="id_user" id="id_user" value="<?=$id_perusahaan_detail?>" hidden>
+
                             <div class="form-group">
                                 <label for="nama_perusahaan">Nama Perusahaan</label>
-                                <input type="text" class="form-control" id="nama_perusahaan" name="nama_perusahaan">
+                                <input type="text" class="form-control" id="nama_perusahaan" name="nama_perusahaan"
+                                    value="<?=$nama_perusahaan?>">
                             </div>
                             <div class="form-group">
                                 <label for="jenis_perusahaan">Jenis Perusahaan</label>
-                                <input type="text" class="form-control" id="jenis_perusahaan" name="jenis_perusahaan">
+                                <input type="text" class="form-control" id="jenis_perusahaan" name="jenis_perusahaan"
+                                    value="<?=$jenis_perusahaan?>">
                             </div>
                             <div class="form-group">
                                 <label for="npwp_perusahaan">NPWP Perusahaan</label>
-                                <input type="text" class="form-control" id="npwp_perusahaan" name="npwp_perusahaan">
+                                <input type="text" class="form-control" id="npwp_perusahaan" name="npwp_perusahaan"
+                                    value="<?=$npwp_perusahaan?>">
                             </div>
                             <div class="form-group">
                                 <label for="provinsi">Provinsi</label>
-                                <input type="text" class="form-control" id="provinsi" name="provinsi">
+                                <input type="text" class="form-control" id="provinsi" name="provinsi"
+                                    value="<?=$provinsi?>">
                             </div>
                             <div class="form-group">
                                 <label for="kota">kota</label>
-                                <input type="text" class="form-control" id="kota" name="kota">
+                                <input type="text" class="form-control" id="kota" name="kota" value="<?=$kota?>">
                             </div>
                             <div class="form-group">
                                 <label for="alamat">Alamat</label>
-                                <textarea class="form-control" id="alamat" name="alamat" rows="3"></textarea>
+                                <textarea class="form-control" id="alamat" name="alamat"
+                                    rows="3"><?=$alamat?></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="kode_pos">Kode Pos</label>
-                                <input type="text" class="form-control" id="kode_pos" name="kode_pos">
+                                <input type="text" class="form-control" id="kode_pos" name="kode_pos"
+                                    value="<?=$kode_pos?>">
                             </div>
                             <div class="form-group">
                                 <label for="deskripsi">deskripsi</label>
-                                <textarea class="form-control" id="deskripsi" name="deskripsi" rows="3"></textarea>
+                                <textarea class="form-control" id="deskripsi" name="deskripsi"
+                                    rows="3"><?=$deskripsi?></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="nomor_telepon">Kode Pos</label>
-                                <input type="text" class="form-control" id="nomor_telepon" name="nomor_telepon">
+                                <input type="text" class="form-control" id="nomor_telepon" name="nomor_telepon"
+                                    value="<?=$nomor_telepon?>">
                             </div>
                             <div class="form-group">
                                 <label for="logo">Logo</label>
                                 <input type="file" class="form-control" id="logo" name="logo">
+                                <input type="text" class="form-control" id="logo_old" name="logo_old" value=<?=$logo?>
+                                    hidden>
                             </div>
                             <button type="submit" class="btn btn-primary mb-3">Submit</button>
                         </form>
+                        <?php endforeach ;?>
                     </div>
 
                     <!-- /.row (main row) -->

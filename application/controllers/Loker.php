@@ -11,9 +11,11 @@ class Loker extends CI_Controller {
     
     public function view_perusahaan($id_user)
 	{
-        $data['loker'] = $this->m_loker->get_all_loker($id_user)->result_array();
+        $data['loker'] = $this->m_loker->get_all_loker_by_id($id_user)->result_array();
 		$this->load->view('perusahaan/loker', $data);
     }
+
+    
 
     public function tambah_loker()
     {

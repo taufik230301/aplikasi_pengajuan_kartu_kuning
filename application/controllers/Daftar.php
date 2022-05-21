@@ -17,9 +17,10 @@ class Daftar extends CI_Controller {
 		$this->load->view('user/daftar_ak1', $data);
     }
 
-    public function view_perusahaan()
+    public function view_perusahaan($id_user)
 	{
-		$this->load->view('perusahaan/daftar');
+        $data['perusahaan'] = $this->m_user->get_all_perusahaan_by_id($id_user)->result_array();
+		$this->load->view('perusahaan/daftar', $data);
     }
 
 
@@ -128,26 +129,51 @@ class Daftar extends CI_Controller {
     
     public function lengkapi_data_perusahaan()
     {
-        $nik = $this->input->post('nik');
-        $nama_lengkap = $this->input->post('nama_lengkap');
-        $tempat_lahir = $this->input->post('tempat_lahir');
-        $tanggal_lahir = $this->input->post('tanggal_lahir');
-        $jenis_kelamin = $this->input->post('jenis_kelamin');
-        $agama = $this->input->post('agama');
-        $status_perkawinan = $this->input->post('status_perkawinan');
-        $tinggi_badan = $this->input->post('tinggi_badan');
-        $berat_badan = $this->input->post('berat_badan');
-        $pendidikan_terakhir = $this->input->post('pendidikan_terakhir');
-        $jurusan = $this->input->post('jurusan');
-        $pengalaman_kerja = $this->input->post('pengalaman_kerja');
-        $no_hp = $this->input->post('no_hp');
+
+        $id_user = $this->input->post('id_user');
+        $nama_perusahaan = $this->input->post('nama_perusahaan');
+        $jenis_perusahaan = $this->input->post('jenis_perusahaan');
+        $npwp_perusahaan = $this->input->post('npwp_perusahaan');
         $provinsi = $this->input->post('provinsi');
         $kota = $this->input->post('kota');
-        $kode_pos = $this->input->post('kode_pos');
         $alamat = $this->input->post('alamat');
+        $kode_pos = $this->input->post('kode_pos');
+        $deskripsi = $this->input->post('deskripsi');
+        $nomor_telepon = $this->input->post('nomor_telepon');
+        $foto_name = md5($nama_perusahaan.$npwp_perusahaan.$id_user);
+        
+        $path = './assets/logo/';
 
-        echo $nik;
-        die();
+		$this->load->library('upload');
+		$config['upload_path'] = './assets/logo';
+		$config['allowed_types'] = 'jpg|png|jpeg|gif';
+		$config['max_size'] = '2048';  //2MB max
+		$config['max_width'] = '4480'; // pixel
+		$config['max_height'] = '4480'; // pixel
+		$config['file_name'] = $foto_name.'_logo';
+		$this->upload->initialize($config);
+		$logo_upload = $this->upload->do_upload('logo');
+		
+		if($logo_upload){
+			$logo = $this->upload->data();
+		}else{
+			
+			$this->session->set_flashdata('error_file_saya','error_file_saya');
+			redirect('Daftar/view_perusahaan/'.$id_user);
+        }
+
+
+        $hasil = $this->m_user->update_perusahaan_detail($id_user, $nama_perusahaan, 
+        $jenis_perusahaan, $npwp_perusahaan, $provinsi, $kota, $alamat, $kode_pos, $deskripsi, $nomor_telepon, $logo['file_name']);
+
+        if($hasil==false){
+            $this->session->set_flashdata('eror','eror');
+            redirect('Daftar/view_perusahaan/'.$id_user);
+        }else{
+            @unlink($path.$this->input->post('logo_old'));
+            $this->session->set_flashdata('input','input');
+            redirect('Daftar/view_perusahaan/'.$id_user);
+        }
 
         
     }

@@ -95,18 +95,25 @@
                                             foreach($loker as $i)
                                             :
                                             $id++;
+                                            $nama_perusahaan = $i['nama_perusahaan'];
                                             $judul = $i['judul'];
+                                            $deskripsi_loker = $i['deskripsi'];
+                                            $posisi = $i['posisi'];
+                                            $jumlah_rekrut = $i['jumlah_rekrut'];
+                                            $salary = $i['salary'];
+                                            $batas_akhir = $i['batas_akhir'];
+
                                             
                                             ?>
                                             <tr>
-                                                <td>Trident</td>
-                                                <td>Internet Explorer 4.0</td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                                <td>B</td>
+                                                <td><?=$id?></td>
+                                                <td><?=$nama_perusahaan?></td>
+                                                <td><?=$judul?></td>
+                                                <td><?=$deskripsi_loker?></td>
+                                                <td><?=$posisi?></td>
+                                                <td><?=$jumlah_rekrut?></td>
+                                                <td><?=$salary?></td>
+                                                <td><?=$batas_akhir?></td>
                                             </tr>
                                             <?php endforeach;?>
                                         </tbody>
