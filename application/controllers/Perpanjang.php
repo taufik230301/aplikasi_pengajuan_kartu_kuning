@@ -11,7 +11,9 @@ class Perpanjang extends CI_Controller {
 
     public function view_user($id_user)
 	{
-        $data['user'] = $this->m_user->get_user_detail_by_id($id_user)->result_array();
+		$data['user_data'] = $this->m_user->get_user_detail_by_id($this->session->userdata('id_user'))->row_array();
+		$data['user'] = $this->m_user->get_user_detail_by_id($id_user)->result_array();
+		
 		$this->load->view('user/perpanjang', $data);
     }
 

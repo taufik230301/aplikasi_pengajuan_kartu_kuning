@@ -141,10 +141,10 @@ class M_user extends CI_Model
 
         $this->db->query("UPDATE user_detail SET no_pendaftaran='$no_pendaftaran', nik='$nik', nama_lengkap='$nama_lengkap', 
         tempat_lahir='$tempat_lahir', tanggal_lahir='$tanggal_lahir', jenis_kelamin='$jenis_kelamin', agama='$agama', 
-        status_perkawinan='$status_perkawinan', 
-        tinggi_badan='$tinggi_badan', berat_badan='$berat_badan', pendidikan_terakhir='$pendidikan_terakhir', 
-        jurusan='$jurusan', pengalaman_kerja='$pengalaman_kerja', no_hp='$no_hp', provinsi='$provinsi', kota='$kota',
-         kode_pos='$kode_pos', alamat='$alamat', foto_saya='$foto_saya', foto_ktp='$foto_ktp', foto_ijazah='$foto_ijazah' 
+        status_perkawinan='$status_perkawinan', tinggi_badan='$tinggi_badan', berat_badan='$berat_badan', 
+        pendidikan_terakhir='$pendidikan_terakhir', jurusan='$jurusan', pengalaman_kerja='$pengalaman_kerja', no_hp='$no_hp', provinsi='$provinsi', kota='$kota',
+        kode_pos='$kode_pos', alamat='$alamat', foto_saya='$foto_saya', foto_ktp='$foto_ktp', foto_ijazah='$foto_ijazah', id_status_verifikasi='$id_status_verifikasi' 
+        , id_status_perpanjangan='$id_status_perpanjangan', id_status_aktif='$id_status_aktif' 
          WHERE id_user_detail='$id_user'");
 
         $this->db->trans_complete();

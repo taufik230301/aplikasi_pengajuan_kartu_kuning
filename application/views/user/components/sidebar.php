@@ -67,6 +67,25 @@
                         <p>Perpanjang</p>
                     </a>
                 </li>
+                <li class="nav-item" style="<?php 
+                        //  echo var_dump($user['akhir_berlaku'] < date("Y-m-d"));
+                        if($user_data['akhir_berlaku'] > date("Y-m-d")){
+                            echo '';
+                        }else{
+                            echo 'display:none;';
+                        }
+                        
+                        ?>">
+                    <a href="<?=base_url();?>Cetak/kartu_kuning/<?=$this->session->userdata('id_user');?>"
+                        class="nav-link" 
+                       
+                        
+                        >
+                        <i class="nav-icon fas fa-book"></i>
+                        
+                        <p>Cetak Kartu Kuning</p>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
