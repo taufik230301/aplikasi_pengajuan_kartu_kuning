@@ -17,6 +17,20 @@ class M_user extends CI_Model
             return false;
     }
 
+    public function delete_perusahaan($id_user)
+    {
+       $this->db->trans_start();
+
+       $this->db->query("DELETE FROM user WHERE id_user='$id_user'");
+       $this->db->query("DELETE FROM perusahaan_detail WHERE id_perusahaan_detail='$id_user'");
+
+       $this->db->trans_complete();
+        if($this->db->trans_status()==true)
+            return true;
+        else
+            return false;
+    }
+
     public function get_user_detail_by_id($id_user)
     {
         $hasil = $this->db->query("SELECT * FROM user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail WHERE  id_user='$id_user'");
@@ -50,6 +64,29 @@ class M_user extends CI_Model
 
        $this->db->query("INSERT INTO user(id_user, username, password, email ,id_user_level, id_user_detail) VALUES ('$id','$username','$password','$email','$id_user_level','$id')");
        $this->db->query("INSERT INTO user_detail(id_user_detail, id_status_verifikasi, id_status_aktif, id_status_perpanjangan, date_registered) VALUES ('$id','$id_status_verifikasi','$id_status_aktif','$id_status_perpanjangan', NOW())");
+
+       $this->db->trans_complete();
+        if($this->db->trans_status()==true)
+            return true;
+        else
+            return false;
+    }
+
+    public function insert_user($id ,$username, $password, $email, $no_pendaftaran, $nik, $nama_lengkap, $tempat_lahir,
+    $tanggal_lahir, $jenis_kelamin, $agama, $status_perkawinan, $tinggi_badan, $berat_badan, 
+    $pendidikan_terakhir, $jurusan, $pengalaman_kerja, $no_hp, $provinsi, $kota, $kode_pos, 
+    $alamat, $foto_saya, $foto_ktp, $foto_ijazah, $id_status_verifikasi, $id_status_perpanjangan, $id_status_aktif, $id_user_level)
+    {
+       $this->db->trans_start();
+
+       $this->db->query("INSERT INTO user(id_user, username, password, email ,id_user_level, id_user_detail) VALUES ('$id','$username','$password','$email','$id_user_level','$id')");
+       $this->db->query("INSERT INTO user_detail(id_user_detail, no_pendaftaran, nik, nama_lengkap, tempat_lahir, tanggal_lahir, jenis_kelamin, 
+       agama, status_perkawinan, tinggi_badan, berat_badan, pendidikan_terakhir, 
+       jurusan, pengalaman_kerja, no_hp, provinsi, kota, kode_pos, alamat, foto_saya, foto_ktp, foto_ijazah, id_status_verifikasi, id_status_aktif, id_status_perpanjangan, date_registered) 
+       VALUES ('$id','$no_pendaftaran','$nik','$nama_lengkap','$tempat_lahir','$tanggal_lahir',
+       '$jenis_kelamin','$agama','$status_perkawinan','$tinggi_badan','$berat_badan','$pendidikan_terakhir',
+       '$jurusan','$pengalaman_kerja','$no_hp','$provinsi','$kota','$kode_pos','$alamat',
+       '$foto_saya','$foto_ktp','$foto_ijazah','$id_status_verifikasi','$id_status_aktif','$id_status_perpanjangan', NOW())");
 
        $this->db->trans_complete();
         if($this->db->trans_status()==true)
@@ -123,10 +160,46 @@ class M_user extends CI_Model
     {
         $this->db->trans_start();
 
-        $this->db->query("UPDATE perusahaan_detail SET nama_perusahaan='$nama_perusahaan', jenis_perusahaan='$nama_perusahaan', 
+        $this->db->query("UPDATE perusahaan_detail SET nama_perusahaan='$nama_perusahaan', jenis_perusahaan='$jenis_perusahaan', 
         npwp_perusahaan='$npwp_perusahaan', provinsi='$provinsi', kota='$kota', alamat='$alamat', kode_pos='$kode_pos', deskripsi='$deskripsi',
         nomor_telepon='$nomor_telepon',
         logo='$logo'WHERE id_perusahaan_detail='$id_user'");
+
+        $this->db->trans_complete();
+        if($this->db->trans_status()==true)
+            return true;
+        else
+            return false;
+    }
+
+    public function update_perusahaan($id_user, $nama_perusahaan, 
+    $jenis_perusahaan, $npwp_perusahaan, $provinsi, $kota, $alamat, $kode_pos, $deskripsi, $nomor_telepon, $logo)
+    {
+        $this->db->trans_start();
+
+        $this->db->query("UPDATE perusahaan_detail SET nama_perusahaan='$nama_perusahaan', jenis_perusahaan='$jenis_perusahaan', 
+        npwp_perusahaan='$npwp_perusahaan', provinsi='$provinsi', kota='$kota', alamat='$alamat', kode_pos='$kode_pos', deskripsi='$deskripsi',
+        nomor_telepon='$nomor_telepon',
+        logo='$logo'WHERE id_perusahaan_detail='$id_user'");
+
+        $this->db->trans_complete();
+        if($this->db->trans_status()==true)
+            return true;
+        else
+            return false;
+    }
+
+    public function insert_perusahaan($id, $username, $password, $email, $nama_perusahaan, 
+    $jenis_perusahaan, $npwp_perusahaan, $provinsi, $kota, $alamat, $kode_pos, $deskripsi, $nomor_telepon, $logo, $id_status_aktif, $id_status_verifikasi, $id_user_level)
+    {
+        $this->db->trans_start();
+        $this->db->query("INSERT INTO user(id_user, username, password, email ,id_user_level, id_user_detail) VALUES ('$id','$username','$password','$email','$id_user_level','$id')");
+        $this->db->query("INSERT INTO perusahaan_detail(id_perusahaan_detail, nama_perusahaan, jenis_perusahaan,
+        npwp_perusahaan, provinsi, kota, alamat, kode_pos, deskripsi, nomor_telepon, logo, id_status_verifikasi, 
+        id_status_aktif, date_registered) VALUES ('$id','$nama_perusahaan','$jenis_perusahaan','$npwp_perusahaan','$provinsi',
+        '$kota','$alamat','$kode_pos','$deskripsi','$nomor_telepon','$logo',
+        '$id_status_verifikasi','$id_status_aktif', NOW())");
+       
 
         $this->db->trans_complete();
         if($this->db->trans_status()==true)

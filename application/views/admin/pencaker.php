@@ -6,11 +6,20 @@
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
-    <?php if ($this->session->flashdata('input')){ ?>
+    <?php if ($this->session->flashdata('update')){ ?>
     <script>
     swal({
         title: "Berhasil Diubah!",
         text: "Data Berhasil Diubah!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+    <?php if ($this->session->flashdata('input')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Ditambahakan!",
+        text: "Data Berhasil Ditambahkan!",
         icon: "success"
     });
     </script>
@@ -128,7 +137,7 @@
                             </ol>
                         </div><!-- /.col -->
                         <button type="button" class="btn btn-primary mt-3 ml-2" data-toggle="modal"
-                            data-target="#tambah_user">
+                            data-target="#tambah_pencaker">
                             Tambah User
                         </button>
                     </div><!-- /.row -->
@@ -795,6 +804,145 @@
                 <!-- /.row (main row) -->
         </div><!-- /.container-fluid -->
         </section>
+        <!-- Modal Tambah Data -->
+        <div class="modal fade" id="tambah_pencaker" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Tambah Data
+                            Pencaker
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="<?=base_url();?>Pencaker/tambah_pencaker" enctype="multipart/form-data"
+                            method="POST">
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control" id="username" name="username"
+                                    aria-describedby="emailHelp" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="text" class="form-control" id="password" name="password"
+                                    aria-describedby="emailHelp" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="text" class="form-control" id="email" name="email"
+                                    aria-describedby="emailHelp" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="nik">NIK</label>
+                                <input type="text" class="form-control" id="nik" name="nik" aria-describedby="emailHelp"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="nama_lengkap">Nama Lengkap</label>
+                                <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="tempat_lahir">Tempat lahir</label>
+                                <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="tanggal_lahir">Tanggal Lahir</label>
+                                <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">Jenis
+                                    Kelamin</label>
+                                <select class="form-control" id="exampleFormControlSelect1" name="jenis_kelamin"
+                                    required>
+                                    <option value="L">Laki-Laki</option>
+                                    <option value="P">Perempuan</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="agama">Agama</label>
+                                <input type="text" class="form-control" id="agama" name="agama" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="status_perkawinan">Status
+                                    Perkawinan</label>
+                                <select class="form-control" id="exampleFormControlSelect1" name="status_perkawinan"
+                                    required>
+                                    <option value="Kawin">Kawin</option>
+                                    <option value="Belum Kawin">Belum Kawin</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="tinggi_badan">Tinggi Badan</label>
+                                <input type="text" class="form-control" id="tinggi_badan" name="tinggi_badan" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="berat_bedan">Berat Badan</label>
+                                <input type="text" class="form-control" id="berat_badan" name="berat_badan" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="pendidikan_terakhir">Pendidikan
+                                    Terakhir</label>
+                                <select class="form-control" id="pendidikan_terakhir" name="pendidikan_terakhir"
+                                    required>
+                                    <option value="SD">SD</option>
+                                    <option value="SMP">SMP</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="jurusan">Jurusan</label>
+                                <input type="text" class="form-control" id="jurusan" name="jurusan" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="pengalaman_kerja">Pengalaman
+                                    Kerja</label>
+                                <textarea class="form-control" id="pengalaman_kerja" name="pengalaman_kerja" rows="3"
+                                    required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="no_hp">No NP</label>
+                                <input type="text" class="form-control" id="no_hp" name="no_hp" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="provinsi">Provinsi</label>
+                                <input type="text" class="form-control" id="provinsi" name="provinsi" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="kota">Kota</label>
+                                <input type="text" class="form-control" id="kota" name="kota" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="kode_pos">Kode Pos</label>
+                                <input type="text" class="form-control" id="kode_pos" name="kode_pos" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="alamat">Alamat</label>
+                                <textarea class="form-control" id="alamat" name="alamat" rows="3" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="foto_saya">Foto</label>
+                                <input type="file" class="form-control" id="foto_saya" name="foto_saya" required>
+
+                            </div>
+                            <div class="form-group">
+                                <label for="foto_ktp">Foto KTP</label>
+                                <input type="file" class="form-control" id="foto_ktp" name="foto_ktp" required>
+
+                            </div>
+                            <div class="form-group">
+                                <label for="foto_ijazah">Foto Ijazah</label>
+                                <input type="file" class="form-control" id="foto_ijazah" name="foto_ijazah" required>
+
+                            </div>
+                            <button type="submit" class="btn btn-primary mb-3">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- /.content -->
 
         <!-- /.content-wrapper -->

@@ -24,16 +24,126 @@ class Perusahaan extends CI_Controller {
     public function tambah_perusahaan()
     {
 
+      $username = $this->input->post('username');
+      $password = $this->input->post('password');
+      $email = $this->input->post('email');
+      $nama_perusahaan = $this->input->post('nama_perusahaan');
+      $jenis_perusahaan = $this->input->post('jenis_perusahaan');
+      $npwp_perusahaan = $this->input->post('npwp_perusahaan');
+      $provinsi = $this->input->post('provinsi');
+      $kota = $this->input->post('kota');
+      $alamat = $this->input->post('alamat');
+      $kode_pos = $this->input->post('kode_pos');
+      $deskripsi = $this->input->post('deskripsi');
+      $nomor_telepon = $this->input->post('nomor_telepon');
+      $id_status_verifikasi = 1; 
+      $id_status_aktif = 1;
+      $id_user_level = 2;
+      $id_user = md5($nama_perusahaan.$kode_pos.$email);
+      $foto_name = md5($nama_perusahaan.$npwp_perusahaan.$id_user);
+      
+      $path = './assets/logo/';
+
+  $this->load->library('upload');
+  $config['upload_path'] = './assets/logo';
+  $config['allowed_types'] = 'jpg|png|jpeg|gif';
+  $config['max_size'] = '2048';  //2MB max
+  $config['max_width'] = '4480'; // pixel
+  $config['max_height'] = '4480'; // pixel
+  $config['file_name'] = $foto_name.'_logo';
+  $this->upload->initialize($config);
+  $logo_upload = $this->upload->do_upload('logo');
+  
+  if($logo_upload){
+    $logo = $this->upload->data();
+  }else{
+    
+    $this->session->set_flashdata('error_file_saya','error_file_saya');
+    redirect('Perusahaan/view_admin');
+      }
+
+
+      $hasil = $this->m_user->insert_perusahaan($id_user, $username, $password, $email, $nama_perusahaan, 
+      $jenis_perusahaan, $npwp_perusahaan, $provinsi, $kota, $alamat, $kode_pos, $deskripsi, $nomor_telepon, $logo['file_name'], $id_status_aktif, $id_status_verifikasi, $id_user_level);
+
+      if($hasil==false){
+          $this->session->set_flashdata('eror','eror');
+          redirect('Perusahaan/view_admin');
+      }else{
+          $this->session->set_flashdata('input','input');
+          redirect('Perusahaan/view_admin');
+      }
     }
 
     public function update_perusahaan()
     {
+
+        $id_user = $this->input->post('id_user');
+        $nama_perusahaan = $this->input->post('nama_perusahaan');
+        $jenis_perusahaan = $this->input->post('jenis_perusahaan');
+        $npwp_perusahaan = $this->input->post('npwp_perusahaan');
+        $provinsi = $this->input->post('provinsi');
+        $kota = $this->input->post('kota');
+        $alamat = $this->input->post('alamat');
+        $kode_pos = $this->input->post('kode_pos');
+        $deskripsi = $this->input->post('deskripsi');
+        $nomor_telepon = $this->input->post('nomor_telepon');
+        $foto_name = md5($nama_perusahaan.$npwp_perusahaan.$id_user);
+        
+        $path = './assets/logo/';
+
+		$this->load->library('upload');
+		$config['upload_path'] = './assets/logo';
+		$config['allowed_types'] = 'jpg|png|jpeg|gif';
+		$config['max_size'] = '2048';  //2MB max
+		$config['max_width'] = '4480'; // pixel
+		$config['max_height'] = '4480'; // pixel
+		$config['file_name'] = $foto_name.'_logo';
+		$this->upload->initialize($config);
+		$logo_upload = $this->upload->do_upload('logo');
+		
+		if($logo_upload){
+			$logo = $this->upload->data();
+		}else{
+			
+			$this->session->set_flashdata('error_file_saya','error_file_saya');
+			redirect('Perusahaan/view_admin');
+        }
+
+
+        $hasil = $this->m_user->update_perusahaan($id_user, $nama_perusahaan, 
+        $jenis_perusahaan, $npwp_perusahaan, $provinsi, $kota, $alamat, $kode_pos, $deskripsi, $nomor_telepon, $logo['file_name']);
+
+        if($hasil==false){
+            $this->session->set_flashdata('eror','eror');
+            redirect('Perusahaan/view_admin');
+        }else{
+            @unlink($path.$this->input->post('logo_old'));
+            $this->session->set_flashdata('update','update');
+            redirect('Perusahaan/view_admin');
+        }
+
         
     }
 
     public function hapus_perusahaan()
     {
-        
+
+      $id_user = $this->input->post("id_user");
+
+      $path = './assets/logo/';
+
+      $hasil = $this->m_user->delete_perusahaan($id_user);
+
+        if($hasil==false){
+                  $this->session->set_flashdata('eror','eror');
+                  redirect('Perusahaan/view_admin');
+        }else{
+              @unlink($path.$this->input->post('logo_old'));
+                  $this->session->set_flashdata('delete','delete');
+                  redirect('Perusahaan/view_admin');
+        }
+
     }
 
     public function verifikasi_data()
