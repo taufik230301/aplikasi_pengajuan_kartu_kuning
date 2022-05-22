@@ -6,6 +6,34 @@
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
+    <?php if ($this->session->flashdata('input')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Diubah!",
+        text: "Data Berhasil Diubah!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+    <?php if ($this->session->flashdata('eror')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Terjadi Kesalahan Dalam Proses data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+    <?php if ($this->session->flashdata('delete')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Dihapus!",
+        text: "Data Berhasil Dihapus!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
     <?php if ($this->session->flashdata('error_send')){ ?>
     <script>
     swal({
@@ -99,6 +127,10 @@
                                 <li class="breadcrumb-item active">Pencaker</li>
                             </ol>
                         </div><!-- /.col -->
+                        <button type="button" class="btn btn-primary mt-3 ml-2" data-toggle="modal"
+                            data-target="#tambah_user">
+                            Tambah User
+                        </button>
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
             </div>
@@ -151,6 +183,7 @@
                                                 <th>Mulai Berlaku</th>
                                                 <th>Akhir Berlaku</th>
                                                 <th>Verifikasi Data</th>
+                                                <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -327,6 +360,26 @@
                                                         </div>
                                                     </div>
                                                 </td>
+                                                <td>
+                                                    <div class="table-responsive">
+                                                        <div class="table table-striped table-hover ">
+                                                            <a href="" class="btn btn-primary" data-toggle="modal"
+                                                                data-target="#ubah_pencaker<?=$id_user?>">
+                                                                Edit <i class="nav-icon fas fa-edit"></i>
+                                                            </a>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="table-responsive">
+                                                        <div class="table table-striped table-hover ">
+                                                            <a href="" data-toggle="modal"
+                                                                data-target="#delete_pencaker<?=$id_user?>"
+                                                                class="btn btn-danger">Hapus <i
+                                                                    class="fas fa-trash"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
                                             </tr>
                                             <!-- Modal Verfikasi Data -->
                                             <div class="modal fade" id="verifikasi_data<?=$id_user?>" tabindex="-1"
@@ -355,7 +408,7 @@
                                                                         Verifikasi</label>
                                                                     <select class="form-control"
                                                                         id="exampleFormControlSelect1"
-                                                                        name="status_verifikasi">
+                                                                        name="status_verifikasi" required>
                                                                         <?php
                                                                         foreach($status_verifikasi_data as $i)
                                                                         :
@@ -371,7 +424,7 @@
                                                                 <div class="form-group">
                                                                     <label for="pesan">Pesan</label>
                                                                     <textarea class="form-control" id="pesan" rows="3"
-                                                                        name="pesan"></textarea>
+                                                                        name="pesan" required></textarea>
                                                                 </div>
 
                                                                 <button type="submit"
@@ -410,7 +463,7 @@
                                                                         Aktif</label>
                                                                     <select class="form-control"
                                                                         id="exampleFormControlSelect1"
-                                                                        name="status_aktif">
+                                                                        name="status_aktif" required>
                                                                         <?php
                                                                         foreach($status_aktif_data as $i)
                                                                         :
@@ -423,9 +476,21 @@
                                                                     </select>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label for="pesan">Pesan</label>
+                                                                    <label for="pesan" required>Pesan</label>
                                                                     <textarea class="form-control" id="pesan" rows="3"
                                                                         name="pesan"></textarea>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="mulai_berlaku">Mulai Berlaku</label>
+                                                                    <input type="date" class="form-control"
+                                                                        id="mulai_berlaku" name="mulai_berlaku"
+                                                                        required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="akhir_berlaku">Akhir Berlaku</label>
+                                                                    <input type="date" class="form-control"
+                                                                        id="akhir_berlaku" name="akhir_berlaku"
+                                                                        required>
                                                                 </div>
                                                                 <button type="submit"
                                                                     class="btn btn-primary">Submit</button>
@@ -437,12 +502,13 @@
                                             </div>
 
                                             <!-- Modal Status Perpanjangan -->
-                                            <div class="modal fade" id="ubah_status_perpanjangan<?=$id_user?>" tabindex="-1"
-                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal fade" id="ubah_status_perpanjangan<?=$id_user?>"
+                                                tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalLabel">Status Perpanjangan
+                                                            <h5 class="modal-title" id="exampleModalLabel">Status
+                                                                Perpanjangan
                                                             </h5>
                                                             <button type="button" class="close" data-dismiss="modal"
                                                                 aria-label="Close">
@@ -451,7 +517,8 @@
                                                         </div>
 
                                                         <div class="modal-body">
-                                                            <form action="<?=base_url();?>Pencaker/ubah_status_perpanjangan"
+                                                            <form
+                                                                action="<?=base_url();?>Pencaker/ubah_status_perpanjangan"
                                                                 method="POST">
                                                                 <input type="text" name="email" value="<?=$email?>"
                                                                     hidden>
@@ -462,14 +529,15 @@
                                                                         Aktif</label>
                                                                     <select class="form-control"
                                                                         id="exampleFormControlSelect1"
-                                                                        name="status_perpanjangan">
+                                                                        name="status_perpanjangan" required>
                                                                         <?php
                                                                         foreach($status_perpanjangan_data as $i)
                                                                         :
                                                                         $id_status_perpanjangan_option = $i['id_status_perpanjangan'];
                                                                         $status_perpanjangan_option = $i['status_perpanjangan'];
                                                                         ?>
-                                                                        <option value="<?=$id_status_perpanjangan_option?>">
+                                                                        <option
+                                                                            value="<?=$id_status_perpanjangan_option?>">
                                                                             <?=$status_perpanjangan_option?></option>
                                                                         <?php endforeach;?>
                                                                     </select>
@@ -477,13 +545,235 @@
                                                                 <div class="form-group">
                                                                     <label for="pesan">Pesan</label>
                                                                     <textarea class="form-control" id="pesan" rows="3"
-                                                                        name="pesan"></textarea>
+                                                                        name="pesan" required></textarea>
                                                                 </div>
                                                                 <button type="submit"
                                                                     class="btn btn-primary">Submit</button>
                                                             </form>
                                                         </div>
 
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Modal Ubah Data -->
+                                            <div class="modal fade" id="ubah_pencaker<?=$id_user?>" tabindex="-1"
+                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Edit Data
+                                                                Pencaker
+                                                            </h5>
+                                                            <button type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+
+                                                            <form action="<?=base_url();?>Pencaker/update_pencaker"
+                                                                enctype="multipart/form-data" method="POST">
+                                                                <input type="text" value="<?=$id_user?>" name="id_user"
+                                                                    hidden>
+                                                                <input type="text" value="<?=$id_status_verifikasi?>"
+                                                                    name="id_status_verifikasi" hidden>
+                                                                <input type="text" value="<?=$id_status_perpanjangan?>"
+                                                                    name="id_status_perpanjangan" hidden>
+                                                                <input type="text" value="<?=$id_status_aktif?>"
+                                                                    name="id_status_aktif" hidden>
+                                                                <div class="form-group">
+                                                                    <label for="no_pendaftaran">No Pendaftaran</label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="no_pendaftaran" name="no_pendaftaran"
+                                                                        aria-describedby="emailHelp"
+                                                                        value="<?=$no_pendaftaran?>" required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="nik">NIK</label>
+                                                                    <input type="text" class="form-control" id="nik"
+                                                                        name="nik" aria-describedby="emailHelp"
+                                                                        value="<?=$nik?>" required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="nama_lengkap">Nama Lengkap</label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="nama_lengkap" name="nama_lengkap"
+                                                                        value="<?=$nama_lengkap?>" required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="tempat_lahir">Tempat lahir</label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="tempat_lahir" name="tempat_lahir"
+                                                                        value="<?=$tempat_lahir?>" required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="tanggal_lahir">Tanggal Lahir</label>
+                                                                    <input type="date" class="form-control"
+                                                                        id="tanggal_lahir" name="tanggal_lahir"
+                                                                        value="<?=$tanggal_lahir?>" required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="exampleFormControlSelect1">Jenis
+                                                                        Kelamin</label>
+                                                                    <select class="form-control"
+                                                                        id="exampleFormControlSelect1"
+                                                                        name="jenis_kelamin" required>
+                                                                        <option value="L">Laki-Laki</option>
+                                                                        <option value="P">Perempuan</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="agama">Agama</label>
+                                                                    <input type="text" class="form-control" id="agama"
+                                                                        name="agama" value="<?=$agama?>" required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="status_perkawinan">Status
+                                                                        Perkawinan</label>
+                                                                    <select class="form-control"
+                                                                        id="exampleFormControlSelect1"
+                                                                        name="status_perkawinan" required>
+                                                                        <option value="Kawin">Kawin</option>
+                                                                        <option value="Belum Kawin">Belum Kawin</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="tinggi_badan">Tinggi Badan</label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="tinggi_badan" name="tinggi_badan"
+                                                                        value="<?=$tinggi_badan?>" required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="berat_bedan">Berat Badan</label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="berat_badan" name="berat_badan"
+                                                                        value="<?=$berat_badan?>" required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="pendidikan_terakhir">Pendidikan
+                                                                        Terakhir</label>
+                                                                    <select class="form-control"
+                                                                        id="pendidikan_terakhir"
+                                                                        name="pendidikan_terakhir" required>
+                                                                        <option value="SD">SD</option>
+                                                                        <option value="SMP">SMP</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="jurusan">Jurusan</label>
+                                                                    <input type="text" class="form-control" id="jurusan"
+                                                                        name="jurusan" value="<?=$jurusan?>" required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="pengalaman_kerja">Pengalaman
+                                                                        Kerja</label>
+                                                                    <textarea class="form-control" id="pengalaman_kerja"
+                                                                        name="pengalaman_kerja" rows="3"
+                                                                        required><?=$pengalaman_kerja?></textarea>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="no_hp">No NP</label>
+                                                                    <input type="text" class="form-control" id="no_hp"
+                                                                        name="no_hp" value="<?=$no_hp?>" required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="provinsi">Provinsi</label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="provinsi" name="provinsi"
+                                                                        value="<?=$provinsi?>" required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="kota">Kota</label>
+                                                                    <input type="text" class="form-control" id="kota"
+                                                                        name="kota" value="<?=$kota?>" required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="kode_pos">Kode Pos</label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="kode_pos" name="kode_pos"
+                                                                        value="<?=$kode_pos?>" required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="alamat">Alamat</label>
+                                                                    <textarea class="form-control" id="alamat"
+                                                                        name="alamat" rows="3"
+                                                                        required><?=$alamat?></textarea>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="foto_saya">Foto</label>
+                                                                    <input type="file" class="form-control"
+                                                                        id="foto_saya" name="foto_saya" required>
+                                                                    <input type="text" class="form-control"
+                                                                        id="foto_saya" name="foto_saya_old"
+                                                                        value="<?=$foto_saya?>" hidden>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="foto_ktp">Foto KTP</label>
+                                                                    <input type="file" class="form-control"
+                                                                        id="foto_ktp" name="foto_ktp" required>
+                                                                    <input type="text" class="form-control"
+                                                                        id="foto_ktp" name="foto_ktp_old"
+                                                                        value="<?=$foto_ktp?>" hidden>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="foto_ijazah">Foto Ijazah</label>
+                                                                    <input type="file" class="form-control"
+                                                                        id="foto_ijazah" name="foto_ijazah" required>
+                                                                    <input type="text" class="form-control"
+                                                                        id="foto_ijazah" name="foto_ijazah_old"
+                                                                        value="<?=$foto_ijazah?>" hidden>
+                                                                </div>
+                                                                <button type="submit"
+                                                                    class="btn btn-primary mb-3">Submit</button>
+                                                            </form>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Modal Delete Data -->
+                                            <div class="modal fade" id="delete_pencaker<?=$id_user?>" tabindex="-1"
+                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Delete Data
+                                                                Pencaker
+                                                            </h5>
+                                                            <button type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <form action="<?= base_url();?>Pencaker/hapus_pencaker"
+                                                                method="post" enctype="multipart/form-data">
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <input type="hidden" name="id_user"
+                                                                            value="<?php echo $id_user?>" />
+                                                                        <input type="hidden" name="foto_saya_old"
+                                                                            value="<?=$foto_saya?>" hidden>
+                                                                        <input type="hidden" name="foto_ktp_old"
+                                                                            value="<?=$foto_ktp?>" hidden>
+                                                                        <input type="hidden" name="foto_ijazah_old"
+                                                                            value="<?=$foto_ijazah?>" hidden>
+
+                                                                        <p>Apakah kamu yakin ingin menghapus data
+                                                                            ini?</i></b></p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-danger ripple"
+                                                                        data-dismiss="modal">Tidak</button>
+                                                                    <button type="submit"
+                                                                        class="btn btn-success ripple save-category">Ya</button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>

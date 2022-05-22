@@ -67,7 +67,7 @@ class Daftar extends CI_Controller {
 		}else{
 			
 			$this->session->set_flashdata('error_file_saya','error_file_saya');
-			redirect('Daftar/view_user');
+			redirect('Daftar/view_user/'.$id);
 		}
 		
 	
@@ -84,7 +84,7 @@ class Daftar extends CI_Controller {
 		}else{
 			@unlink($path.$foto_saya['file_name']);
 			$this->session->set_flashdata('error_file_ktp','error_file_ktp');
-			redirect('Daftar/view_user');
+			redirect('Daftar/view_user/'.$id);
 		}
 		
 
@@ -102,7 +102,7 @@ class Daftar extends CI_Controller {
 			@unlink($path.$foto_saya['file_name']);
 			@unlink($path.$foto_ktp['file_name']);
 			$this->session->set_flashdata('error_file_ijazah','error_file_ijazah');
-			redirect('Daftar/view_user');
+			redirect('Daftar/view_user/'.$id);
         }
         
         $hasil = $this->m_user->update_user_detail($id ,$no_pendaftaran, $nik, $nama_lengkap, $tempat_lahir,

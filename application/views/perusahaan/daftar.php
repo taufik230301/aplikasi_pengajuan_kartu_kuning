@@ -94,50 +94,50 @@
                             <div class="form-group">
                                 <label for="nama_perusahaan">Nama Perusahaan</label>
                                 <input type="text" class="form-control" id="nama_perusahaan" name="nama_perusahaan"
-                                    value="<?=$nama_perusahaan?>">
+                                    value="<?=$nama_perusahaan?>" required>
                             </div>
                             <div class="form-group">
                                 <label for="jenis_perusahaan">Jenis Perusahaan</label>
                                 <input type="text" class="form-control" id="jenis_perusahaan" name="jenis_perusahaan"
-                                    value="<?=$jenis_perusahaan?>">
+                                    value="<?=$jenis_perusahaan?>" required>
                             </div>
                             <div class="form-group">
                                 <label for="npwp_perusahaan">NPWP Perusahaan</label>
                                 <input type="text" class="form-control" id="npwp_perusahaan" name="npwp_perusahaan"
-                                    value="<?=$npwp_perusahaan?>">
+                                    value="<?=$npwp_perusahaan?>" required>
                             </div>
                             <div class="form-group">
                                 <label for="provinsi">Provinsi</label>
                                 <input type="text" class="form-control" id="provinsi" name="provinsi"
-                                    value="<?=$provinsi?>">
+                                    value="<?=$provinsi?>" required>
                             </div>
                             <div class="form-group">
                                 <label for="kota">kota</label>
-                                <input type="text" class="form-control" id="kota" name="kota" value="<?=$kota?>">
+                                <input type="text" class="form-control" id="kota" name="kota" value="<?=$kota?>" required>
                             </div>
                             <div class="form-group">
                                 <label for="alamat">Alamat</label>
                                 <textarea class="form-control" id="alamat" name="alamat"
-                                    rows="3"><?=$alamat?></textarea>
+                                    rows="3" required><?=$alamat?></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="kode_pos">Kode Pos</label>
                                 <input type="text" class="form-control" id="kode_pos" name="kode_pos"
-                                    value="<?=$kode_pos?>">
+                                    value="<?=$kode_pos?>" required>
                             </div>
                             <div class="form-group">
                                 <label for="deskripsi">deskripsi</label>
                                 <textarea class="form-control" id="deskripsi" name="deskripsi"
-                                    rows="3"><?=$deskripsi?></textarea>
+                                    rows="3" required><?=$deskripsi?></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="nomor_telepon">Kode Pos</label>
                                 <input type="text" class="form-control" id="nomor_telepon" name="nomor_telepon"
-                                    value="<?=$nomor_telepon?>">
+                                    value="<?=$nomor_telepon?>" required>
                             </div>
                             <div class="form-group">
                                 <label for="logo">Logo</label>
-                                <input type="file" class="form-control" id="logo" name="logo">
+                                <input type="file" class="form-control" id="logo" name="logo" required>
                                 <input type="text" class="form-control" id="logo_old" name="logo_old" value=<?=$logo?>
                                     hidden>
                             </div>

@@ -10,12 +10,39 @@
     <script>
     swal({
         title: "Berhasil Terdaftar!",
-        text: "Silahkan Anda Login!",
+        text: "Data Anda Sudah Dikirim!",
         icon: "success"
     });
     </script>
     <?php } ?>
     <?php if ($this->session->flashdata('eror')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Terjadi Kesalahan Dalam Proses data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+    <?php if ($this->session->flashdata('error_file_saya')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Terjadi Kesalahan Dalam Proses data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+    <?php if ($this->session->flashdata('error_file_ktp')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Terjadi Kesalahan Dalam Proses data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+    <?php if ($this->session->flashdata('error_file_ijazah')){ ?>
     <script>
     swal({
         title: "Eror!",
@@ -101,7 +128,7 @@
                                     value="<?=$nik?>" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2'){
                                         echo 'disabled';
                                     }else{
-                                        echo '';
+                                        echo 'required';
                                     }  ?>>
                             </div>
                             <div class="form-group">
@@ -110,7 +137,7 @@
                                     value="<?=$nama_lengkap?>" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2'){
                                         echo 'disabled';
                                     }else{
-                                        echo '';
+                                        echo 'required';
                                     }  ?>>
                             </div>
                             <div class="form-group">
@@ -119,7 +146,7 @@
                                     value="<?=$tempat_lahir?>" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2'){
                                         echo 'disabled';
                                     }else{
-                                        echo '';
+                                        echo 'required';
                                     }  ?>>
                             </div>
                             <div class="form-group">
@@ -128,7 +155,7 @@
                                     value="<?=$tanggal_lahir?>" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2'){
                                         echo 'disabled';
                                     }else{
-                                        echo '';
+                                        echo 'required';
                                     }  ?>>
                             </div>
                             <div class="form-group">
@@ -136,7 +163,7 @@
                                 <select class="form-control" id="exampleFormControlSelect1" name="jenis_kelamin" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2'){
                                         echo 'disabled';
                                     }else{
-                                        echo '';
+                                        echo 'required';
                                     }  ?>>
                                     <option value="L">Laki-Laki</option>
                                     <option value="P">Perempuan</option>
@@ -147,7 +174,7 @@
                                 <input type="text" class="form-control" id="agama" name="agama" value="<?=$agama?>" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2'){
                                         echo 'disabled';
                                     }else{
-                                        echo '';
+                                        echo 'required';
                                     }  ?>>
                             </div>
                             <div class="form-group">
@@ -155,7 +182,7 @@
                                 <select class="form-control" id="exampleFormControlSelect1" name="status_perkawinan" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2'){
                                         echo 'disabled';
                                     }else{
-                                        echo '';
+                                        echo 'required';
                                     }  ?>>
                                     <option value="Kawin">Kawin</option>
                                     <option value="Belum Kawin">Belum Kawin</option>
@@ -167,7 +194,7 @@
                                     value="<?=$tinggi_badan?>" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2'){
                                         echo 'disabled';
                                     }else{
-                                        echo '';
+                                        echo 'required';
                                     }  ?>>
                             </div>
                             <div class="form-group">
@@ -176,7 +203,7 @@
                                     value="<?=$berat_badan?>" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2'){
                                         echo 'disabled';
                                     }else{
-                                        echo '';
+                                        echo 'required';
                                     }  ?>>
                             </div>
                             <div class="form-group">
@@ -184,7 +211,7 @@
                                 <select class="form-control" id="pendidikan_terakhir" name="pendidikan_terakhir" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2'){
                                         echo 'disabled';
                                     }else{
-                                        echo '';
+                                        echo 'required';
                                     }  ?>>
                                     <option value="SD">SD</option>
                                     <option value="SMP">SMP</option>
@@ -196,7 +223,7 @@
                                     value="<?=$jurusan?>" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2'){
                                         echo 'disabled';
                                     }else{
-                                        echo '';
+                                        echo 'required';
                                     }  ?>>
                             </div>
                             <div class="form-group">
@@ -204,7 +231,7 @@
                                 <textarea class="form-control" id="pengalaman_kerja" name="pengalaman_kerja" rows="3" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2'){
                                         echo 'disabled';
                                     }else{
-                                        echo '';
+                                        echo 'required';
                                     }  ?>><?=$pengalaman_kerja?></textarea>
                             </div>
                             <div class="form-group">
@@ -212,7 +239,7 @@
                                 <input type="text" class="form-control" id="no_hp" name="no_hp" value="<?=$no_hp?>" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2'){
                                         echo 'disabled';
                                     }else{
-                                        echo '';
+                                        echo 'required';
                                     }  ?>>
                             </div>
                             <div class="form-group">
@@ -221,7 +248,7 @@
                                     value="<?=$provinsi?>" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2'){
                                         echo 'disabled';
                                     }else{
-                                        echo '';
+                                        echo 'required';
                                     }  ?>>
                             </div>
                             <div class="form-group">
@@ -229,7 +256,7 @@
                                 <input type="text" class="form-control" id="kota" name="kota" value="<?=$kota?>" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2'){
                                         echo 'disabled';
                                     }else{
-                                        echo '';
+                                        echo 'required';
                                     }  ?>>
                             </div>
                             <div class="form-group">
@@ -238,7 +265,7 @@
                                     value="<?=$kode_pos?>" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2'){
                                         echo 'disabled';
                                     }else{
-                                        echo '';
+                                        echo 'required';
                                     }  ?>>
                             </div>
                             <div class="form-group">
@@ -246,7 +273,7 @@
                                 <textarea class="form-control" id="alamat" name="alamat" rows="3" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2'){
                                         echo 'disabled';
                                     }else{
-                                        echo '';
+                                        echo 'required';
                                     }  ?>><?=$alamat?></textarea>
                             </div>
                             <div class="form-group">
@@ -254,7 +281,7 @@
                                 <input type="file" class="form-control" id="foto_saya" name="foto_saya" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2'){
                                         echo 'disabled';
                                     }else{
-                                        echo '';
+                                        echo 'required';
                                     }  ?>>
                                 <input type="text" class="form-control" id="foto_saya" name="foto_saya_old"
                                     value="<?=$foto_saya?>" hidden>
@@ -264,7 +291,7 @@
                                 <input type="file" class="form-control" id="foto_ktp" name="foto_ktp" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2'){
                                         echo 'disabled';
                                     }else{
-                                        echo '';
+                                        echo 'required';
                                     }  ?>>
                                 <input type="text" class="form-control" id="foto_ktp" name="foto_ktp_old"
                                     value="<?=$foto_ktp?>" hidden>
@@ -274,7 +301,7 @@
                                 <input type="file" class="form-control" id="foto_ijazah" name="foto_ijazah" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2'){
                                         echo 'disabled';
                                     }else{
-                                        echo '';
+                                        echo 'required';
                                     }  ?>>
                                 <input type="text" class="form-control" id="foto_ijazah" name="foto_ijazah_old"
                                     value="<?=$foto_ijazah?>" hidden>

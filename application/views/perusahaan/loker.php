@@ -71,7 +71,7 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h3 class="card-title">Table Loker</h3>
+                                    <h3 class="card-title">Table Data Loker</h3>
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
@@ -150,27 +150,27 @@
                         <form action="<?=base_url();?>Loker/tambah_loker" method="POST">
                         <div class="form-group">
                                 <label for="judul">Judul</label>
-                                <input type="text" class="form-control" id="judul" name="judul">
+                                <input type="text" class="form-control" id="judul" name="judul" required>
                             </div>
                             <div class="form-group">
                                 <label for="deskripsi">Deskripsi</label>
-                                <input type="text" class="form-control" id="deskripsi" name="deskripsi">
+                                <input type="text" class="form-control" id="deskripsi" name="deskripsi" required>
                             </div>
                             <div class="form-group">
                                 <label for="posisi">Posisi</label>
-                                <input type="text" class="form-control" id="posisi" name="posisi">
+                                <input type="text" class="form-control" id="posisi" name="posisi" required>
                             </div>
                             <div class="form-group">
                                 <label for="jumlah_rekrut">Jumlah Rekrut</label>
-                                <input type="text" class="form-control" id="jumlah_rekrut" name="jumlah_rekrut">
+                                <input type="text" class="form-control" id="jumlah_rekrut" name="jumlah_rekrut" required>
                             </div>
                             <div class="form-group">
                                 <label for="salary">Salary</label>
-                                <input type="text" class="form-control" id="salary" name="salary">
+                                <input type="text" class="form-control" id="salary" name="salary" required>
                             </div>
                             <div class="form-group">
                                 <label for="batas_akhir">Batas Akhir</label>
-                                <input type="date" class="form-control" id="batas_akhir" name="batas_akhir">
+                                <input type="date" class="form-control" id="batas_akhir" name="batas_akhir" required>
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
