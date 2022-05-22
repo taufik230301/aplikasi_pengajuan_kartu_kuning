@@ -36,20 +36,34 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item">
                     <a href="<?=base_url();?>Dashboard/view_user" class="nav-link">
-                    
+
                         <i class="nav-icon fas fa-tachometer-alt text-white"></i>
                         <p class="text">Dashboard</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?=base_url();?>Daftar/view_user/<?=$this->session->userdata('id_user');?>" class="nav-link">
+                    <a href="<?=base_url();?>Daftar/view_user/<?=$this->session->userdata('id_user');?>"
+                        class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p class="text">Daftar AK1</p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="<?=base_url();?>Perpanjang/view_user/<?=$this->session->userdata('id_user');?>" class="nav-link">
+                <li class="nav-item" style="<?php 
+                        //  echo var_dump($user['akhir_berlaku'] < date("Y-m-d"));
+                        if($user_data['akhir_berlaku'] < date("Y-m-d")){
+                            echo '';
+                        }else{
+                            echo 'display:none;';
+                        }
+                        
+                        ?>">
+                    <a href="<?=base_url();?>Perpanjang/view_user/<?=$this->session->userdata('id_user');?>"
+                        class="nav-link" 
+                       
+                        
+                        >
                         <i class="nav-icon fas fa-book"></i>
+                        
                         <p>Perpanjang</p>
                     </a>
                 </li>
