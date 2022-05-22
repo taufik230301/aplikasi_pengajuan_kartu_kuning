@@ -285,7 +285,7 @@
                                                         <div class="table table-striped table-hover ">
                                                             <a href="" data-toggle="modal"
                                                                 data-target="#delete_perusahaan<?=$id_user?>"
-                                                                class="btn btn-primary">Hapus <i
+                                                                class="btn btn-danger">Hapus <i
                                                                     class="fas fa-trash"></i>
                                                             </a>
                                                         </div>
