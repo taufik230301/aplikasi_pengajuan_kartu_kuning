@@ -14,11 +14,21 @@ class Perusahaan extends CI_Controller {
     
     public function view_admin()
 	{
+    if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
+      
         $data['perusahaan'] = $this->m_user->get_all_perusahaan()->result_array();
         $data['status_verifikasi_data'] = $this->m_status_verifikasi->get_all_status_verifikasi()->result_array();
         $data['status_aktif_data'] = $this->m_status_aktif->get_all_status_aktif()->result_array();
         $data['status_perpanjangan_data'] = $this->m_status_perpanjangan->get_all_status_perpanjangan()->result_array();
-		$this->load->view('admin/perusahaan', $data);
+        $this->load->view('admin/perusahaan', $data);
+
+    }else{
+
+      $this->session->set_flashdata('loggin_err','loggin_err');
+      redirect('Login/login_user');
+
+    }
+    
     }
 
     public function tambah_perusahaan()

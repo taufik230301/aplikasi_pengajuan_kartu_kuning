@@ -95,6 +95,7 @@
                                             foreach($loker as $i)
                                             :
                                             $id++;
+                                            $id_loker = $i['id_loker'];
                                             $nama_perusahaan = $i['nama_perusahaan'];
                                             $judul = $i['judul'];
                                             $deskripsi_loker = $i['deskripsi'];
@@ -115,6 +116,60 @@
                                                 <td><?=$salary?></td>
                                                 <td><?=$batas_akhir?></td>
                                             </tr>
+                                            <!-- Modal Tambah-->
+                                            <div class="modal fade" id="edit_loker<?=$id_loker?>" tabindex="-1"
+                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Edit Loker
+                                                            </h5>
+                                                            <button type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <form action="<?=base_url();?>Loker/tambah_loker"
+                                                                method="POST">
+                                                                <div class="form-group">
+                                                                    <label for="judul">Judul</label>
+                                                                    <input type="text" class="form-control" id="judul"
+                                                                        name="judul" required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="deskripsi">Deskripsi</label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="deskripsi" name="deskripsi" required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="posisi">Posisi</label>
+                                                                    <input type="text" class="form-control" id="posisi"
+                                                                        name="posisi" required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="jumlah_rekrut">Jumlah Rekrut</label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="jumlah_rekrut" name="jumlah_rekrut"
+                                                                        required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="salary">Salary</label>
+                                                                    <input type="text" class="form-control" id="salary"
+                                                                        name="salary" required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="batas_akhir">Batas Akhir</label>
+                                                                    <input type="date" class="form-control"
+                                                                        id="batas_akhir" name="batas_akhir" required>
+                                                                </div>
+                                                                <button type="submit"
+                                                                    class="btn btn-primary">Submit</button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <?php endforeach;?>
                                         </tbody>
 
@@ -136,7 +191,7 @@
         </div>
         <!-- /.content-wrapper -->
 
-        <!-- Modal -->
+        <!-- Modal Tambah-->
         <div class="modal fade" id="tambah_loker" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -148,7 +203,7 @@
                     </div>
                     <div class="modal-body">
                         <form action="<?=base_url();?>Loker/tambah_loker" method="POST">
-                        <div class="form-group">
+                            <div class="form-group">
                                 <label for="judul">Judul</label>
                                 <input type="text" class="form-control" id="judul" name="judul" required>
                             </div>
@@ -162,7 +217,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="jumlah_rekrut">Jumlah Rekrut</label>
-                                <input type="text" class="form-control" id="jumlah_rekrut" name="jumlah_rekrut" required>
+                                <input type="text" class="form-control" id="jumlah_rekrut" name="jumlah_rekrut"
+                                    required>
                             </div>
                             <div class="form-group">
                                 <label for="salary">Salary</label>

@@ -11,10 +11,20 @@ class Perpanjang extends CI_Controller {
 
     public function view_user($id_user)
 	{
+		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 3) {
+
 		$data['user_data'] = $this->m_user->get_user_detail_by_id($this->session->userdata('id_user'))->row_array();
 		$data['user'] = $this->m_user->get_user_detail_by_id($id_user)->result_array();
 		
 		$this->load->view('user/perpanjang', $data);
+		
+		}else{
+
+			$this->session->set_flashdata('loggin_err','loggin_err');
+			redirect('Login/login_user');
+
+		}
+
     }
 
     public function lengkapi_data_user()

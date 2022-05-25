@@ -11,8 +11,17 @@ class Loker extends CI_Controller {
     
     public function view_perusahaan($id_user)
 	{
+        if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 2) {
+
         $data['loker'] = $this->m_loker->get_all_loker_by_id($id_user)->result_array();
-		$this->load->view('perusahaan/loker', $data);
+        $this->load->view('perusahaan/loker', $data);
+
+        }else{
+
+            $this->session->set_flashdata('loggin_err','loggin_err');
+            redirect('Login/login_perusahaan');
+
+        }
     }
 
     
@@ -41,6 +50,8 @@ class Loker extends CI_Controller {
 
     public function update_loker()
     {
+
+        
         
     }
 
