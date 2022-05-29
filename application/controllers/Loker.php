@@ -14,6 +14,7 @@ class Loker extends CI_Controller {
         if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 2) {
 
         $data['loker'] = $this->m_loker->get_all_loker_by_id($id_user)->result_array();
+        
         $this->load->view('perusahaan/loker', $data);
 
         }else{
@@ -48,8 +49,15 @@ class Loker extends CI_Controller {
 			}
     }
 
-    public function update_loker()
+    public function edit_loker()
     {
+
+        $judul = $this->input->post('judul');
+        $deskripsi = $this->input->post('deskripsi');
+        $username = $this->input->post('username');
+        $username = $this->input->post('username');
+        $username = $this->input->post('username');
+        $username = $this->input->post('username');
 
         
         

@@ -86,6 +86,7 @@
                                                 <th>Jumlah Rekrut</th>
                                                 <th>Salary</th>
                                                 <th>Batas Akhir</th>
+                                                <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -115,9 +116,30 @@
                                                 <td><?=$jumlah_rekrut?></td>
                                                 <td><?=$salary?></td>
                                                 <td><?=$batas_akhir?></td>
+                                                <td>
+                                                    <div class="table-responsive">
+                                                        <div class="table table-striped table-hover ">
+                                                            <a href="" class="btn btn-primary" data-toggle="modal"
+                                                                data-target="#ubah_loker<?=$id_loker?>">
+                                                                Edit <i class="nav-icon fas fa-edit"></i>
+                                                            </a>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="table-responsive">
+                                                        <div class="table table-striped table-hover ">
+                                                            <a href="" data-toggle="modal"
+                                                                data-target="#delete_loker<?=$id_loker?>"
+                                                                class="btn btn-danger">Hapus <i
+                                                                    class="fas fa-trash"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
                                             </tr>
+                                            
                                             <!-- Modal Tambah-->
-                                            <div class="modal fade" id="edit_loker<?=$id_loker?>" tabindex="-1"
+                                            <div class="modal fade" id="ubah_loker<?=$id_loker?>" tabindex="-1"
                                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
@@ -130,38 +152,38 @@
                                                             </button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <form action="<?=base_url();?>Loker/tambah_loker"
+                                                            <form action="<?=base_url();?>Loker/edit_loker"
                                                                 method="POST">
                                                                 <div class="form-group">
                                                                     <label for="judul">Judul</label>
                                                                     <input type="text" class="form-control" id="judul"
-                                                                        name="judul" required>
+                                                                        name="judul" value="<?=$judul?>" required>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="deskripsi">Deskripsi</label>
                                                                     <input type="text" class="form-control"
-                                                                        id="deskripsi" name="deskripsi" required>
+                                                                        id="deskripsi" name="deskripsi" value="<?=$deskripsi_loker?>" required>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="posisi">Posisi</label>
                                                                     <input type="text" class="form-control" id="posisi"
-                                                                        name="posisi" required>
+                                                                        name="posisi" value="<?=$posisi?>" required>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="jumlah_rekrut">Jumlah Rekrut</label>
                                                                     <input type="text" class="form-control"
-                                                                        id="jumlah_rekrut" name="jumlah_rekrut"
+                                                                        id="jumlah_rekrut" name="jumlah_rekrut" value="<?=$jumlah_rekrut?>"
                                                                         required>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="salary">Salary</label>
                                                                     <input type="text" class="form-control" id="salary"
-                                                                        name="salary" required>
+                                                                        name="salary" value="<?=$salary?>" required>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="batas_akhir">Batas Akhir</label>
                                                                     <input type="date" class="form-control"
-                                                                        id="batas_akhir" name="batas_akhir" required>
+                                                                        id="batas_akhir" name="batas_akhir" value="<?=$batas_akhir?>" required>
                                                                 </div>
                                                                 <button type="submit"
                                                                     class="btn btn-primary">Submit</button>

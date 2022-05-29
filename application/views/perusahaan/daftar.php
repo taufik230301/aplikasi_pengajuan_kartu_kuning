@@ -90,6 +90,8 @@
                             enctype="multipart/form-data">
 
                             <input type="text" name="id_user" id="id_user" value="<?=$id_perusahaan_detail?>" hidden>
+                            <input type="text"  id="logo_old" name="logo_old" value="<?=$logo?>"
+                                hidden>
 
                             <div class="form-group">
                                 <label for="nama_perusahaan">Nama Perusahaan</label>
@@ -113,12 +115,13 @@
                             </div>
                             <div class="form-group">
                                 <label for="kota">kota</label>
-                                <input type="text" class="form-control" id="kota" name="kota" value="<?=$kota?>" required>
+                                <input type="text" class="form-control" id="kota" name="kota" value="<?=$kota?>"
+                                    required>
                             </div>
                             <div class="form-group">
                                 <label for="alamat">Alamat</label>
-                                <textarea class="form-control" id="alamat" name="alamat"
-                                    rows="3" required><?=$alamat?></textarea>
+                                <textarea class="form-control" id="alamat" name="alamat" rows="3"
+                                    required><?=$alamat?></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="kode_pos">Kode Pos</label>
@@ -127,8 +130,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="deskripsi">deskripsi</label>
-                                <textarea class="form-control" id="deskripsi" name="deskripsi"
-                                    rows="3" required><?=$deskripsi?></textarea>
+                                <textarea class="form-control" id="deskripsi" name="deskripsi" rows="3"
+                                    required><?=$deskripsi?></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="nomor_telepon">Kode Pos</label>
@@ -138,9 +141,9 @@
                             <div class="form-group">
                                 <label for="logo">Logo</label>
                                 <input type="file" class="form-control" id="logo" name="logo" required>
-                                <input type="text" class="form-control" id="logo_old" name="logo_old" value=<?=$logo?>
-                                    hidden>
+
                             </div>
+                            
                             <button type="submit" class="btn btn-primary mb-3">Submit</button>
                         </form>
                         <?php endforeach ;?>
