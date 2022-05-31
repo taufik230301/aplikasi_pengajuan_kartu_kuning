@@ -70,14 +70,14 @@
                             <!-- small box -->
                             <div class="small-box bg-info">
                                 <div class="inner">
-                                    <h3>150</h3>
+                                    <h3><?=$pencaker['total_pencaker'];?></h3>
 
-                                    <p>New Orders</p>
+                                    <p>Data Pencaker</p>
                                 </div>
                                 <div class="icon">
-                                    <i class="ion ion-bag"></i>
+                                    <i class="ion ion-person-stalker"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">More info <i
+                                <a href="<?=base_url();?>/Pencaker/view_perusahaan" class="small-box-footer">More info <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
@@ -86,9 +86,9 @@
                             <!-- small box -->
                             <div class="small-box bg-success">
                                 <div class="inner">
-                                    <h3>53<sup style="font-size: 20px">%</sup></h3>
+                                    <h3><?=$perusahaan['total_perusahaan'];?></h3>
 
-                                    <p>Bounce Rate</p>
+                                    <p>Data Perusahaan</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-stats-bars"></i>
@@ -98,34 +98,19 @@
                             </div>
                         </div>
                         <!-- ./col -->
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box bg-warning">
-                                <div class="inner">
-                                    <h3>44</h3>
-
-                                    <p>User Registrations</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-person-add"></i>
-                                </div>
-                                <a href="#" class="small-box-footer">More info <i
-                                        class="fas fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                        <!-- ./col -->
-                        <div class="col-lg-3 col-6">
+                         <!-- ./col -->
+                         <div class="col-lg-3 col-6">
                             <!-- small box -->
                             <div class="small-box bg-danger">
                                 <div class="inner">
-                                    <h3>65</h3>
+                                    <h3><?=$loker['total_loker'];?></h3>
 
-                                    <p>Unique Visitors</p>
+                                    <p>Data Loker</p>
                                 </div>
                                 <div class="icon">
-                                    <i class="ion ion-pie-graph"></i>
+                                    <i class="ion ion-briefcase"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">More info <i
+                                <a href="<?=base_url();?>Loker/view_perusahaan/<?=$this->session->userdata('id_user');?>" class="small-box-footer">More info <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>

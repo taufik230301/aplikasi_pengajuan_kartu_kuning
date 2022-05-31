@@ -7,6 +7,7 @@ class Dashboard extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('m_user');
+		$this->load->model('m_loker');
 	}
 
 	public function view_admin()
@@ -27,7 +28,14 @@ class Dashboard extends CI_Controller {
 	{
 		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 2) {
 
-		$this->load->view('perusahaan/dashboard');
+		$data['pencaker'] = $this->m_user->count_all_user()->row_array();
+		$data['perusahaan'] = $this->m_user->count_all_perusahaan()->row_array();
+		$data['loker'] = $this->m_loker->count_all_loker_by_id($this->session->userdata('id_user'))->row_array();
+		
+		// echo var_dump($data);
+		// die();
+
+		$this->load->view('perusahaan/dashboard', $data);
 
 		}else{
 

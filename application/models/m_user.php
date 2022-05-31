@@ -44,9 +44,24 @@ class M_user extends CI_Model
         return $hasil;
     }
 
+    public function count_all_user()
+    {
+        $hasil = $this->db->query("SELECT  COUNT(id_user) as total_pencaker FROM user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail 
+         WHERE id_user_level = 3");
+        return $hasil;
+    }
+
+
     public function get_all_perusahaan()
     {
         $hasil = $this->db->query("SELECT * FROM user JOIN perusahaan_detail ON user.id_user_detail = perusahaan_detail.id_perusahaan_detail 
+         WHERE id_user_level = 2");
+        return $hasil;
+    }
+
+    public function count_all_perusahaan()
+    {
+        $hasil = $this->db->query("SELECT  COUNT(id_user) as total_perusahaan  FROM user JOIN perusahaan_detail ON user.id_user_detail = perusahaan_detail.id_perusahaan_detail 
          WHERE id_user_level = 2");
         return $hasil;
     }
