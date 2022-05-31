@@ -43,6 +43,25 @@
     });
     </script>
     <?php } ?>
+
+    <?php if ($this->session->flashdata('delete')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Dihapus!",
+        text: "Data Berhasil Dihapus!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+    <?php if ($this->session->flashdata('eror_delete')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Data gagal Dihapus!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
     <div class="wrapper">
 
         <!-- Preloader -->
@@ -157,7 +176,7 @@
                                                     </div>
                                                 </td>
                                             </tr>
-                                            
+
                                             <!-- Modal Tambah-->
                                             <div class="modal fade" id="ubah_loker<?=$id_loker?>" tabindex="-1"
                                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -174,7 +193,8 @@
                                                         <div class="modal-body">
                                                             <form action="<?=base_url();?>Loker/edit_loker"
                                                                 method="POST">
-                                                                <input type="text" value="<?=$id_loker?>" name="id_loker" hidden>
+                                                                <input type="text" value="<?=$id_loker?>"
+                                                                    name="id_loker" hidden>
                                                                 <div class="form-group">
                                                                     <label for="judul">Judul</label>
                                                                     <input type="text" class="form-control" id="judul"
@@ -183,7 +203,8 @@
                                                                 <div class="form-group">
                                                                     <label for="deskripsi">Deskripsi</label>
                                                                     <input type="text" class="form-control"
-                                                                        id="deskripsi" name="deskripsi" value="<?=$deskripsi_loker?>" required>
+                                                                        id="deskripsi" name="deskripsi"
+                                                                        value="<?=$deskripsi_loker?>" required>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="posisi">Posisi</label>
@@ -193,8 +214,8 @@
                                                                 <div class="form-group">
                                                                     <label for="jumlah_rekrut">Jumlah Rekrut</label>
                                                                     <input type="text" class="form-control"
-                                                                        id="jumlah_rekrut" name="jumlah_rekrut" value="<?=$jumlah_rekrut?>"
-                                                                        required>
+                                                                        id="jumlah_rekrut" name="jumlah_rekrut"
+                                                                        value="<?=$jumlah_rekrut?>" required>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="salary">Salary</label>
@@ -204,10 +225,48 @@
                                                                 <div class="form-group">
                                                                     <label for="batas_akhir">Batas Akhir</label>
                                                                     <input type="date" class="form-control"
-                                                                        id="batas_akhir" name="batas_akhir" value="<?=$batas_akhir?>" required>
+                                                                        id="batas_akhir" name="batas_akhir"
+                                                                        value="<?=$batas_akhir?>" required>
                                                                 </div>
                                                                 <button type="submit"
                                                                     class="btn btn-primary">Submit</button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Modal Delete Data -->
+                                            <div class="modal fade" id="delete_loker<?=$id_loker?>" tabindex="-1"
+                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Delete Data
+                                                                Loker
+                                                            </h5>
+                                                            <button type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <form action="<?= base_url();?>Loker/hapus_loker"
+                                                                method="post" enctype="multipart/form-data">
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <input type="hidden" name="id_loker"
+                                                                            value="<?php echo $id_loker?>" />
+                                                                       
+                                                                        <p>Apakah kamu yakin ingin menghapus data
+                                                                            ini?</i></b></p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-danger ripple"
+                                                                        data-dismiss="modal">Tidak</button>
+                                                                    <button type="submit"
+                                                                        class="btn btn-success ripple save-category">Ya</button>
+                                                                </div>
                                                             </form>
                                                         </div>
                                                     </div>

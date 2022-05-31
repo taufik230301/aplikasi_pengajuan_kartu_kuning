@@ -37,4 +37,19 @@ class M_loker extends CI_Model
             return false;
     }
 
+    public function delete_loker($id_loker)
+    {
+       $this->db->trans_start();
+
+       $this->db->query("DELETE FROM loker WHERE id_loker='$id_loker'");
+
+       $this->db->trans_complete();
+        if($this->db->trans_status()==true)
+            return true;
+        else
+            return false;
+    }
+
+
+
 }

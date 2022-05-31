@@ -79,6 +79,24 @@ class Loker extends CI_Controller {
 
     public function hapus_loker()
     {
+
+        $id_loker = $this->input->post('id_loker');
+        $id_user = $this->session->userdata('id_user');
+
+
+        $hasil = $this->m_loker->delete_loker($id_loker);
+
+        if($hasil==false){
+
+            $this->session->set_flashdata('eror_delete','eror_delete');
+            redirect('Loker/view_perusahaan/'.$id_user);
+  
+        }else{
+                  
+            $this->session->set_flashdata('delete','delete');
+            redirect('Loker/view_perusahaan/'.$id_user);
+          
+        }
         
     }
 
