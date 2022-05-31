@@ -54,12 +54,26 @@ class Loker extends CI_Controller {
 
         $judul = $this->input->post('judul');
         $deskripsi = $this->input->post('deskripsi');
-        $username = $this->input->post('username');
-        $username = $this->input->post('username');
-        $username = $this->input->post('username');
-        $username = $this->input->post('username');
+        $posisi = $this->input->post('posisi');
+        $jumlah_rekrut = $this->input->post('jumlah_rekrut');
+        $salary = $this->input->post('salary');
+        $batas_akhir = $this->input->post('batas_akhir');
+        $id_loker = $this->input->post('id_loker');
+        $id_user = $this->session->userdata('id_user');
 
-        
+        $hasil = $this->m_loker->update_loker($judul, $deskripsi, $posisi, $jumlah_rekrut, $salary, $batas_akhir, $id_loker);
+
+        if($hasil==false){
+
+            $this->session->set_flashdata('eror_edit','eror_edit');
+            redirect('Loker/view_perusahaan/'.$id_user);
+  
+        }else{
+                  
+            $this->session->set_flashdata('edit','edit');
+            redirect('Loker/view_perusahaan/'.$id_user);
+          
+        }
         
     }
 

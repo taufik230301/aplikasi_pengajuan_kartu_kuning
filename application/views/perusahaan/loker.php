@@ -9,8 +9,8 @@
     <?php if ($this->session->flashdata('input')){ ?>
     <script>
     swal({
-        title: "Data berhasil dimasukan!",
-        text: "Silahkan Anda Login!",
+        title: "Berhasil Ditambahakan!",
+        text: "Data Berhasil Ditambahakan!",
         icon: "success"
     });
     </script>
@@ -19,7 +19,26 @@
     <script>
     swal({
         title: "Eror!",
-        text: "Data gagal dimasukan!",
+        text: "Data gagal Ditambahakan!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('edit')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Diedit!",
+        text: "Data Berhasil Diedit!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+    <?php if ($this->session->flashdata('eror_edit')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Data gagal Diedit!",
         icon: "error"
     });
     </script>
@@ -97,6 +116,7 @@
                                             :
                                             $id++;
                                             $id_loker = $i['id_loker'];
+                                            $id_loker = $i['id_loker'];
                                             $nama_perusahaan = $i['nama_perusahaan'];
                                             $judul = $i['judul'];
                                             $deskripsi_loker = $i['deskripsi'];
@@ -154,6 +174,7 @@
                                                         <div class="modal-body">
                                                             <form action="<?=base_url();?>Loker/edit_loker"
                                                                 method="POST">
+                                                                <input type="text" value="<?=$id_loker?>" name="id_loker" hidden>
                                                                 <div class="form-group">
                                                                     <label for="judul">Judul</label>
                                                                     <input type="text" class="form-control" id="judul"

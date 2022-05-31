@@ -24,4 +24,17 @@ class M_loker extends CI_Model
             return false;
     }
 
+    public function update_loker($judul, $deskripsi, $posisi, $jumlah_rekrut, $salary, $batas_akhir, $id_loker)
+    {
+       $this->db->trans_start();
+
+       $this->db->query("UPDATE loker SET judul='$judul', deskripsi='$deskripsi', posisi='$posisi', jumlah_rekrut='$jumlah_rekrut', salary='$salary', batas_akhir='$batas_akhir' WHERE id_loker='$id_loker'");
+
+       $this->db->trans_complete();
+        if($this->db->trans_status()==true)
+            return true;
+        else
+            return false;
+    }
+
 }

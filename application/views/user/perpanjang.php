@@ -6,6 +6,25 @@
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
+    <?php if ($this->session->flashdata('input')){ ?>
+    <script>
+    swal({
+        title: "Success!",
+        text: "Data Berhasil Diperpanjang!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('eror')){ ?>
+    <script>
+    swal({
+        title: "Erorr!",
+        text: "Data Gagal Diubah!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
     <div class="wrapper">
 
         <!-- Preloader -->
@@ -77,8 +96,8 @@
                             <input type="text" value="<?=$this->session->userdata('id_user')?>" name="id_user" hidden>
                             <div class="form-group">
                                 <label for="no_pendaftaran">No Pendaftaran</label>
-                                <input type="text" class="form-control" id="no_pendaftaran" name="no_pendaftaran" aria-describedby="emailHelp"
-                                    value="<?=$no_pendaftaran?>">
+                                <input type="text" class="form-control" id="no_pendaftaran" name="no_pendaftaran"
+                                    aria-describedby="emailHelp" value="<?=$no_pendaftaran?>">
                             </div>
                             <div class="form-group">
                                 <label for="nik">NIK</label>

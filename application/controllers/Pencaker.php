@@ -139,12 +139,15 @@ class Pencaker extends CI_Controller {
         $alamat, $foto_saya['file_name'], $foto_ktp['file_name'], $foto_ijazah['file_name'], $id_status_verifikasi, $id_status_perpanjangan, $id_status_aktif, $id_user_level);
 
 			if($hasil==false){
-                $this->session->set_flashdata('eror','eror');
-                redirect('Pencaker/view_admin');
+
+          $this->session->set_flashdata('eror','eror');
+          redirect('Pencaker/view_admin');
+
 			}else{
                 
 				$this->session->set_flashdata('input','input');
-				redirect('Pencaker/view_admin');
+        redirect('Pencaker/view_admin');
+        
 			}
 
     }
