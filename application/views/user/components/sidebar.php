@@ -49,10 +49,14 @@
                     </a>
                 </li>
                 <li class="nav-item" style="<?php 
-                        //  echo var_dump($user['akhir_berlaku'] < date("Y-m-d"));
+                         
                         if($user_data['akhir_berlaku'] < date("Y-m-d")){
                             echo '';
                         }else{
+                            echo 'display:none;';
+                        }
+
+                        if($user_data['akhir_berlaku'] == NULL){
                             echo 'display:none;';
                         }
                         
