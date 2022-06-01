@@ -26,4 +26,58 @@ class Cetak extends CI_Controller {
     
     }
 
+    public function laporan_perbulan(){
+        $bulan = $this->input->post('bulan');
+        if($bulan == 1){
+            $start = '2022-01-01';
+            $end = '2022-01-31';
+        }else if($bulan == 2){
+            $start = '2022-02-01';
+            $end = '2022-02-28';
+        }else if($bulan == 3){
+            $start = '2022-03-01';
+            $end = '2022-03-31';
+        }else if($bulan == 4){
+            $start = '2022-04-01';
+            $end = '2022-04-30';
+        }else if($bulan == 5){
+            $start = '2022-05-01';
+            $end = '2022-05-31';
+        }else if($bulan == 6){
+            $start = '2022-06-01';
+            $end = '2022-06-30';
+        }else if($bulan == 7){
+            $start = '2022-07-01';
+            $end = '2022-07-31';
+        }else if($bulan == 8){
+            $start = '2022-08-01';
+            $end = '2022-08-31';
+        }else if($bulan == 9){
+            $start = '2022-09-01';
+            $end = '2022-09-30';
+        }else if($bulan == 10){
+            $start = '2022-10-01';
+            $end = '2022-10-31';
+        }else if($bulan == 11){
+            $start = '2022-11-01';
+            $end = '2022-11-30';
+        }else if($bulan == 12){
+            $start = '2022-12-01';
+            $end = '2022-12-31';
+        }
+       
+
+        $data['pegawai'] = $this->m_user->get_all_user_by_date_month($start, $end)->result_array();
+       
+    
+        $this->load->library('pdf');
+    
+        $this->pdf->setPaper('A4', 'landscape');
+        $this->pdf->set_option('isRemoteEnabled', true);
+        $this->pdf->filename = "kartu_kuning.pdf";
+        $this->pdf->load_view('laporan_pencaker_perbulan', $data);
+    
+    
+    }
+
 }

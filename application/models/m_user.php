@@ -44,6 +44,14 @@ class M_user extends CI_Model
         return $hasil;
     }
 
+    public function get_all_user_by_date_month($start, $end)
+    {
+        $hasil = $this->db->query("SELECT * FROM user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail 
+         WHERE id_user_level = 3 AND date_registered between '$start'
+        AND '$end' AND nik IS NOT NULL");
+        return $hasil;
+    }
+
     public function count_all_user()
     {
         $hasil = $this->db->query("SELECT  COUNT(id_user) as total_pencaker FROM user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail 

@@ -126,6 +126,7 @@
             <!-- Content Header (Page header) -->
             <div class="content-header">
                 <div class="container-fluid">
+
                     <div class="row mb-2">
                         <div class="col-sm-6">
                             <h1 class="m-0">Data Pencari Kerja</h1>
@@ -135,12 +136,59 @@
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
                                 <li class="breadcrumb-item active">Pencaker</li>
                             </ol>
+
                         </div><!-- /.col -->
-                        <button type="button" class="btn btn-primary mt-3 ml-2" data-toggle="modal"
-                            data-target="#tambah_pencaker">
-                            Tambah User
-                        </button>
+                        <div class="row mb-3 mt-3 ml-2">
+                            <form action="<?=base_url();?>Cetak/laporan_perbulan" method="POST">
+                                <div class="form-group">
+                                    <div class="col">
+                                        <label for="bulan">Pilih Bulan</label>
+                                        <select class="form-control" id="bulan" name="bulan">
+                                            <option value="1">Januari</option>
+                                            <option value="2">Februari</option>
+                                            <option value="3">Maret</option>
+                                            <option value="4">April</option>
+                                            <option value="5">Mei</option>
+                                            <option value="6">Juni</option>
+                                            <option value="7">Juli</option>
+                                            <option value="8">Agustus</option>
+                                            <option value="9">September</option>
+                                            <option value="10">Oktober</option>
+                                            <option value="11">November</option>
+                                            <option value="12">Desember</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <button type="submit" class="btn btn-primary">Cetak Laporan</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="row mb-3 mt-3 ml-2">
+                            <form>
+                                <div class="form-group">
+                                    <div class="col">
+                                        <label for="exampleFormControlSelect1">Pilih Tahun</label>
+                                        <select class="form-control" id="exampleFormControlSelect1">
+                                            <option>2018</option>
+                                            <option>2019</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <button type="submit" class="btn btn-primary">Cetak Laporan</button>
+                                </div>
+                            </form>
+                        </div>
+
+
+
                     </div><!-- /.row -->
+
+
                 </div><!-- /.container-fluid -->
             </div>
             <!-- /.content-header -->
@@ -157,6 +205,12 @@
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
+                                    <div class="row">
+                                        <button type="button" class="btn btn-primary mb-3" data-toggle="modal"
+                                            data-target="#tambah_pencaker">
+                                            Tambah User
+                                        </button>
+                                    </div>
                                     <table id="example1" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
