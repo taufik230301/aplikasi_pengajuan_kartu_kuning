@@ -21,7 +21,7 @@
 
 <body>
     <h2 style="text-align: center;">LAPORAN DAFTAR PENCAKER</h2>
-    <h2 style="text-align: center;">Bulan Juni</h2>
+    <h2 style="text-align: center;">Bulan <?=$bulan?></h2>
     <table style="height: 197px; width: 1033px;">
         <tbody>
             <tr style="height: 8.95px;">

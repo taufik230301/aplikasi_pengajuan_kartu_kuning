@@ -2,6 +2,12 @@
 
 class M_loker extends CI_Model
 {
+
+    public function get_all_loker()
+    {
+        $hasil = $this->db->query("SELECT id_loker, nama_perusahaan, judul, loker.deskripsi, posisi, jumlah_rekrut, salary, batas_akhir, logo FROM loker JOIN perusahaan_detail ON loker.id_perusahaan = perusahaan_detail.id_perusahaan_detail");
+        return $hasil;
+    }
     
     public function get_all_loker_by_id($id_user)
     {

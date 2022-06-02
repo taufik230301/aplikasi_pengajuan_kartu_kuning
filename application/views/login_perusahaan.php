@@ -7,6 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SISPAKER | LOGIN</title>
 
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="<?= base_url();?>assets/favicon.ico" />
+
     <!-- Font Icon -->
     <link rel="stylesheet"
         href="<?=base_url();?>assets/login/fonts/material-icon/css/material-design-iconic-font.min.css">
@@ -87,14 +90,14 @@
     });
     </script>
     <?php } ?>
-    
+
     <div class="main">
         <!-- Sing in  Form -->
         <section class="sign-in">
             <div class="container">
                 <div class="signin-content">
                     <div class="signin-image">
-                        <figure><img src="<?=base_url();?>assets/login/images/signin-image.jpg" alt="sing up image">
+                        <figure><img src="<?=base_url();?>assets/logo/disnaker.jpg" alt="sing up image">
                         </figure>
                         <a href="<?=base_url();?>Register/register_perusahaan" class="signup-image-link">Buat Akun
                             Perusahaan</a>

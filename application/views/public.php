@@ -183,22 +183,26 @@
                         <div class="tab-content">
                             <div class="tab-pane active show" id="tab-1">
                                 <figure>
-                                    <img src="<?= base_url();?>assets/public/assets/img/features-1.png" alt="" class="img-fluid">
+                                    <img src="<?= base_url();?>assets/public/assets/img/features-1.png" alt=""
+                                        class="img-fluid">
                                 </figure>
                             </div>
                             <div class="tab-pane" id="tab-2">
                                 <figure>
-                                    <img src="<?= base_url();?>assets/public/assets/img/features-2.png" alt="" class="img-fluid">
+                                    <img src="<?= base_url();?>assets/public/assets/img/features-2.png" alt=""
+                                        class="img-fluid">
                                 </figure>
                             </div>
                             <div class="tab-pane" id="tab-3">
                                 <figure>
-                                    <img src="<?= base_url();?>assets/public/assets/img/features-3.png" alt="" class="img-fluid">
+                                    <img src="<?= base_url();?>assets/public/assets/img/features-3.png" alt=""
+                                        class="img-fluid">
                                 </figure>
                             </div>
                             <div class="tab-pane" id="tab-4">
                                 <figure>
-                                    <img src="<?= base_url();?>assets/public/assets/img/features-4.png" alt="" class="img-fluid">
+                                    <img src="<?= base_url();?>assets/public/assets/img/features-4.png" alt=""
+                                        class="img-fluid">
                                 </figure>
                             </div>
                         </div>
@@ -288,140 +292,42 @@
 
                 <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
+                    <?php
+                                            
+                                            $id = 0;
+                                            foreach($loker as $i)
+                                            :
+                                            $id++;
+                                            $id_loker = $i['id_loker'];
+                                            $id_loker = $i['id_loker'];
+                                            $nama_perusahaan = $i['nama_perusahaan'];
+                                            $judul = $i['judul'];
+                                            $deskripsi_loker = $i['deskripsi'];
+                                            $posisi = $i['posisi'];
+                                            $jumlah_rekrut = $i['jumlah_rekrut'];
+                                            $salary = $i['salary'];
+                                            $batas_akhir = $i['batas_akhir'];
+                                            $logo = $i['logo'];
+
+                                            
+                                            ?>
                     <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                         <div class="portfolio-wrap">
-                            <img src="<?= base_url();?>assets/public/assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+                            <img src="<?= base_url();?>assets/logo/<?=$logo?>"
+                                class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>App 1</h4>
-                                <p>App</p>
+                                <h4><?=$nama_perusahaan?></h4>
+                                <p><?=$judul?></p>
                             </div>
                             <div class="portfolio-links">
-                                <a href="<?= base_url();?>assets/public/assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
-                                    class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
+                                <a href="<?= base_url();?>assets/logo/<?=$logo?>"
+                                    data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i
+                                        class="bx bx-plus"></i></a>
                                 <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <div class="portfolio-wrap">
-                            <img src="<?= base_url();?>assets/public/assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Web 3</h4>
-                                <p>Web</p>
-                            </div>
-                            <div class="portfolio-links">
-                                <a href="<?= base_url();?>assets/public/assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery"
-                                    class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <div class="portfolio-wrap">
-                            <img src="<?= base_url();?>assets/public/assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>App 2</h4>
-                                <p>App</p>
-                            </div>
-                            <div class="portfolio-links">
-                                <a href="<?= base_url();?>assets/public/assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery"
-                                    class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <div class="portfolio-wrap">
-                            <img src="<?= base_url();?>assets/public/assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Card 2</h4>
-                                <p>Card</p>
-                            </div>
-                            <div class="portfolio-links">
-                                <a href="<?= base_url();?>assets/public/assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery"
-                                    class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <div class="portfolio-wrap">
-                            <img src="<?= base_url();?>assets/public/assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Web 2</h4>
-                                <p>Web</p>
-                            </div>
-                            <div class="portfolio-links">
-                                <a href="<?= base_url();?>assets/public/assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery"
-                                    class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <div class="portfolio-wrap">
-                            <img src="<?= base_url();?>assets/public/assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>App 3</h4>
-                                <p>App</p>
-                            </div>
-                            <div class="portfolio-links">
-                                <a href="<?= base_url();?>assets/public/assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery"
-                                    class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <div class="portfolio-wrap">
-                            <img src="<?= base_url();?>assets/public/assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Card 1</h4>
-                                <p>Card</p>
-                            </div>
-                            <div class="portfolio-links">
-                                <a href="<?= base_url();?>assets/public/assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery"
-                                    class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <div class="portfolio-wrap">
-                            <img src="<?= base_url();?>assets/public/assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Card 3</h4>
-                                <p>Card</p>
-                            </div>
-                            <div class="portfolio-links">
-                                <a href="<?= base_url();?>assets/public/assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery"
-                                    class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <div class="portfolio-wrap">
-                            <img src="<?= base_url();?>assets/public/assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Web 3</h4>
-                                <p>Web</p>
-                            </div>
-                            <div class="portfolio-links">
-                                <a href="<?= base_url();?>assets/public/assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery"
-                                    class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                    <?php endforeach;?>
 
                 </div>
 
@@ -470,7 +376,8 @@
                                     risus at semper.
                                     <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                                 </p>
-                                <img src="<?= base_url();?>assets/public/assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                                <img src="<?= base_url();?>assets/public/assets/img/testimonials/testimonials-1.jpg"
+                                    class="testimonial-img" alt="">
                                 <h3>Saul Goodman</h3>
                                 <h4>Ceo &amp; Founder</h4>
                             </div>
@@ -485,7 +392,8 @@
                                     legam anim culpa.
                                     <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                                 </p>
-                                <img src="<?= base_url();?>assets/public/assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                                <img src="<?= base_url();?>assets/public/assets/img/testimonials/testimonials-2.jpg"
+                                    class="testimonial-img" alt="">
                                 <h3>Sara Wilsson</h3>
                                 <h4>Designer</h4>
                             </div>
@@ -500,7 +408,8 @@
                                     minim.
                                     <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                                 </p>
-                                <img src="<?= base_url();?>assets/public/assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                                <img src="<?= base_url();?>assets/public/assets/img/testimonials/testimonials-3.jpg"
+                                    class="testimonial-img" alt="">
                                 <h3>Jena Karlis</h3>
                                 <h4>Store Owner</h4>
                             </div>
@@ -515,7 +424,8 @@
                                     dolore labore illum veniam.
                                     <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                                 </p>
-                                <img src="<?= base_url();?>assets/public/assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                                <img src="<?= base_url();?>assets/public/assets/img/testimonials/testimonials-4.jpg"
+                                    class="testimonial-img" alt="">
                                 <h3>Matt Brandon</h3>
                                 <h4>Freelancer</h4>
                             </div>
@@ -530,7 +440,8 @@
                                     culpa fore nisi cillum quid.
                                     <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                                 </p>
-                                <img src="<?= base_url();?>assets/public/assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                                <img src="<?= base_url();?>assets/public/assets/img/testimonials/testimonials-5.jpg"
+                                    class="testimonial-img" alt="">
                                 <h3>John Larson</h3>
                                 <h4>Entrepreneur</h4>
                             </div>
@@ -558,7 +469,8 @@
 
                     <div class="col-lg-4 col-md-6">
                         <div class="member" data-aos="zoom-in">
-                            <div class="pic"><img src="<?= base_url();?>assets/public/assets/img/team/team-1.jpg" class="img-fluid" alt=""></div>
+                            <div class="pic"><img src="<?= base_url();?>assets/public/assets/img/team/team-1.jpg"
+                                    class="img-fluid" alt=""></div>
                             <div class="member-info">
                                 <h4>Walter White</h4>
                                 <span>Chief Executive Officer</span>
@@ -574,7 +486,8 @@
 
                     <div class="col-lg-4 col-md-6">
                         <div class="member" data-aos="zoom-in" data-aos-delay="100">
-                            <div class="pic"><img src="<?= base_url();?>assets/public/assets/img/team/team-2.jpg" class="img-fluid" alt=""></div>
+                            <div class="pic"><img src="<?= base_url();?>assets/public/assets/img/team/team-2.jpg"
+                                    class="img-fluid" alt=""></div>
                             <div class="member-info">
                                 <h4>Sarah Jhonson</h4>
                                 <span>Product Manager</span>
@@ -590,7 +503,8 @@
 
                     <div class="col-lg-4 col-md-6">
                         <div class="member" data-aos="zoom-in" data-aos-delay="200">
-                            <div class="pic"><img src="<?= base_url();?>assets/public/assets/img/team/team-3.jpg" class="img-fluid" alt=""></div>
+                            <div class="pic"><img src="<?= base_url();?>assets/public/assets/img/team/team-3.jpg"
+                                    class="img-fluid" alt=""></div>
                             <div class="member-info">
                                 <h4>William Anderson</h4>
                                 <span>CTO</span>
@@ -624,49 +538,57 @@
 
                     <div class="col-lg-3 col-md-4 col-xs-6">
                         <div class="client-logo" data-aos="zoom-in">
-                            <img src="<?= base_url();?>assets/public/assets/img/clients/client-1.png" class="img-fluid" alt="">
+                            <img src="<?= base_url();?>assets/public/assets/img/clients/client-1.png" class="img-fluid"
+                                alt="">
                         </div>
                     </div>
 
                     <div class="col-lg-3 col-md-4 col-xs-6">
                         <div class="client-logo" data-aos="zoom-in" data-aos-delay="100">
-                            <img src="<?= base_url();?>assets/public/assets/img/clients/client-2.png" class="img-fluid" alt="">
+                            <img src="<?= base_url();?>assets/public/assets/img/clients/client-2.png" class="img-fluid"
+                                alt="">
                         </div>
                     </div>
 
                     <div class="col-lg-3 col-md-4 col-xs-6">
                         <div class="client-logo" data-aos="zoom-in" data-aos-delay="150">
-                            <img src="<?= base_url();?>assets/public/assets/img/clients/client-3.png" class="img-fluid" alt="">
+                            <img src="<?= base_url();?>assets/public/assets/img/clients/client-3.png" class="img-fluid"
+                                alt="">
                         </div>
                     </div>
 
                     <div class="col-lg-3 col-md-4 col-xs-6">
                         <div class="client-logo" data-aos="zoom-in" data-aos-delay="200">
-                            <img src="<?= base_url();?>assets/public/assets/img/clients/client-4.png" class="img-fluid" alt="">
+                            <img src="<?= base_url();?>assets/public/assets/img/clients/client-4.png" class="img-fluid"
+                                alt="">
                         </div>
                     </div>
 
                     <div class="col-lg-3 col-md-4 col-xs-6">
                         <div class="client-logo" data-aos="zoom-in" data-aos-delay="250">
-                            <img src="<?= base_url();?>assets/public/assets/img/clients/client-5.png" class="img-fluid" alt="">
+                            <img src="<?= base_url();?>assets/public/assets/img/clients/client-5.png" class="img-fluid"
+                                alt="">
                         </div>
                     </div>
 
                     <div class="col-lg-3 col-md-4 col-xs-6">
                         <div class="client-logo" data-aos="zoom-in" data-aos-delay="300">
-                            <img src="<?= base_url();?>assets/public/assets/img/clients/client-6.png" class="img-fluid" alt="">
+                            <img src="<?= base_url();?>assets/public/assets/img/clients/client-6.png" class="img-fluid"
+                                alt="">
                         </div>
                     </div>
 
                     <div class="col-lg-3 col-md-4 col-xs-6">
                         <div class="client-logo" data-aos="zoom-in" data-aos-delay="350">
-                            <img src="<?= base_url();?>assets/public/assets/img/clients/client-7.png" class="img-fluid" alt="">
+                            <img src="<?= base_url();?>assets/public/assets/img/clients/client-7.png" class="img-fluid"
+                                alt="">
                         </div>
                     </div>
 
                     <div class="col-lg-3 col-md-4 col-xs-6" data-aos="zoom-in" data-aos-delay="400">
                         <div class="client-logo">
-                            <img src="<?= base_url();?>assets/public/assets/img/clients/client-8.png" class="img-fluid" alt="">
+                            <img src="<?= base_url();?>assets/public/assets/img/clients/client-8.png" class="img-fluid"
+                                alt="">
                         </div>
                     </div>
 
