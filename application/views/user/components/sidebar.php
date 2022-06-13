@@ -50,6 +50,13 @@
                 </li>
                 <li class="nav-item" style="<?php 
                          
+                        //  $now = time(); // or your date as well
+                        //  $your_date = strtotime($user_data['akhir_berlaku']);
+                        //  $datediff = $your_date - $now;
+                         
+                        //  echo round($datediff / (60 * 60 * 24));
+                        //  echo " ";
+
                         if($user_data['akhir_berlaku'] < date("Y-m-d")){
                             echo '';
                         }else{

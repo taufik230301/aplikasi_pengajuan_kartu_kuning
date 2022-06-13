@@ -80,7 +80,7 @@
                 <td style="width: 58px; vertical-align: top;">
                 <br>
                 <img
-                        src="<?=base_url();?>assets/logo/taufik.jpg" alt=""
+                        src="<?=base_url();?>assets/berkas/<?=$foto_saya?>" alt=""
                         width="100" /></td>
                 <td style="text-align: center; width: 300px;">
                     <p style="text-align: left; margin-left: 30px; font-weight: bold;">No Pendaftaran</p>

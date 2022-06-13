@@ -15,6 +15,7 @@
     });
     </script>
     <?php } ?>
+    
     <?php if ($this->session->flashdata('input')){ ?>
     <script>
     swal({
@@ -24,6 +25,7 @@
     });
     </script>
     <?php } ?>
+
     <?php if ($this->session->flashdata('eror')){ ?>
     <script>
     swal({
@@ -33,6 +35,7 @@
     });
     </script>
     <?php } ?>
+
     <?php if ($this->session->flashdata('delete')){ ?>
     <script>
     swal({

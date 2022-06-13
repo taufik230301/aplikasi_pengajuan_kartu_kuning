@@ -7,6 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SISPAKER | REGISTER</title>
 
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="<?= base_url();?>assets/favicon.ico" />
+    
     <!-- Font Icon -->
     <link rel="stylesheet"
         href="<?=base_url();?>assets/login/fonts/material-icon/css/material-design-iconic-font.min.css">
