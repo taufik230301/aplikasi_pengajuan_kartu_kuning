@@ -25,6 +25,34 @@
     });
     </script>
     <?php } ?>
+
+    <?php if ($this->session->flashdata('error_file_saya')){ ?>
+    <script>
+    swal({
+        title: "Erorr!",
+        text: "Data Gagal Diubah!",
+        icon: "error"
+    });
+    </script>
+
+    <?php if ($this->session->flashdata('error_file_saya')){ ?>
+    <script>
+    swal({
+        title: "Erorr!",
+        text: "Data Gagal Diubah!",
+        icon: "error"
+    });
+    </script>
+
+    <?php if ($this->session->flashdata('error_file_saya')){ ?>
+    <script>
+    swal({
+        title: "Erorr!",
+        text: "Data Gagal Diubah!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
     <div class="wrapper">
 
         <!-- Preloader -->

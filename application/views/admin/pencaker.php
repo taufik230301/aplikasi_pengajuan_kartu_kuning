@@ -167,28 +167,6 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="row mb-3 mt-3 ml-2">
-                            <form>
-                                <div class="form-group">
-                                    <div class="col">
-                                        <label for="exampleFormControlSelect1">Pilih Tahun</label>
-                                        <select class="form-control" id="exampleFormControlSelect1">
-                                            <option>2018</option>
-                                            <option>2019</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <button type="submit" class="btn btn-primary">Cetak Laporan</button>
-                                </div>
-                            </form>
-                        </div>
-
-
-
                     </div><!-- /.row -->
 
 

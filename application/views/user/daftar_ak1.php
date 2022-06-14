@@ -306,7 +306,12 @@
                                 <input type="text" class="form-control" id="foto_ijazah" name="foto_ijazah_old"
                                     value="<?=$foto_ijazah?>" hidden>
                             </div>
-                            <button type="submit" class="btn btn-primary mb-3">Submit</button>
+                            <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2'){
+                                        echo '';
+                                    }else{
+                                        echo '<button type="submit" class="btn btn-primary mb-3">Submit</button>';
+                                    }  ?>
+                            
                         </form>
                         <?php endforeach;?>
                     </div>

@@ -48,6 +48,7 @@ class Perpanjang extends CI_Controller {
         $kode_pos = $this->input->post('kode_pos');
         $alamat = $this->input->post('alamat');
 		$id = $this->input->post('id_user');
+		
 		$id_status_verifikasi = 1; 
         $id_status_perpanjangan = 2;
         $id_status_aktif = 1;
@@ -70,7 +71,7 @@ class Perpanjang extends CI_Controller {
 		}else{
 			
 			$this->session->set_flashdata('error_file_saya','error_file_saya');
-			redirect('Perpanjang/view_user');
+			redirect('Perpanjang/view_user/'.$id);
 		}
 		
 	
@@ -87,7 +88,7 @@ class Perpanjang extends CI_Controller {
 		}else{
 			@unlink($path.$foto_saya['file_name']);
 			$this->session->set_flashdata('error_file_ktp','error_file_ktp');
-			redirect('Perpanjang/view_user');
+			redirect('Perpanjang/view_user/'.$id);
 		}
 		
 
@@ -105,7 +106,7 @@ class Perpanjang extends CI_Controller {
 			@unlink($path.$foto_saya['file_name']);
 			@unlink($path.$foto_ktp['file_name']);
 			$this->session->set_flashdata('error_file_ijazah','error_file_ijazah');
-			redirect('Perpanjang/view_user');
+			redirect('Perpanjang/view_user/'.$id);
         }
         
         $hasil = $this->m_user->update_user_detail($id ,$no_pendaftaran, $nik, $nama_lengkap, $tempat_lahir,
