@@ -15,7 +15,7 @@
     });
     </script>
     <?php } ?>
-    
+
     <?php if ($this->session->flashdata('input')){ ?>
     <script>
     swal({
@@ -385,6 +385,9 @@
 
                                                         </div>
                                                     </div>
+                                                    <?php if($id_status_verifikasi == 1){?>
+
+                                                    <?php }else{?>
                                                     <div class="table-responsive">
                                                         <div class="table table-striped table-hover ">
                                                             <a href="" data-toggle="modal"
@@ -394,6 +397,8 @@
                                                             </a>
                                                         </div>
                                                     </div>
+                                                    <?php }?>
+                                                    <?php if($id_status_aktif == 2 AND $id_status_verifikasi == 2){?>
                                                     <div class="table-responsive">
                                                         <div class="table table-striped table-hover ">
                                                             <a href="" data-toggle="modal"
@@ -403,6 +408,9 @@
                                                             </a>
                                                         </div>
                                                     </div>
+                                                    <?php }else{?>
+
+                                                    <?php }?>
                                                 </td>
                                                 <td>
                                                     <div class="table-responsive">

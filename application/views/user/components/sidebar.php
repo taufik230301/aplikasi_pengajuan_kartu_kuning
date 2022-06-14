@@ -80,7 +80,7 @@
                 </li>
                 <li class="nav-item" style="<?php 
                         //  echo var_dump($user['akhir_berlaku'] < date("Y-m-d"));
-                        if($user_data['akhir_berlaku'] > date("Y-m-d")){
+                        if($user_data['akhir_berlaku'] > date("Y-m-d") AND $user_data['id_status_verifikasi'] == 2  AND $user_data['id_status_perpanjangan'] == 1 AND $user_data['id_status_aktif'] == 2){
                             echo '';
                         }else{
                             echo 'display:none;';
