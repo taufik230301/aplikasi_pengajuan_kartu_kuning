@@ -89,7 +89,7 @@
                         ?>">
                     <a href="<?=base_url();?>Cetak/kartu_kuning/<?=$this->session->userdata('id_user');?>"
                         class="nav-link" 
-                       
+                        target="_blank"
                         
                         >
                         <i class="nav-icon fas fa-book"></i>

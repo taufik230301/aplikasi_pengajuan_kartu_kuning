@@ -34,8 +34,9 @@
         icon: "error"
     });
     </script>
+    <?php } ?>
 
-    <?php if ($this->session->flashdata('error_file_saya')){ ?>
+    <?php if ($this->session->flashdata('error_file_ijazah')){ ?>
     <script>
     swal({
         title: "Erorr!",
@@ -43,8 +44,8 @@
         icon: "error"
     });
     </script>
-
-    <?php if ($this->session->flashdata('error_file_saya')){ ?>
+    <?php } ?>
+    <?php if ($this->session->flashdata('error_file_ktp')){ ?>
     <script>
     swal({
         title: "Erorr!",
@@ -125,42 +126,42 @@
                             <div class="form-group">
                                 <label for="no_pendaftaran">No Pendaftaran</label>
                                 <input type="text" class="form-control" id="no_pendaftaran" name="no_pendaftaran"
-                                    aria-describedby="emailHelp" value="<?=$no_pendaftaran?>">
+                                    aria-describedby="emailHelp" value="<?=$no_pendaftaran?>" required>
                             </div>
                             <div class="form-group">
                                 <label for="nik">NIK</label>
                                 <input type="text" class="form-control" id="nik" name="nik" aria-describedby="emailHelp"
-                                    value="<?=$nik?>">
+                                    value="<?=$nik?>" required>
                             </div>
                             <div class="form-group">
                                 <label for="nama_lengkap">Nama Lengkap</label>
                                 <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap"
-                                    value="<?=$nama_lengkap?>">
+                                    value="<?=$nama_lengkap?>" required>
                             </div>
                             <div class="form-group">
                                 <label for="tempat_lahir">Tempat lahir</label>
                                 <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir"
-                                    value="<?=$tempat_lahir?>">
+                                    value="<?=$tempat_lahir?>" required>
                             </div>
                             <div class="form-group">
                                 <label for="tanggal_lahir">Tanggal Lahir</label>
                                 <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir"
-                                    value="<?=$tanggal_lahir?>">
+                                    value="<?=$tanggal_lahir?>" required>
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlSelect1">Jenis Kelamin</label>
-                                <select class="form-control" id="exampleFormControlSelect1" name="jenis_kelamin">
+                                <select class="form-control" id="exampleFormControlSelect1" name="jenis_kelamin" required>
                                     <option value="L">Laki-Laki</option>
                                     <option value="P">Perempuan</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="agama">Agama</label>
-                                <input type="text" class="form-control" id="agama" name="agama" value="<?=$agama?>">
+                                <input type="text" class="form-control" id="agama" name="agama" value="<?=$agama?>" required>
                             </div>
                             <div class="form-group">
                                 <label for="status_perkawinan">Status Perkawinan</label>
-                                <select class="form-control" id="exampleFormControlSelect1" name="status_perkawinan">
+                                <select class="form-control" id="exampleFormControlSelect1" name="status_perkawinan" required>
                                     <option value="Kawin">Kawin</option>
                                     <option value="Belum Kawin">Belum Kawin</option>
                                 </select>
@@ -168,16 +169,16 @@
                             <div class="form-group">
                                 <label for="tinggi_badan">Tinggi Badan</label>
                                 <input type="text" class="form-control" id="tinggi_badan" name="tinggi_badan"
-                                    value="<?=$tinggi_badan?>">
+                                    value="<?=$tinggi_badan?>" required>
                             </div>
                             <div class="form-group">
                                 <label for="berat_bedan">Berat Badan</label>
                                 <input type="text" class="form-control" id="berat_badan" name="berat_badan"
-                                    value="<?=$berat_badan?>">
+                                    value="<?=$berat_badan?>" required>
                             </div>
                             <div class="form-group">
                                 <label for="pendidikan_terakhir">Pendidikan Terakhir</label>
-                                <select class="form-control" id="pendidikan_terakhir" name="pendidikan_terakhir">
+                                <select class="form-control" id="pendidikan_terakhir" name="pendidikan_terakhir" required>
                                     <option value="SD">SD</option>
                                     <option value="SMP">SMP</option>
                                 </select>
@@ -185,51 +186,51 @@
                             <div class="form-group">
                                 <label for="jurusan">Jurusan</label>
                                 <input type="text" class="form-control" id="jurusan" name="jurusan"
-                                    value="<?=$jurusan?>">
+                                    value="<?=$jurusan?>" required>
                             </div>
                             <div class="form-group">
                                 <label for="pengalaman_kerja">Pengalaman Kerja</label>
                                 <textarea class="form-control" id="pengalaman_kerja" name="pengalaman_kerja"
-                                    rows="3"><?=$pengalaman_kerja?></textarea>
+                                    rows="3" required><?=$pengalaman_kerja?></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="no_hp">No NP</label>
-                                <input type="text" class="form-control" id="no_hp" name="no_hp" value="<?=$no_hp?>">
+                                <input type="text" class="form-control" id="no_hp" name="no_hp" value="<?=$no_hp?>" required>
                             </div>
                             <div class="form-group">
                                 <label for="provinsi">Provinsi</label>
                                 <input type="text" class="form-control" id="provinsi" name="provinsi"
-                                    value="<?=$provinsi?>">
+                                    value="<?=$provinsi?>" required>
                             </div>
                             <div class="form-group">
                                 <label for="kota">Kota</label>
-                                <input type="text" class="form-control" id="kota" name="kota" value="<?=$kota?>">
+                                <input type="text" class="form-control" id="kota" name="kota" value="<?=$kota?>" required>
                             </div>
                             <div class="form-group">
                                 <label for="kode_pos">Kode Pos</label>
                                 <input type="text" class="form-control" id="kode_pos" name="kode_pos"
-                                    value="<?=$kode_pos?>">
+                                    value="<?=$kode_pos?>" required>
                             </div>
                             <div class="form-group">
                                 <label for="alamat">Alamat</label>
                                 <textarea class="form-control" id="alamat" name="alamat"
-                                    rows="3"><?=$alamat?></textarea>
+                                    rows="3" required><?=$alamat?></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="foto_saya">Foto</label>
-                                <input type="file" class="form-control" id="foto_saya" name="foto_saya">
+                                <input type="file" class="form-control" id="foto_saya" name="foto_saya" required>
                                 <input type="text" class="form-control" id="foto_saya" name="foto_saya_old"
                                     value="<?=$foto_saya?>" hidden>
                             </div>
                             <div class="form-group">
                                 <label for="foto_ktp">Foto KTP</label>
-                                <input type="file" class="form-control" id="foto_ktp" name="foto_ktp">
+                                <input type="file" class="form-control" id="foto_ktp" name="foto_ktp" required>
                                 <input type="text" class="form-control" id="foto_ktp" name="foto_ktp_old"
                                     value="<?=$foto_ktp?>" hidden>
                             </div>
                             <div class="form-group">
                                 <label for="foto_ijazah">Foto Ijazah</label>
-                                <input type="file" class="form-control" id="foto_ijazah" name="foto_ijazah">
+                                <input type="file" class="form-control" id="foto_ijazah" name="foto_ijazah" required>
                                 <input type="text" class="form-control" id="foto_ijazah" name="foto_ijazah_old"
                                     value="<?=$foto_ijazah?>" hidden>
                             </div>
