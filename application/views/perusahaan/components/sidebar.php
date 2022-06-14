@@ -41,19 +41,31 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?=base_url();?>Daftar/view_perusahaan/<?=$this->session->userdata('id_user');?>" class="nav-link">
+                    <a href="<?=base_url();?>Daftar/view_perusahaan/<?=$this->session->userdata('id_user');?>"
+                        class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>Daftar</p>
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" style="<?php if($perusahaan_data['id_status_verifikasi'] == 2 AND $perusahaan_data['id_status_aktif'] == 2){
+                            echo '';
+                        }else{
+                            echo 'display:none;';
+                        }
+                        ?>">
                     <a href="<?=base_url();?>Pencaker/view_perusahaan" class="nav-link">
                         <i class="nav-icon fas fa-users"></i>
                         <p>Data Pencaker</p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="<?=base_url();?>Loker/view_perusahaan/<?=$this->session->userdata('id_user');?>" class="nav-link">
+                <li class="nav-item" style="<?php if($perusahaan_data['id_status_verifikasi'] == 2 AND $perusahaan_data['id_status_aktif'] == 2){
+                            echo '';
+                        }else{
+                            echo 'display:none;';
+                        }
+                        ?>">
+                    <a href="<?=base_url();?>Loker/view_perusahaan/<?=$this->session->userdata('id_user');?>"
+                        class="nav-link">
                         <i class="nav-icon fas fa-columns"></i>
                         <p>Loker</p>
                     </a>

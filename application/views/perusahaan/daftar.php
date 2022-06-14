@@ -82,6 +82,7 @@
                                             $deskripsi = $i['deskripsi'];
                                             $nomor_telepon = $i['nomor_telepon'];
                                             $logo = $i['logo'];
+                                            $id_status_verifikasi = $i['id_status_verifikasi'];
                                           
 
                                             
@@ -90,61 +91,102 @@
                             enctype="multipart/form-data">
 
                             <input type="text" name="id_user" id="id_user" value="<?=$id_perusahaan_detail?>" hidden>
-                            <input type="text"  id="logo_old" name="logo_old" value="<?=$logo?>"
-                                hidden>
+                            <input type="text" id="logo_old" name="logo_old" value="<?=$logo?>" hidden>
 
                             <div class="form-group">
                                 <label for="nama_perusahaan">Nama Perusahaan</label>
                                 <input type="text" class="form-control" id="nama_perusahaan" name="nama_perusahaan"
-                                    value="<?=$nama_perusahaan?>" required>
+                                    value="<?=$nama_perusahaan?>" <?php  if($id_status_verifikasi == 2 ){
+                                        echo 'disabled';
+                                    }else{
+                                        echo 'required';
+                                    }  ?>>
                             </div>
                             <div class="form-group">
                                 <label for="jenis_perusahaan">Jenis Perusahaan</label>
                                 <input type="text" class="form-control" id="jenis_perusahaan" name="jenis_perusahaan"
-                                    value="<?=$jenis_perusahaan?>" required>
+                                    value="<?=$jenis_perusahaan?>" <?php  if($id_status_verifikasi == 2 ){
+                                        echo 'disabled';
+                                    }else{
+                                        echo 'required';
+                                    }  ?>>
                             </div>
                             <div class="form-group">
                                 <label for="npwp_perusahaan">NPWP Perusahaan</label>
                                 <input type="text" class="form-control" id="npwp_perusahaan" name="npwp_perusahaan"
-                                    value="<?=$npwp_perusahaan?>" required>
+                                    value="<?=$npwp_perusahaan?>" <?php  if($id_status_verifikasi == 2 ){
+                                        echo 'disabled';
+                                    }else{
+                                        echo 'required';
+                                    }  ?>>
                             </div>
                             <div class="form-group">
                                 <label for="provinsi">Provinsi</label>
                                 <input type="text" class="form-control" id="provinsi" name="provinsi"
-                                    value="<?=$provinsi?>" required>
+                                    value="<?=$provinsi?>" <?php  if($id_status_verifikasi == 2 ){
+                                        echo 'disabled';
+                                    }else{
+                                        echo 'required';
+                                    }  ?>>
                             </div>
                             <div class="form-group">
                                 <label for="kota">kota</label>
-                                <input type="text" class="form-control" id="kota" name="kota" value="<?=$kota?>"
-                                    required>
+                                <input type="text" class="form-control" id="kota" name="kota" value="<?=$kota?>" <?php  if($id_status_verifikasi == 2 ){
+                                        echo 'disabled';
+                                    }else{
+                                        echo 'required';
+                                    }  ?>>
                             </div>
                             <div class="form-group">
                                 <label for="alamat">Alamat</label>
-                                <textarea class="form-control" id="alamat" name="alamat" rows="3"
-                                    required><?=$alamat?></textarea>
+                                <textarea class="form-control" id="alamat" name="alamat" rows="3" <?php  if($id_status_verifikasi == 2 ){
+                                        echo 'disabled';
+                                    }else{
+                                        echo 'required';
+                                    }  ?>><?=$alamat?></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="kode_pos">Kode Pos</label>
                                 <input type="text" class="form-control" id="kode_pos" name="kode_pos"
-                                    value="<?=$kode_pos?>" required>
+                                    value="<?=$kode_pos?>" <?php  if($id_status_verifikasi == 2 ){
+                                        echo 'disabled';
+                                    }else{
+                                        echo 'required';
+                                    }  ?>>
                             </div>
                             <div class="form-group">
                                 <label for="deskripsi">deskripsi</label>
-                                <textarea class="form-control" id="deskripsi" name="deskripsi" rows="3"
-                                    required><?=$deskripsi?></textarea>
+                                <textarea class="form-control" id="deskripsi" name="deskripsi" rows="3" <?php  if($id_status_verifikasi == 2 ){
+                                        echo 'disabled';
+                                    }else{
+                                        echo 'required';
+                                    }  ?>><?=$deskripsi?></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="nomor_telepon">Kode Pos</label>
                                 <input type="text" class="form-control" id="nomor_telepon" name="nomor_telepon"
-                                    value="<?=$nomor_telepon?>" required>
+                                    value="<?=$nomor_telepon?>" <?php  if($id_status_verifikasi == 2 ){
+                                        echo 'disabled';
+                                    }else{
+                                        echo 'required';
+                                    }  ?>>
                             </div>
                             <div class="form-group">
                                 <label for="logo">Logo</label>
-                                <input type="file" class="form-control" id="logo" name="logo" required>
+                                <input type="file" class="form-control" id="logo" name="logo" <?php  if($id_status_verifikasi == 2 ){
+                                        echo 'disabled';
+                                    }else{
+                                        echo 'required';
+                                    }  ?>>
 
                             </div>
+
+                            <?php  if($id_status_verifikasi == 2 ){
+                                        echo '';
+                                    }else{
+                                        echo '<button type="submit" class="btn btn-primary mb-3">Submit</button>';
+                                    }  ?>
                             
-                            <button type="submit" class="btn btn-primary mb-3">Submit</button>
                         </form>
                         <?php endforeach ;?>
                     </div>

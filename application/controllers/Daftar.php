@@ -14,6 +14,7 @@ class Daftar extends CI_Controller {
 	{
         if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 3) {
 
+            
         $data['user_data'] = $this->m_user->get_user_detail_by_id($this->session->userdata('id_user'))->row_array();
         $data['user'] = $this->m_user->get_user_detail_by_id($id_user)->result_array();
         
@@ -32,6 +33,8 @@ class Daftar extends CI_Controller {
 
     if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 2) {
         
+        
+        $data['perusahaan_data'] = $this->m_user->get_all_perusahaan_by_id($this->session->userdata('id_user'))->row_array();
         $data['perusahaan'] = $this->m_user->get_all_perusahaan_by_id($id_user)->result_array();
         $this->load->view('perusahaan/daftar', $data);
         

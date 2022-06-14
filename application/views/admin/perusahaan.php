@@ -261,15 +261,19 @@
 
                                                         </div>
                                                     </div>
+                                                    <?php if($id_status_verifikasi == 1){?>
+
+                                                    <?php }else{?>
                                                     <div class="table-responsive">
                                                         <div class="table table-striped table-hover ">
                                                             <a href="" data-toggle="modal"
                                                                 data-target="#aktifkan_perusahaan<?=$id_user?>"
-                                                                class="btn btn-primary">Aktifkan Kartu <i
+                                                                class="btn btn-primary">Aktifkan Akun <i
                                                                     class="fas fa-check"></i>
                                                             </a>
                                                         </div>
                                                     </div>
+                                                    <?php } ?>
                                                 </td>
                                                 <td>
                                                     <div class="table-responsive">

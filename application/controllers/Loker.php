@@ -6,6 +6,8 @@ class Loker extends CI_Controller {
     {
         parent::__construct();
         $this->load->model('m_loker');
+        
+        $this->load->model('m_user');
     }
 
     
@@ -13,6 +15,7 @@ class Loker extends CI_Controller {
 	{
         if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 2) {
 
+            $data['perusahaan_data'] = $this->m_user->get_all_perusahaan_by_id($this->session->userdata('id_user'))->row_array();
         $data['loker'] = $this->m_loker->get_all_loker_by_id($id_user)->result_array();
         
         $this->load->view('perusahaan/loker', $data);
