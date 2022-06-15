@@ -670,9 +670,21 @@
                                                                         Kelamin</label>
                                                                     <select class="form-control"
                                                                         id="exampleFormControlSelect1"
-                                                                        name="jenis_kelamin" required>
-                                                                        <option value="L">Laki-Laki</option>
-                                                                        <option value="P">Perempuan</option>
+                                                                        name="jenis_kelamin" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' OR $akhir_berlaku != NULL){
+                                                                                            echo 'disabled';
+                                                                                        }else{
+                                                                                            echo 'required';
+                                                                                        }  ?>>
+                                                                        <option value="L" <?php  if($jenis_kelamin == 'L'){
+                                                                                            echo 'selected';
+                                                                                        }else{
+                                                                                            echo '';
+                                                                                        }  ?>>Laki-Laki</option>
+                                                                        <option value="P" <?php  if($jenis_kelamin == 'P'){
+                                                                                            echo 'selected';
+                                                                                        }else{
+                                                                                            echo '';
+                                                                                        }  ?>>Perempuan</option>
                                                                     </select>
                                                                 </div>
                                                                 <div class="form-group">
@@ -685,9 +697,21 @@
                                                                         Perkawinan</label>
                                                                     <select class="form-control"
                                                                         id="exampleFormControlSelect1"
-                                                                        name="status_perkawinan" required>
-                                                                        <option value="Kawin">Kawin</option>
-                                                                        <option value="Belum Kawin">Belum Kawin</option>
+                                                                        name="status_perkawinan" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' OR $akhir_berlaku != NULL){
+                                        echo 'disabled';
+                                    }else{
+                                        echo 'required';
+                                    }  ?>>
+                                                                        <option value="Kawin" <?php  if($status_perkawinan == 'Kawin'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>Kawin</option>
+                                                                        <option value="Belum Kawin" <?php  if($status_perkawinan == 'Belum Kawin'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>Belum Kawin</option>
                                                                     </select>
                                                                 </div>
                                                                 <div class="form-group">
