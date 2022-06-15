@@ -707,9 +707,66 @@
                                                                         Terakhir</label>
                                                                     <select class="form-control"
                                                                         id="pendidikan_terakhir"
-                                                                        name="pendidikan_terakhir" required>
-                                                                        <option value="SD">SD</option>
-                                                                        <option value="SMP">SMP</option>
+                                                                        name="pendidikan_terakhir" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' OR $akhir_berlaku != NULL){
+                                        echo 'disabled';
+                                    }else{
+                                        echo 'required';
+                                    }  ?>>
+                                                                        <option value="SD" <?php  if($pendidikan_terakhir == 'SD'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>SD</option>
+                                                                        <option value="SMP" <?php  if($pendidikan_terakhir == 'SMP'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>SMP</option>
+                                                                        <option value="SMA" <?php  if($pendidikan_terakhir == 'SMA'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>SMA</option>
+                                                                        <option value="D1" <?php  if($pendidikan_terakhir == 'D1'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>D1</option>
+                                                                        <option value="D2" <?php  if($pendidikan_terakhir == 'D2'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>D2</option>
+                                                                        <option value="D3" <?php  if($pendidikan_terakhir == 'D3'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>D3</option>
+                                                                        <option value="S1" <?php  if($pendidikan_terakhir == 'S1'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>S1</option>
+                                                                        <option value="D4" <?php  if($pendidikan_terakhir == 'D4'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>D4</option>
+                                                                        <option value="S2" <?php  if($pendidikan_terakhir == 'S2'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>S2</option>
+                                                                        <option value="S3" <?php  if($pendidikan_terakhir == 'S3'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>S3</option>
+                                                                        <option value="Profesor" <?php  if($pendidikan_terakhir == 'Profesor'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>Profesor</option>
                                                                     </select>
                                                                 </div>
                                                                 <div class="form-group">
