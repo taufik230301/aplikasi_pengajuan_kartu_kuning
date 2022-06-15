@@ -99,6 +99,9 @@
                                             $id_user = $i['id_user'];
                                             $nik = $i['nik']; 
                                             $nama_lengkap = $i['nama_lengkap']; 
+                                            $jenis_kelamin = $i['jenis_kelamin']; 
+                                            $status_perkawinan = $i['status_perkawinan']; 
+                                            $pendidikan_terakhir = $i['pendidikan_terakhir']; 
                                             $tempat_lahir = $i['tempat_lahir']; 
                                             $tanggal_lahir = $i['tanggal_lahir']; 
                                             $agama = $i['agama']; 
@@ -167,8 +170,16 @@
                                     }else{
                                         echo 'required';
                                     }  ?>>
-                                    <option value="L">Laki-Laki</option>
-                                    <option value="P">Perempuan</option>
+                                    <option value="L" <?php  if($jenis_kelamin == 'L'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>Laki-Laki</option>
+                                    <option value="P" <?php  if($jenis_kelamin == 'P'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>Perempuan</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -186,8 +197,16 @@
                                     }else{
                                         echo 'required';
                                     }  ?>>
-                                    <option value="Kawin">Kawin</option>
-                                    <option value="Belum Kawin">Belum Kawin</option>
+                                    <option value="Kawin" <?php  if($status_perkawinan == 'Kawin'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>Kawin</option>
+                                    <option value="Belum Kawin" <?php  if($status_perkawinan == 'Belum Kawin'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>Belum Kawin</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -215,8 +234,61 @@
                                     }else{
                                         echo 'required';
                                     }  ?>>
-                                    <option value="SD">SD</option>
-                                    <option value="SMP">SMP</option>
+                                    <option value="SD" <?php  if($pendidikan_terakhir == 'SD'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>SD</option>
+                                    <option value="SMP" <?php  if($pendidikan_terakhir == 'SMP'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>SMP</option>
+                                    <option value="SMA" <?php  if($pendidikan_terakhir == 'SMA'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>SMA</option>
+                                    <option value="D1" <?php  if($pendidikan_terakhir == 'D1'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>D1</option>
+                                    <option value="D2" <?php  if($pendidikan_terakhir == 'D2'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>D2</option>
+                                    <option value="D3" <?php  if($pendidikan_terakhir == 'D3'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>D3</option>
+                                    <option value="S1" <?php  if($pendidikan_terakhir == 'S1'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>S1</option>
+                                    <option value="D4" <?php  if($pendidikan_terakhir == 'D4'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>D4</option>
+                                    <option value="S2" <?php  if($pendidikan_terakhir == 'S2'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>S2</option>
+                                    <option value="S3" <?php  if($pendidikan_terakhir == 'S3'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>S3</option>
+                                    <option value="Profesor" <?php  if($pendidikan_terakhir == 'Profesor'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>Profesor</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -313,7 +385,7 @@
                                     }else{
                                         echo '<button type="submit" class="btn btn-primary mb-3">Submit</button>';
                                     }  ?>
-                            
+
                         </form>
                         <?php endforeach;?>
                     </div>
