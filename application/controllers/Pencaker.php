@@ -323,6 +323,13 @@ class Pencaker extends CI_Controller {
       $mulai_berlaku = $this->input->post("mulai_berlaku");
       $akhir_berlaku = $this->input->post("akhir_berlaku");
 
+      if($status_aktif == 1){
+        $id_status_perpanjangan = 2;
+      }else{
+        $id_status_perpanjangan = 1;
+      }
+      
+
       $this->load->library('email');
       $this->load->config('email');
 
@@ -339,7 +346,7 @@ class Pencaker extends CI_Controller {
       $this->email->message($pesan);
 
       if ($this->email->send()) {
-        $hasil = $this->m_status_aktif->update_status_aktif_user($status_aktif, $id_user, $mulai_berlaku, $akhir_berlaku);
+        $hasil = $this->m_status_aktif->update_status_aktif_user($status_aktif, $id_user, $mulai_berlaku, $akhir_berlaku, $id_status_perpanjangan);
 
         if($hasil==false){
                   $this->session->set_flashdata('eror_status_aktif','eror_status_aktif');

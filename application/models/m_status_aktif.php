@@ -10,11 +10,11 @@ class M_status_aktif extends CI_Model
     }
 
 
-    public function update_status_aktif_user($status_aktif, $id_user, $mulai_berlaku, $akhir_berlaku)
+    public function update_status_aktif_user($status_aktif, $id_user, $mulai_berlaku, $akhir_berlaku, $id_status_perpanjangan)
     {
         $this->db->trans_start();
 
-        $this->db->query("UPDATE user_detail SET id_status_aktif='$status_aktif', mulai_berlaku='$mulai_berlaku', akhir_berlaku='$akhir_berlaku' WHERE id_user_detail='$id_user'");
+        $this->db->query("UPDATE user_detail SET id_status_aktif='$status_aktif', mulai_berlaku='$mulai_berlaku', akhir_berlaku='$akhir_berlaku',id_status_perpanjangan='$id_status_perpanjangan' WHERE id_user_detail='$id_user'");
 
         $this->db->trans_complete();
         if($this->db->trans_status()==true)

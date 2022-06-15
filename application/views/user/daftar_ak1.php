@@ -89,6 +89,8 @@
             <!-- Main content -->
             <section class="content">
                 <div class="container-fluid">
+
+
                     <!-- Small boxes (Stat box) -->
                     <div class="col">
                         <?php
@@ -124,6 +126,11 @@
                                             
 
                                             ?>
+                        <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' OR $akhir_berlaku != NULL){?>
+                        <h2 class="text-primary">Data anda sudah diverifikasi</h2>
+                        <?php }else{?>
+
+                        <?php }  ?>
                         <form action="<?=base_url();?>Daftar/lengkapi_data_user" enctype="multipart/form-data"
                             method="POST">
                             <input type="text" value="<?=$this->session->userdata('id_user')?>" name="id_user" hidden>
