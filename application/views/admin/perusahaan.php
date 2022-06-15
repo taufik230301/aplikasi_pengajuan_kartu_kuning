@@ -323,7 +323,7 @@
                                                                         Verifikasi</label>
                                                                     <select class="form-control"
                                                                         id="exampleFormControlSelect1"
-                                                                        name="status_verifikasi">
+                                                                        name="status_verifikasi" required>
                                                                         <?php
                                                                         foreach($status_verifikasi_data as $i)
                                                                         :
@@ -339,7 +339,7 @@
                                                                 <div class="form-group">
                                                                     <label for="pesan">Pesan</label>
                                                                     <textarea class="form-control" id="pesan" rows="3"
-                                                                        name="pesan"></textarea>
+                                                                        name="pesan" required></textarea>
                                                                 </div>
 
                                                                 <button type="submit"

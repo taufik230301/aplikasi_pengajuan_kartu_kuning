@@ -6,7 +6,6 @@ class Loker extends CI_Controller {
     {
         parent::__construct();
         $this->load->model('m_loker');
-        
         $this->load->model('m_user');
     }
 

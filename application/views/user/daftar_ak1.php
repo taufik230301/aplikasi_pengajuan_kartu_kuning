@@ -127,7 +127,7 @@
                             <div class="form-group">
                                 <label for="nik">NIK</label>
                                 <input type="text" class="form-control" id="nik" name="nik" aria-describedby="emailHelp"
-                                    value="<?=$nik?>" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' ){
+                                    value="<?=$nik?>" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' OR $akhir_berlaku != NULL){
                                         echo 'disabled';
                                     }else{
                                         echo 'required';
@@ -136,7 +136,7 @@
                             <div class="form-group">
                                 <label for="nama_lengkap">Nama Lengkap</label>
                                 <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap"
-                                    value="<?=$nama_lengkap?>" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' ){
+                                    value="<?=$nama_lengkap?>" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' OR $akhir_berlaku != NULL){
                                         echo 'disabled';
                                     }else{
                                         echo 'required';
@@ -145,7 +145,7 @@
                             <div class="form-group">
                                 <label for="tempat_lahir">Tempat lahir</label>
                                 <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir"
-                                    value="<?=$tempat_lahir?>" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' ){
+                                    value="<?=$tempat_lahir?>" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' OR $akhir_berlaku != NULL){
                                         echo 'disabled';
                                     }else{
                                         echo 'required';
@@ -154,7 +154,7 @@
                             <div class="form-group">
                                 <label for="tanggal_lahir">Tanggal Lahir</label>
                                 <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir"
-                                    value="<?=$tanggal_lahir?>" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' ){
+                                    value="<?=$tanggal_lahir?>" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' OR $akhir_berlaku != NULL){
                                         echo 'disabled';
                                     }else{
                                         echo 'required';
@@ -162,7 +162,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlSelect1">Jenis Kelamin</label>
-                                <select class="form-control" id="exampleFormControlSelect1" name="jenis_kelamin" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' ){
+                                <select class="form-control" id="exampleFormControlSelect1" name="jenis_kelamin" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' OR $akhir_berlaku != NULL){
                                         echo 'disabled';
                                     }else{
                                         echo 'required';
@@ -173,7 +173,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="agama">Agama</label>
-                                <input type="text" class="form-control" id="agama" name="agama" value="<?=$agama?>" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' ){
+                                <input type="text" class="form-control" id="agama" name="agama" value="<?=$agama?>" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' OR $akhir_berlaku != NULL){
                                         echo 'disabled';
                                     }else{
                                         echo 'required';
@@ -181,7 +181,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="status_perkawinan">Status Perkawinan</label>
-                                <select class="form-control" id="exampleFormControlSelect1" name="status_perkawinan" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' ){
+                                <select class="form-control" id="exampleFormControlSelect1" name="status_perkawinan" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' OR $akhir_berlaku != NULL){
                                         echo 'disabled';
                                     }else{
                                         echo 'required';
@@ -193,7 +193,7 @@
                             <div class="form-group">
                                 <label for="tinggi_badan">Tinggi Badan</label>
                                 <input type="text" class="form-control" id="tinggi_badan" name="tinggi_badan"
-                                    value="<?=$tinggi_badan?>" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' ){
+                                    value="<?=$tinggi_badan?>" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' OR $akhir_berlaku != NULL){
                                         echo 'disabled';
                                     }else{
                                         echo 'required';
@@ -202,7 +202,7 @@
                             <div class="form-group">
                                 <label for="berat_bedan">Berat Badan</label>
                                 <input type="text" class="form-control" id="berat_badan" name="berat_badan"
-                                    value="<?=$berat_badan?>" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' ){
+                                    value="<?=$berat_badan?>" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' OR $akhir_berlaku != NULL){
                                         echo 'disabled';
                                     }else{
                                         echo 'required';
@@ -210,7 +210,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="pendidikan_terakhir">Pendidikan Terakhir</label>
-                                <select class="form-control" id="pendidikan_terakhir" name="pendidikan_terakhir" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' ){
+                                <select class="form-control" id="pendidikan_terakhir" name="pendidikan_terakhir" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' OR $akhir_berlaku != NULL){
                                         echo 'disabled';
                                     }else{
                                         echo 'required';
@@ -222,7 +222,7 @@
                             <div class="form-group">
                                 <label for="jurusan">Jurusan</label>
                                 <input type="text" class="form-control" id="jurusan" name="jurusan"
-                                    value="<?=$jurusan?>" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' ){
+                                    value="<?=$jurusan?>" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' OR $akhir_berlaku != NULL){
                                         echo 'disabled';
                                     }else{
                                         echo 'required';
@@ -230,7 +230,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="pengalaman_kerja">Pengalaman Kerja</label>
-                                <textarea class="form-control" id="pengalaman_kerja" name="pengalaman_kerja" rows="3" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' ){
+                                <textarea class="form-control" id="pengalaman_kerja" name="pengalaman_kerja" rows="3" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' OR $akhir_berlaku != NULL ){
                                         echo 'disabled';
                                     }else{
                                         echo 'required';
@@ -238,7 +238,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="no_hp">No NP</label>
-                                <input type="text" class="form-control" id="no_hp" name="no_hp" value="<?=$no_hp?>" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' ){
+                                <input type="text" class="form-control" id="no_hp" name="no_hp" value="<?=$no_hp?>" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' OR $akhir_berlaku != NULL){
                                         echo 'disabled';
                                     }else{
                                         echo 'required';
@@ -247,7 +247,7 @@
                             <div class="form-group">
                                 <label for="provinsi">Provinsi</label>
                                 <input type="text" class="form-control" id="provinsi" name="provinsi"
-                                    value="<?=$provinsi?>" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' ){
+                                    value="<?=$provinsi?>" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' OR $akhir_berlaku != NULL){
                                         echo 'disabled';
                                     }else{
                                         echo 'required';
@@ -255,7 +255,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="kota">Kota</label>
-                                <input type="text" class="form-control" id="kota" name="kota" value="<?=$kota?>" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2'){
+                                <input type="text" class="form-control" id="kota" name="kota" value="<?=$kota?>" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' OR $akhir_berlaku != NULL){
                                         echo 'disabled';
                                     }else{
                                         echo 'required';
@@ -264,7 +264,7 @@
                             <div class="form-group">
                                 <label for="kode_pos">Kode Pos</label>
                                 <input type="text" class="form-control" id="kode_pos" name="kode_pos"
-                                    value="<?=$kode_pos?>" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' ){
+                                    value="<?=$kode_pos?>" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' OR $akhir_berlaku != NULL){
                                         echo 'disabled';
                                     }else{
                                         echo 'required';
@@ -272,7 +272,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="alamat">Alamat</label>
-                                <textarea class="form-control" id="alamat" name="alamat" rows="3" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' ){
+                                <textarea class="form-control" id="alamat" name="alamat" rows="3" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' OR $akhir_berlaku != NULL){
                                         echo 'disabled';
                                     }else{
                                         echo 'required';
@@ -280,7 +280,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="foto_saya">Foto</label>
-                                <input type="file" class="form-control" id="foto_saya" name="foto_saya" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' ){
+                                <input type="file" class="form-control" id="foto_saya" name="foto_saya" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' OR $akhir_berlaku != NULL){
                                         echo 'disabled';
                                     }else{
                                         echo 'required';
@@ -290,7 +290,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="foto_ktp">Foto KTP</label>
-                                <input type="file" class="form-control" id="foto_ktp" name="foto_ktp" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' ){
+                                <input type="file" class="form-control" id="foto_ktp" name="foto_ktp" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' OR $akhir_berlaku != NULL ){
                                         echo 'disabled';
                                     }else{
                                         echo 'required';
@@ -300,7 +300,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="foto_ijazah">Foto Ijazah</label>
-                                <input type="file" class="form-control" id="foto_ijazah" name="foto_ijazah" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' ){
+                                <input type="file" class="form-control" id="foto_ijazah" name="foto_ijazah" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' OR $akhir_berlaku != NULL){
                                         echo 'disabled';
                                     }else{
                                         echo 'required';
@@ -308,7 +308,7 @@
                                 <input type="text" class="form-control" id="foto_ijazah" name="foto_ijazah_old"
                                     value="<?=$foto_ijazah?>" hidden>
                             </div>
-                            <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' ){
+                            <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2'  OR $akhir_berlaku != NULL ){
                                         echo '';
                                     }else{
                                         echo '<button type="submit" class="btn btn-primary mb-3">Submit</button>';

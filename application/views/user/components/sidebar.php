@@ -57,7 +57,7 @@
                         //  echo round($datediff / (60 * 60 * 24));
                         //  echo " ";
 
-                        if($user_data['akhir_berlaku'] < date("Y-m-d")){
+                        if($user_data['akhir_berlaku'] < date("Y-m-d") ){
                             echo '';
                         }else{
                             echo 'display:none;';
