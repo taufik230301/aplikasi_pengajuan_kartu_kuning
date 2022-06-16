@@ -18,6 +18,8 @@ class Dashboard extends CI_Controller {
 		$data['pencaker_acitve'] = $this->m_user->count_all_user_active()->row_array();
 		$data['pencaker_no_active'] = $this->m_user->count_all_user_no_active()->row_array();
 		$data['perusahaan'] = $this->m_user->count_all_perusahaan()->row_array();
+		$data['perusahaan_active'] = $this->m_user->count_all_perusahaan_active()->row_array();
+		$data['perusahaan_no_active'] = $this->m_user->count_all_perusahaan_no_active()->row_array();
 		$this->load->view('admin/dashboard', $data);
 
 		}else{

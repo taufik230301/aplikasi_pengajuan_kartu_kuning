@@ -91,7 +91,14 @@ class M_user extends CI_Model
     public function count_all_perusahaan_active()
     {
         $hasil = $this->db->query("SELECT  COUNT(id_user) as total_perusahaan  FROM user JOIN perusahaan_detail ON user.id_user_detail = perusahaan_detail.id_perusahaan_detail 
-         WHERE id_user_level = 2");
+         WHERE id_user_level = 2 AND id_status_aktif = 2");
+        return $hasil;
+    }
+
+    public function count_all_perusahaan_no_active()
+    {
+        $hasil = $this->db->query("SELECT  COUNT(id_user) as total_perusahaan  FROM user JOIN perusahaan_detail ON user.id_user_detail = perusahaan_detail.id_perusahaan_detail 
+         WHERE id_user_level = 2 AND id_status_aktif = 1");
         return $hasil;
     }
 
