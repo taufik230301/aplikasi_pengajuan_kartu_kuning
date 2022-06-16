@@ -516,7 +516,7 @@
                                                                     <select class="form-control"
                                                                         id="exampleFormControlSelect1"
                                                                         name="status_aktif" required>
-                                                                      <option value="2">Aktifkan</option>
+                                                                        <option value="2">Aktifkan</option>
                                                                     </select>
                                                                 </div>
                                                                 <div class="form-group">
@@ -663,9 +663,9 @@
                                                                     <select class="form-control"
                                                                         id="exampleFormControlSelect1"
                                                                         name="jenis_kelamin" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' OR $akhir_berlaku != NULL){
-                                                                                            echo 'disabled';
-                                                                                        }else{
                                                                                             echo 'required';
+                                                                                        }else{
+                                                                                            echo 'disabled';
                                                                                         }  ?>>
                                                                         <option value="L" <?php  if($jenis_kelamin == 'L'){
                                                                                             echo 'selected';
@@ -690,9 +690,9 @@
                                                                     <select class="form-control"
                                                                         id="exampleFormControlSelect1"
                                                                         name="status_perkawinan" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' OR $akhir_berlaku != NULL){
-                                        echo 'disabled';
-                                    }else{
                                         echo 'required';
+                                    }else{
+                                        echo 'disabled';
                                     }  ?>>
                                                                         <option value="Kawin" <?php  if($status_perkawinan == 'Kawin'){
                                         echo 'selected';
@@ -724,9 +724,9 @@
                                                                     <select class="form-control"
                                                                         id="pendidikan_terakhir"
                                                                         name="pendidikan_terakhir" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' OR $akhir_berlaku != NULL){
-                                        echo 'disabled';
-                                    }else{
                                         echo 'required';
+                                    }else{
+                                        echo 'disabled';
                                     }  ?>>
                                                                         <option value="SD" <?php  if($pendidikan_terakhir == 'SD'){
                                         echo 'selected';
@@ -829,6 +829,12 @@
                                                                     <label for="foto_saya">Foto</label>
                                                                     <input type="file" class="form-control"
                                                                         id="foto_saya" name="foto_saya" required>
+                                                                    <small id="foto_saya"
+                                                                        class="form-text text-muted">Masukan Ulang
+                                                                        Foto</small>
+                                                                    <small id="foto_saya"
+                                                                        class="form-text text-muted">Format PNG/JPG/JPEG
+                                                                        (Max 2MB)</small>
                                                                     <input type="text" class="form-control"
                                                                         id="foto_saya" name="foto_saya_old"
                                                                         value="<?=$foto_saya?>" hidden>
@@ -837,6 +843,12 @@
                                                                     <label for="foto_ktp">Foto KTP</label>
                                                                     <input type="file" class="form-control"
                                                                         id="foto_ktp" name="foto_ktp" required>
+                                                                    <small id="foto_saya"
+                                                                        class="form-text text-muted">Masukan Ulang
+                                                                        Foto</small>
+                                                                    <small id="foto_saya"
+                                                                        class="form-text text-muted">Format PNG/JPG/JPEG
+                                                                        (Max 2MB)</small>
                                                                     <input type="text" class="form-control"
                                                                         id="foto_ktp" name="foto_ktp_old"
                                                                         value="<?=$foto_ktp?>" hidden>
@@ -845,6 +857,12 @@
                                                                     <label for="foto_ijazah">Foto Ijazah</label>
                                                                     <input type="file" class="form-control"
                                                                         id="foto_ijazah" name="foto_ijazah" required>
+                                                                    <small id="foto_saya"
+                                                                        class="form-text text-muted">Masukan Ulang
+                                                                        Foto</small>
+                                                                    <small id="foto_saya"
+                                                                        class="form-text text-muted">Format PNG/JPG/JPEG
+                                                                        (Max 2MB)</small>
                                                                     <input type="text" class="form-control"
                                                                         id="foto_ijazah" name="foto_ijazah_old"
                                                                         value="<?=$foto_ijazah?>" hidden>
@@ -1041,17 +1059,17 @@
                             <div class="form-group">
                                 <label for="foto_saya">Foto</label>
                                 <input type="file" class="form-control" id="foto_saya" name="foto_saya" required>
-
+                                <small id="foto_saya" class="form-text text-muted">Format PNG/JPG/JPEG (Max 2MB)</small>
                             </div>
                             <div class="form-group">
                                 <label for="foto_ktp">Foto KTP</label>
                                 <input type="file" class="form-control" id="foto_ktp" name="foto_ktp" required>
-
+                                <small id="foto_saya" class="form-text text-muted">Format PNG/JPG/JPEG (Max 2MB)</small>
                             </div>
                             <div class="form-group">
                                 <label for="foto_ijazah">Foto Ijazah</label>
                                 <input type="file" class="form-control" id="foto_ijazah" name="foto_ijazah" required>
-
+                                <small id="foto_saya" class="form-text text-muted">Format PNG/JPG/JPEG (Max 2MB)</small>
                             </div>
                             <button type="submit" class="btn btn-primary mb-3">Submit</button>
                         </form>
