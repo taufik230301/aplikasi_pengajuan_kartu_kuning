@@ -40,7 +40,7 @@ class M_user extends CI_Model
     public function get_all_user()
     {
         $hasil = $this->db->query("SELECT * FROM user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail 
-         WHERE id_user_level = 3");
+         WHERE id_user_level = 3 AND user_detail.nama_lengkap IS NOT NULL");
         return $hasil;
     }
 
@@ -59,15 +59,36 @@ class M_user extends CI_Model
         return $hasil;
     }
 
+    public function count_all_user_active()
+    {
+        $hasil = $this->db->query("SELECT  COUNT(id_user) as total_pencaker FROM user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail 
+         WHERE id_user_level = 3 AND id_status_aktif = 2");
+        return $hasil;
+    }
+
+    public function count_all_user_no_active()
+    {
+        $hasil = $this->db->query("SELECT  COUNT(id_user) as total_pencaker FROM user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail 
+         WHERE id_user_level = 3 AND id_status_aktif = 1");
+        return $hasil;
+    }
+
 
     public function get_all_perusahaan()
     {
         $hasil = $this->db->query("SELECT * FROM user JOIN perusahaan_detail ON user.id_user_detail = perusahaan_detail.id_perusahaan_detail 
-         WHERE id_user_level = 2");
+         WHERE id_user_level = 2 AND perusahaan_detail.nama_perusahaan IS NOT NULL");
         return $hasil;
     }
 
     public function count_all_perusahaan()
+    {
+        $hasil = $this->db->query("SELECT  COUNT(id_user) as total_perusahaan  FROM user JOIN perusahaan_detail ON user.id_user_detail = perusahaan_detail.id_perusahaan_detail 
+         WHERE id_user_level = 2");
+        return $hasil;
+    }
+
+    public function count_all_perusahaan_active()
     {
         $hasil = $this->db->query("SELECT  COUNT(id_user) as total_perusahaan  FROM user JOIN perusahaan_detail ON user.id_user_detail = perusahaan_detail.id_perusahaan_detail 
          WHERE id_user_level = 2");

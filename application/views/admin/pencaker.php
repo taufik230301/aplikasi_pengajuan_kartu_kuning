@@ -516,15 +516,7 @@
                                                                     <select class="form-control"
                                                                         id="exampleFormControlSelect1"
                                                                         name="status_aktif" required>
-                                                                        <?php
-                                                                        foreach($status_aktif_data as $i)
-                                                                        :
-                                                                        $id_status_aktif_option = $i['id_status_aktif'];
-                                                                        $status_aktif_option = $i['status_aktif'];
-                                                                        ?>
-                                                                        <option value="<?=$id_status_aktif_option?>">
-                                                                            <?=$status_aktif_option?></option>
-                                                                        <?php endforeach;?>
+                                                                      <option value="2">Aktifkan</option>
                                                                     </select>
                                                                 </div>
                                                                 <div class="form-group">

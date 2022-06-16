@@ -15,6 +15,8 @@ class Dashboard extends CI_Controller {
 		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
 
 		$data['pencaker'] = $this->m_user->count_all_user()->row_array();
+		$data['pencaker_acitve'] = $this->m_user->count_all_user_active()->row_array();
+		$data['pencaker_no_active'] = $this->m_user->count_all_user_no_active()->row_array();
 		$data['perusahaan'] = $this->m_user->count_all_perusahaan()->row_array();
 		$this->load->view('admin/dashboard', $data);
 
