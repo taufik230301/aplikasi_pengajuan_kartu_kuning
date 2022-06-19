@@ -364,6 +364,7 @@
                                     }else{
                                         echo 'required';
                                     }  ?>>
+                                <small id="foto_saya" class="form-text text-muted">Format PNG/JPG/JPEG (Max 2MB)</small>
                                 <input type="text" class="form-control" id="foto_saya" name="foto_saya_old"
                                     value="<?=$foto_saya?>" hidden>
                             </div>
@@ -374,6 +375,7 @@
                                     }else{
                                         echo 'required';
                                     }  ?>>
+                                <small id="foto_saya" class="form-text text-muted">Format PNG/JPG/JPEG (Max 2MB)</small>
                                 <input type="text" class="form-control" id="foto_ktp" name="foto_ktp_old"
                                     value="<?=$foto_ktp?>" hidden>
                             </div>
@@ -384,6 +386,7 @@
                                     }else{
                                         echo 'required';
                                     }  ?>>
+                                <small id="foto_saya" class="form-text text-muted">Format PNG/JPG/JPEG (Max 2MB)</small>
                                 <input type="text" class="form-control" id="foto_ijazah" name="foto_ijazah_old"
                                     value="<?=$foto_ijazah?>" hidden>
                             </div>
