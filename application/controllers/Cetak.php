@@ -18,7 +18,7 @@ class Cetak extends CI_Controller {
     
         $this->load->library('pdf');
     
-        $this->pdf->setPaper('A4', 'potrait');
+        $this->pdf->setPaper('A4', 'landscape');
         $this->pdf->set_option('isRemoteEnabled', true);
         $this->pdf->filename = "kartu_kuning.pdf";
         $this->pdf->load_view('kartu_kuning_pdf', $data);

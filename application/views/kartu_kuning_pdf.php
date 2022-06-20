@@ -8,34 +8,23 @@
 </head>
 
 <body>
-    <h2 style="text-align: center;">DAFTAR PEMBUATAN KARTU PENCARI KERJA</h2>
     <table
-        style="height: 92px; margin-left: auto; margin-right: auto; width: 103px; border: none; background-color: yellow;">
+        style="height: 92px; margin-left: auto; margin-right: auto; width: 203px; border: none; background-color: white; margin-top:-60px;">
         <tbody>
             <tr style="height: 113.575px;">
-                <td style="width: 40.925px; text-align: center; height: 113.575px; border: none;">
-                    <h1><img style="margin-left: 40px;"
-                            src="<?=base_url();?>assets/logo/sumsel.png" alt=""
-                            width="72" height="98" /></h1>
-                </td>
+                <img style="margin-top:40px;   margin-right:-20px;" src="<?=base_url();?>assets/logo/logo.png" alt=""
+                    height="95" />
                 <td style="width: 580px; text-align: center; height: 113.575px; border: none;">
-                    <h2>PEMERINTAH KOTA PALEMBANG</h2>
-                    <h4>DINAS SOSIAL TENAGA KERJA KOTA PALEMBANG</h4>
-                    <h4>Jalan pisang no 15 kota Palembang</h4>
+                    <h2 style="margin-bottom:-17px;">PEMERINTAH KABUPATEN OGAN ILIR</h2>
+                    <h4 style="margin-bottom:-17px;">DINAS TENAGA KERJA DAN TRANSMIGRASI</h4>
+                    <h4 style="margin-bottom:-17px;">Jl.Raya Lintas Timur Km. 35 Telp.(0711) 580 600</h4>
+                    <h4 style="margin-bottom:-17px;">KARTU TANDA BUKTI PENDAFTARAN PENCARI KERJA</h4>
                 </td>
             </tr>
         </tbody>
     </table>
-    <table style="margin-left: auto; margin-right: auto; height: 26px;" width="205">
-        <tbody>
-            <tr>
-                <td style="width: 195.8px;">
-                    <p>KARTU TANDA PENCARI KERJA</p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table style="margin-left: auto; margin-right: auto; height: 213px; width: 372.612px;">
+
+    <table style="margin-left: auto;  margin-right: auto; height: 213px; width: 472.612px; margin-top:60px;">
         <tbody>
 
             <?php
@@ -78,10 +67,8 @@
                                             ?>
             <tr>
                 <td style="width: 58px; vertical-align: top;">
-                <br>
-                <img
-                        src="<?=base_url();?>assets/berkas/<?=$foto_saya?>" alt=""
-                        width="100" /></td>
+                    <br>
+                    <img src="<?=base_url();?>assets/berkas/<?=$foto_saya?>" alt="" width="100" /></td>
                 <td style="text-align: center; width: 300px;">
                     <p style="text-align: left; margin-left: 30px; font-weight: bold;">No Pendaftaran</p>
                     <p style="text-align: left; margin-left: 30px; font-weight: bold;">No Induk Kependudukan</p>
@@ -109,6 +96,9 @@
 
         </tbody>
     </table>
+
+    <h4 style="margin-top:160px; text-align: justify;">Keterangan : Kartu ini berlaku nasional selama 2 tahun dengan keharusan mengisi form perpanjangan kartu pada
+        website... setiap 6 bulan sekali bagi pencari kerja yang belum mendapat pekerjaan</h4>
 </body>
 
 </html>
