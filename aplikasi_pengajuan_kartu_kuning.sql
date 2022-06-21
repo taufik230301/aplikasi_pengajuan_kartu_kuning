@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 19, 2022 at 02:40 PM
+-- Generation Time: Jun 21, 2022 at 09:46 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.13
 
@@ -216,7 +216,7 @@ INSERT INTO `user_detail` (`id_user_detail`, `no_pendaftaran`, `nik`, `nama_leng
 ('2990f07cb7bd6be4ab46e34be5a0b1ee', '98778610', '061827182871812', 'malian', 'Palembang', '2022-06-16', 'P', 'Islam', 'Belum Kawin', 170, 59, 'D3', 'Teknik komputer', 'CV DIgital Creatve', '+62812781728', 'Sumatera Selatan', 'test', '30661', 'Jl. Sekip', '804c3117bb600b7e802b4a8abb104a28_saya1.png', '804c3117bb600b7e802b4a8abb104a28_ktp1.png', '804c3117bb600b7e802b4a8abb104a28_ijazah1.png', '2022-06-15', 2, 1, 2, '2022-06-07', '2022-07-29'),
 ('3abb9b3e971314762b999ad5effa937b', '62958806', 'Baseng', 'baseng', 'Palembang', '2022-06-26', 'L', 'Islam', 'Kawin', 170, 59, 'SD', 'Teknik komputer', 'CV Digital', '+62812781728', 'Sumatera Selatan', 'test', '30661', 'Jl. Sekip', 'a660a3b6be71939d70e59c35bba91172_saya.png', 'a660a3b6be71939d70e59c35bba91172_ktp.png', 'a660a3b6be71939d70e59c35bba91172_ijazah.png', '2022-05-31', 1, 1, 1, '2022-06-27', '2022-06-13'),
 ('55ae8b93c382ab83610f033fa2d4904c', '54287062', '061827182871812', 'Rahman', 'Palembang', '2022-06-15', 'L', 'Islam', 'Kawin', 170, 59, 'SD', 'Teknik komputer', 'CV Digital Creative', '+62812781728', 'Sumatera Selatan', 'test', '30661', 'Jl. Sekip', '4ded4c02e97595eee68d1805b147744c_saya1.png', '4ded4c02e97595eee68d1805b147744c_ktp1.png', '4ded4c02e97595eee68d1805b147744c_ijazah1.png', '2022-06-15', 2, 1, 2, '2022-05-29', '2022-06-13'),
-('afb5ab01c26d047a96d48a108ac33216', '52458251', '0618272172617281', 'Taufiiqul Hakim', 'Palembang', '2022-05-25', 'L', 'Islam', 'Kawin', 170, 59, 'SD', 'Teknik komputer', 'CV Digital Creative', '+62812781728', 'Sumatera Selatan', 'test', '30661', 'Jl. Belanti, RT 002, RW 002, Tanjung Raja Timur, Tanjung Raja, Ogan Ilir, Sumsel 30661', '9b78bfd7606472b233e465db3571ae73_saya.png', '9b78bfd7606472b233e465db3571ae73_ktp.png', '9b78bfd7606472b233e465db3571ae73_ijazah.png', '2022-05-22', 2, 1, 2, '2022-06-14', '2022-08-14'),
+('afb5ab01c26d047a96d48a108ac33216', '52458251', '0618272172617281', 'Taufiiqul Hakim', 'Palembang', '2022-05-25', 'L', 'Islam', 'Kawin', 170, 59, 'SD', 'Teknik komputer', 'CV Digital Creative', '+62812781728', 'Sumatera Selatan', 'test', '30661', 'Jl. Belanti, RT 002, RW 002, Tanjung Raja Timur, Tanjung Raja, Ogan Ilir, Sumsel 30661', '9b78bfd7606472b233e465db3571ae73_saya.jpg', '9b78bfd7606472b233e465db3571ae73_ktp.jpg', '9b78bfd7606472b233e465db3571ae73_ijazah.jpg', '2022-05-22', 2, 1, 2, '2022-06-14', '2022-08-14'),
 ('c551fc8847d29dc25a23db5d2cdb941b', '70410541', '061827182871812', 'Rian', 'Palembang', '2022-06-13', 'L', 'Islam', 'Kawin', 170, 59, 'SD', 'Teknik komputer', 'CV Digital Creative', '+62812781728', 'Sumatera Selatan', 'test', '30661', 'Jl. Sekip', '3dee7bbbf175cc79c6a2660a607b33e3_saya.jpg', '3dee7bbbf175cc79c6a2660a607b33e3_ktp.jpg', '3dee7bbbf175cc79c6a2660a607b33e3_ijazah.jpg', '2022-06-14', 2, 1, 2, '2022-06-13', '2022-06-29'),
 ('e2c929f4edd991d6371a719e8c72c3ec', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-17', 1, 1, 1, NULL, NULL),
 ('ef6e295b553be6143f5179fd1955515f', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-18', 1, 1, 1, NULL, NULL);

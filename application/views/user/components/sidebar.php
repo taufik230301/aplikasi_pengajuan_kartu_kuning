@@ -69,12 +69,9 @@
                         
                         ?>">
                     <a href="<?=base_url();?>Perpanjang/view_user/<?=$this->session->userdata('id_user');?>"
-                        class="nav-link" 
-                       
-                        
-                        >
+                        class="nav-link">
                         <i class="nav-icon fas fa-book"></i>
-                        
+
                         <p>Perpanjang</p>
                     </a>
                 </li>
@@ -88,13 +85,17 @@
                         
                         ?>">
                     <a href="<?=base_url();?>Cetak/kartu_kuning/<?=$this->session->userdata('id_user');?>"
-                        class="nav-link" 
-                        target="_blank"
-                        
-                        >
+                        class="nav-link" target="_blank">
                         <i class="nav-icon fas fa-book"></i>
-                        
+
                         <p>Cetak Kartu Kuning</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<?=base_url();?>Alur_Pendaftaran/view_user"
+                        class="nav-link">
+                        <i class="nav-icon fas fa-edit"></i>
+                        <p class="text">Alur Pendaftaran</p>
                     </a>
                 </li>
             </ul>
