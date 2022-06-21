@@ -45,107 +45,238 @@
             <!-- Main content -->
             <section class="content">
                 <div class="container-fluid mb-2">
-                    <div class="row">
-                        <div class="col">
-                            <div class="row d-flex justify-content-center">
-                                <img src="<?=base_url();?>assets/alur_pendaftaran/permohonan.png" alt="Permohonan"
-                                    width="200px">
+                    <h2 class="text-center">Alur Pendaftaran Kartu Kuning</h2>
+                    <div style="margin-top:50px;">
+                        <div class="row">
+                            <div class="col">
+                                <div class="row d-flex justify-content-center">
+                                    <img src="<?=base_url();?>assets/alur_pendaftaran/permohonan.png" alt="Permohonan"
+                                        width="200px">
+                                </div>
+                                <div class="row d-flex justify-content-center">
+                                    <p class="text-center">1. Lakukan pendaftaran akun sebagai pelamar
+                                        (Mengunjungi website...)</p>
+                                </div>
                             </div>
-                            <div class="row d-flex justify-content-center">
-                                <p class="text-center">1. Lakukan pendaftaran akun sebagai pelamar
-                                    (Mengunjungi website...)</p>
+                            <div class="col mt-5">
+                                <div class="row d-flex justify-content-center">
+                                    <img src="<?=base_url();?>assets/alur_pendaftaran/arrow_right.png" alt="Permohonan"
+                                        width="100px">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="row d-flex justify-content-center">
+                                    <img src="<?=base_url();?>assets/alur_pendaftaran/hp.jpg" width="100px"
+                                        alt="Permohonan" width="200px">
+                                </div>
+                                <div class="row d-flex justify-content-center">
+                                    <p class="text-center">2. Login dan lengkapi profile anda dengan melampirkan syarat
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col mt-5">
+                                <div class="row d-flex justify-content-center">
+                                    <img src="<?=base_url();?>assets/alur_pendaftaran/arrow_right.png" alt="Permohonan"
+                                        width="100px">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="row d-flex justify-content-center">
+                                    <img src="<?=base_url();?>assets/alur_pendaftaran/syarat.png" alt="Permohonan"
+                                        width="200px">
+                                </div>
+                                <div class="row">
+                                    <p>1. Softcopy KTP (dalam bentuk jpg/pdf)</p>
+                                    <p> 2. Softcopy asli
+                                        ijazah
+                                        terakhir (dalam bentuk jpg/pdf)</p>
+                                    <p> 3. Softocpy pas photo terbaru (dalam bentuk
+                                        jpg/pdf) </p>
+                                    <p> 4. Softcopy surat keterangan pengalaman kerja jika ada (dalam bentuk
+                                        jpg/pdf)</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="col mt-5">
-                            <div class="row d-flex justify-content-center">
-                                <img src="<?=base_url();?>assets/alur_pendaftaran/arrow_right.png" alt="Permohonan"
-                                    width="100px">
+                        <div class="row">
+
+                            <div class="col mt-5 mb-5 d-flex justify-content-center" style="margin-right:860px;">
+                                <div class="row ">
+                                    <img src="<?=base_url();?>assets/alur_pendaftaran/arrow_top.png" alt="Permohonan"
+                                        width="100px">
+                                </div>
                             </div>
+
+                            <div class="col mt-5 mb-5 d-flex justify-content-center">
+                                <div class="row  ">
+                                    <img src="<?=base_url();?>assets/alur_pendaftaran/arrow_down.png" alt="Permohonan"
+                                        width="100px">
+                                </div>
+                            </div>
+
                         </div>
-                        <div class="col">
-                            <div class="row d-flex justify-content-center">
-                                <img src="<?=base_url();?>assets/alur_pendaftaran/hp.jpg" width="100px" alt="Permohonan"
-                                    width="200px">
+                        <div class="row">
+                            <div class="col">
+                                <div class="row d-flex justify-content-center">
+                                    <img src="<?=base_url();?>assets/alur_pendaftaran/cetak.png" alt="Permohonan"
+                                        width="200px">
+                                </div>
+                                <div class="row d-flex justify-content-center">
+                                    <p class="text-center">5. Pemohon dapat mencetak mandiri kartu AK 1</p>
+                                </div>
                             </div>
-                            <div class="row d-flex justify-content-center">
-                                <p>Permohonan</p>
+
+                            <div class="col mt-5">
+                                <div class="row d-flex justify-content-center">
+                                    <img src="<?=base_url();?>assets/alur_pendaftaran/arrow_left.png" alt="Permohonan"
+                                        width="100px">
+                                </div>
                             </div>
-                        </div>
-                        <div class="col mt-5">
-                            <div class="row d-flex justify-content-center">
-                                <img src="<?=base_url();?>assets/alur_pendaftaran/arrow_right.png" alt="Permohonan"
-                                    width="100px">
+                            <div class="col">
+                                <div class="row d-flex justify-content-center">
+                                    <img src="<?=base_url();?>assets/alur_pendaftaran/operator.png" alt="Permohonan"
+                                        width="200px">
+                                </div>
+                                <div class="row d-flex justify-content-center">
+                                    <p class="text-center">4. Operator akan memverifikasi anda dan mengaktifkan button
+                                        print
+                                        Kartu Pencari Kerja/AK1 di akun anda. </p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col">
-                            <div class="row d-flex justify-content-center">
-                                <img src="<?=base_url();?>assets/alur_pendaftaran/permohonan.png" alt="Permohonan"
-                                    width="200px">
+                            <div class="col mt-5">
+                                <div class="row d-flex justify-content-center">
+                                    <img src="<?=base_url();?>assets/alur_pendaftaran/arrow_left.png" alt="Permohonan"
+                                        width="100px">
+                                </div>
                             </div>
-                            <div class="row d-flex justify-content-center">
-                                <p>Permohonan</p>
+                            <div class="col">
+                                <div class="row d-flex justify-content-center">
+                                    <img src="<?=base_url();?>assets/alur_pendaftaran/request.png" alt="Permohonan"
+                                        width="200px">
+                                </div>
+                                <div class="row d-flex justify-content-center">
+                                    <p class="text-center">3. Silahkan request pencetakan Kartu Pencari Kerja / AK 1
+                                        anda
+                                        pada hari dan jam kerja. </p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-
-                        <div class="col mt-5 mb-5 d-flex justify-content-center" style="margin-right:860px;">
-                            <div class="row ">
-                                <img src="<?=base_url();?>assets/alur_pendaftaran/arrow_top.png" alt="Permohonan"
-                                    width="100px">
+                    <h2 class="text-center" style="margin-top:50px;">Alur Perpanjangan Kartu Kuning</h2>
+                    <div style="margin-top:50px;">
+                        <div class="row">
+                            <div class="col">
+                                <div class="row d-flex justify-content-center">
+                                    <img src="<?=base_url();?>assets/alur_pendaftaran/permohonan.png" alt="Permohonan"
+                                        width="200px">
+                                </div>
+                                <div class="row d-flex justify-content-center">
+                                    <p class="text-center">1. Pemohon Login dan lengkapi profile anda jika ada perubahan
+                                        data dengan melampirkan syarat dan form pengajuan perpanjangan dapat diakses.</p>
+                                </div>
+                            </div>
+                            <div class="col mt-5">
+                                <div class="row d-flex justify-content-center">
+                                    <img src="<?=base_url();?>assets/alur_pendaftaran/arrow_right.png" alt="Permohonan"
+                                        width="100px">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="row d-flex justify-content-center">
+                                    <img src="<?=base_url();?>assets/alur_pendaftaran/hp.jpg" width="100px"
+                                        alt="Permohonan" width="200px">
+                                </div>
+                                <div class="row d-flex justify-content-center">
+                                    <p class="text-center">2. Login dan lengkapi profile anda dengan melampirkan syarat
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col mt-5">
+                                <div class="row d-flex justify-content-center">
+                                    <img src="<?=base_url();?>assets/alur_pendaftaran/arrow_right.png" alt="Permohonan"
+                                        width="100px">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="row d-flex justify-content-center">
+                                    <img src="<?=base_url();?>assets/alur_pendaftaran/syarat.png" alt="Permohonan"
+                                        width="200px">
+                                </div>
+                                <div class="row">
+                                    <p>1. Softcopy KTP (dalam bentuk jpg/pdf)</p>
+                                    <p> 2. Softcopy asli
+                                        ijazah
+                                        terakhir (dalam bentuk jpg/pdf)</p>
+                                    <p> 3. Softocpy pas photo terbaru (dalam bentuk
+                                        jpg/pdf) </p>
+                                    <p> 4. Softcopy surat keterangan pengalaman kerja jika ada (dalam bentuk
+                                        jpg/pdf)</p>
+                                </div>
                             </div>
                         </div>
+                        <div class="row">
 
-                        <div class="col mt-5 mb-5 d-flex justify-content-center">
-                            <div class="row  ">
-                                <img src="<?=base_url();?>assets/alur_pendaftaran/arrow_down.png" alt="Permohonan"
-                                    width="100px">
+                            <div class="col mt-5 mb-5 d-flex justify-content-center" style="margin-right:860px;">
+                                <div class="row ">
+                                    <img src="<?=base_url();?>assets/alur_pendaftaran/arrow_top.png" alt="Permohonan"
+                                        width="100px">
+                                </div>
+                            </div>
+
+                            <div class="col mt-5 mb-5 d-flex justify-content-center">
+                                <div class="row  ">
+                                    <img src="<?=base_url();?>assets/alur_pendaftaran/arrow_down.png" alt="Permohonan"
+                                        width="100px">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="row d-flex justify-content-center">
+                                    <img src="<?=base_url();?>assets/alur_pendaftaran/cetak.png" alt="Permohonan"
+                                        width="200px">
+                                </div>
+                                <div class="row d-flex justify-content-center">
+
+                                    <p class="text-center">5. Pemohon dapat mencetak mandiri kartu AK 1</p>
+                                </div>
+                            </div>
+                            <div class="col mt-5">
+                                <div class="row d-flex justify-content-center">
+                                    <img src="<?=base_url();?>assets/alur_pendaftaran/arrow_left.png" alt="Permohonan"
+                                        width="100px">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="row d-flex justify-content-center">
+                                    <img src="<?=base_url();?>assets/alur_pendaftaran/operator.png" alt="Permohonan"
+                                        width="200px">
+                                </div>
+                                <div class="row d-flex justify-content-center">
+                                    <p class="text-center">4. Operator akan memverifikasi anda dan mengaktifkan button
+                                        print
+                                        Kartu Pencari Kerja/AK1 di akun anda. </p>
+                                </div>
+                            </div>
+                            <div class="col mt-5">
+                                <div class="row d-flex justify-content-center">
+                                    <img src="<?=base_url();?>assets/alur_pendaftaran/arrow_left.png" alt="Permohonan"
+                                        width="100px">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="row d-flex justify-content-center">
+                                    <img src="<?=base_url();?>assets/alur_pendaftaran/request.png" alt="Permohonan"
+                                        width="200px">
+                                </div>
+                                <div class="row d-flex justify-content-center">
+                                    <p class="text-center">3. Silahkan request pencetakan Kartu Pencari Kerja / AK 1
+                                        anda
+                                        pada hari dan jam kerja. </p>
+                                </div>
                             </div>
                         </div>
-
                     </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="row d-flex justify-content-center">
-                                <img src="<?=base_url();?>assets/alur_pendaftaran/permohonan.png" alt="Permohonan"
-                                    width="200px">
-                            </div>
-                            <div class="row d-flex justify-content-center">
-                                <p>Permohonan</p>
-                            </div>
-                        </div>
-                        <div class="col mt-5">
-                            <div class="row d-flex justify-content-center">
-                                <img src="<?=base_url();?>assets/alur_pendaftaran/arrow_left.png" alt="Permohonan"
-                                    width="100px">
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="row d-flex justify-content-center">
-                                <img src="<?=base_url();?>assets/alur_pendaftaran/permohonan.png" alt="Permohonan"
-                                    width="200px">
-                            </div>
-                            <div class="row d-flex justify-content-center">
-                                <p>Permohonan</p>
-                            </div>
-                        </div>
-                        <div class="col mt-5">
-                            <div class="row d-flex justify-content-center">
-                                <img src="<?=base_url();?>assets/alur_pendaftaran/arrow_left.png" alt="Permohonan"
-                                    width="100px">
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="row d-flex justify-content-center">
-                                <img src="<?=base_url();?>assets/alur_pendaftaran/permohonan.png" alt="Permohonan"
-                                    width="200px">
-                            </div>
-                            <div class="row d-flex justify-content-center">
-                                <p>Permohonan</p>
-                            </div>
-                        </div>
-                    </div>
-
 
                     <!-- /.row (main row) -->
                 </div><!-- /.container-fluid -->
