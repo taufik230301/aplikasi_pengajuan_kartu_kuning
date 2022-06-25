@@ -77,7 +77,7 @@
                                 <div class="icon">
                                     <i class="ion ion-person-stalker"></i>
                                 </div>
-                                <a href="<?=base_url();?>/Pencaker/view_perusahaan" class="small-box-footer">More info
+                                <a href="<?=base_url();?>Pencaker/view_perusahaan" class="small-box-footer">More info
                                     <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
@@ -92,7 +92,7 @@
                                 <div class="icon">
                                     <i class="ion ion-person-stalker"></i>
                                 </div>
-                                <a href="<?=base_url();?>/Pencaker/view_perusahaan" class="small-box-footer">More info
+                                <a href="<?=base_url();?>Pencaker/view_perusahaan" class="small-box-footer">More info
                                     <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
@@ -109,7 +109,7 @@
                                 <div class="icon">
                                     <i class="ion ion-person-stalker"></i>
                                 </div>
-                                <a href="<?=base_url();?>/Pencaker/view_perusahaan" class="small-box-footer">More
+                                <a href="<?=base_url();?>Pencaker/view_perusahaan" class="small-box-footer">More
                                     info
                                     <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
@@ -127,7 +127,7 @@
                                 <div class="icon">
                                     <i class="ion ion-stats-bars"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">More info <i
+                                <a href="<?=base_url();?>Perusahaan/view_admin" class="small-box-footer">More info <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
@@ -143,7 +143,7 @@
                                 <div class="icon">
                                     <i class="ion ion-stats-bars"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">More info <i
+                                <a href="<?=base_url();?>Perusahaan/view_admin" class="small-box-footer">More info <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
@@ -159,7 +159,7 @@
                                 <div class="icon">
                                     <i class="ion ion-stats-bars"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">More info <i
+                                <a href="<?=base_url();?>Perusahaan/view_admin" class="small-box-footer">More info <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>

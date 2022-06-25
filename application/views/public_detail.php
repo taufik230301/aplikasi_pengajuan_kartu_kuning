@@ -94,15 +94,15 @@
             <div class="container">
 
                 <ol>
-                    <li><a href="index.html">Home</a></li>
-                    <li>Portfolio Details</li>
+                    <li><a href="<?=base_url();?>Web_public/index">Home</a></li>
+                    <li>Detail Loker</li>
                 </ol>
-                <h2>Portfolio Details</h2>
+                <h2>Detail Loker</h2>
 
             </div>
         </section><!-- End Breadcrumbs -->
 
-        <!-- ======= Portfolio Details Section ======= -->
+        <!-- ======= Detail Loker Section ======= -->
         <section id="portfolio-details" class="portfolio-details">
             <div class="container">
 
@@ -113,15 +113,8 @@
                             <div class="swiper-wrapper align-items-center">
 
                                 <div class="swiper-slide">
-                                    <img src="<?= base_url();?>assets/public/assets/img/portfolio/portfolio-1.jpg" alt="">
-                                </div>
-
-                                <div class="swiper-slide">
-                                    <img src="<?= base_url();?>assets/public/assets/img/portfolio/portfolio-2.jpg" alt="">
-                                </div>
-
-                                <div class="swiper-slide">
-                                    <img src="<?= base_url();?>assets/public/assets/img/portfolio/portfolio-3.jpg" alt="">
+                                    <img src="<?= base_url();?>assets/logo/<?=$loker['logo']?>"
+                                        alt="">
                                 </div>
 
                             </div>
@@ -131,21 +124,19 @@
 
                     <div class="col-lg-4">
                         <div class="portfolio-info">
-                            <h3>Project information</h3>
+                            <h3><?=$loker['nama_perusahaan']?></h3>
                             <ul>
-                                <li><strong>Category</strong>: Web design</li>
-                                <li><strong>Client</strong>: ASU Company</li>
-                                <li><strong>Project date</strong>: 01 March, 2020</li>
-                                <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
+                                <li><strong>Lowongan</strong>: <?=$loker['judul']?></li>
+                                <li><strong>Posisi</strong>: <?=$loker['posisi']?></li>
+                                <li><strong>Jumlah Rekrut</strong>: <?=$loker['jumlah_rekrut']?></li>
+                                <li><strong>salary</strong>: <?=$loker['salary']?></li>
+                                <li><strong>Deadline Akhir</strong>: <?=$loker['batas_akhir']?></li>
                             </ul>
                         </div>
                         <div class="portfolio-description">
-                            <h2>This is an example of portfolio detail</h2>
+                            <h2>Deskiprsi <?=$loker['judul']?></h2>
                             <p>
-                                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi
-                                labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque
-                                itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur
-                                dignissimos. Sequi nulla at esse enim cum deserunt eius.
+                                <?=$loker['deskripsi']?>
                             </p>
                         </div>
                     </div>
@@ -153,7 +144,7 @@
                 </div>
 
             </div>
-        </section><!-- End Portfolio Details Section -->
+        </section><!-- End Detail Loker Section -->
 
     </main><!-- End #main -->
 

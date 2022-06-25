@@ -16,10 +16,12 @@ class Web_Public extends CI_Controller {
 		$this->load->view('public', $data);
 	}
 
-	public function loker_detail()
+	public function loker_detail($id_loker)
 	{
+		$data['loker'] = $this->m_loker->get_all_loker_by_id_loker($id_loker)->row_array();
 		
-		$this->load->view('public_detail');
+	
+		$this->load->view('public_detail', $data);
 	}
 
 }
