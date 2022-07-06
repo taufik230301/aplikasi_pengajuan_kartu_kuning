@@ -41,6 +41,16 @@
     </script>
     <?php } ?>
 
+    <?php if ($this->session->flashdata('password_err')){ ?>
+    <script>
+    swal({
+        title: "Error Password!",
+        text: "Ketik Ulang Password!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
     <div class="main">
 
         <!-- Sign up form -->

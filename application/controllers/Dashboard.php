@@ -35,7 +35,6 @@ class Dashboard extends CI_Controller {
 		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 2) {
 
 		$data['perusahaan_data'] = $this->m_user->get_all_perusahaan_by_id($this->session->userdata('id_user'))->row_array();
-		
 		$data['pencaker'] = $this->m_user->count_all_user()->row_array();
 		$data['perusahaan'] = $this->m_user->count_all_perusahaan()->row_array();
 		$data['loker'] = $this->m_loker->count_all_loker_by_id($this->session->userdata('id_user'))->row_array();

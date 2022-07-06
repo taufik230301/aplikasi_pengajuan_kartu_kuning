@@ -27,6 +27,9 @@ class Register extends CI_Controller {
 		$email = $this->input->post('email');
 		$pass = $this->input->post('pass');
 		$re_pass = $this->input->post('re_pass');
+
+		
+
 		$id_user_level = 3;
 		$id_status_verifikasi = 1;
 		$id_status_aktif = 1;
