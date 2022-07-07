@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 07, 2022 at 12:47 AM
+-- Generation Time: Jul 07, 2022 at 05:45 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.13
 
@@ -159,13 +159,9 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id_user`, `username`, `password`, `email`, `id_user_level`, `id_user_detail`) VALUES
 ('0fce2d618d88fcb962a30f6ca370b7c7', 'pt_pupuk', '123', 'pupuk@gmail.com', '2', '0fce2d618d88fcb962a30f6ca370b7c7'),
-('2990f07cb7bd6be4ab46e34be5a0b1ee', 'malian', '123', 'malian123@gmail.com', '3', '2990f07cb7bd6be4ab46e34be5a0b1ee'),
-('3abb9b3e971314762b999ad5effa937b', 'none', 'none', 'none@gmail.com', '3', '3abb9b3e971314762b999ad5effa937b'),
-('55ae8b93c382ab83610f033fa2d4904c', 'rahman', '123', 'rahman@gmail.com', '3', '55ae8b93c382ab83610f033fa2d4904c'),
 ('7ec0c82dacd303494c008521f8a3c04a', 'pama', '123', 'pama@gmail.com', '2', '7ec0c82dacd303494c008521f8a3c04a'),
+('8afecfbc3731b9a6c601ae70da706442', 'pegawai', 'pegawai', 'taufiiqul.hakim@binus.ac.id', '3', '8afecfbc3731b9a6c601ae70da706442'),
 ('a69bb59aa6b7a811881eb71061d44a73', 'bukit', '123', 'bukit@gmail.com', '2', 'a69bb59aa6b7a811881eb71061d44a73'),
-('afb5ab01c26d047a96d48a108ac33216', 'pegawai', 'pegawai', 'taufiiqul.hakim@binus.ac.id', '3', 'afb5ab01c26d047a96d48a108ac33216'),
-('c551fc8847d29dc25a23db5d2cdb941b', 'rian', '123', 'rian@gmail.com', '3', 'c551fc8847d29dc25a23db5d2cdb941b'),
 ('d509166e5f7601075b91b2de69f13471', 'perusahaan', 'perusahaan', 'taufiiqulhakim23@gmail.com', '2', 'd509166e5f7601075b91b2de69f13471'),
 ('e2c929f4edd991d6371a719e8c72c3ec', 'ika', '123', 'ika@gmail.com', '3', 'e2c929f4edd991d6371a719e8c72c3ec'),
 ('e64405bfb4d637b3902f0806a494e801', 'bukit_asam', 'bukit_asam', 'bukit_asam@gmail.com', '2', 'e64405bfb4d637b3902f0806a494e801'),
@@ -200,6 +196,9 @@ CREATE TABLE `user_detail` (
   `foto_saya` varchar(256) DEFAULT NULL,
   `foto_ktp` varchar(256) DEFAULT NULL,
   `foto_ijazah` varchar(256) DEFAULT NULL,
+  `foto_akte` varchar(255) DEFAULT NULL,
+  `foto_surat_pengalaman_kerja` varchar(255) DEFAULT NULL,
+  `foto_transkrip_nilai` varchar(255) DEFAULT NULL,
   `date_registered` date NOT NULL,
   `id_status_verifikasi` int(12) NOT NULL,
   `id_status_perpanjangan` int(12) NOT NULL,
@@ -212,14 +211,10 @@ CREATE TABLE `user_detail` (
 -- Dumping data for table `user_detail`
 --
 
-INSERT INTO `user_detail` (`id_user_detail`, `no_pendaftaran`, `nik`, `nama_lengkap`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `agama`, `status_perkawinan`, `tinggi_badan`, `berat_badan`, `pendidikan_terakhir`, `jurusan`, `pengalaman_kerja`, `no_hp`, `provinsi`, `kota`, `kode_pos`, `alamat`, `foto_saya`, `foto_ktp`, `foto_ijazah`, `date_registered`, `id_status_verifikasi`, `id_status_perpanjangan`, `id_status_aktif`, `mulai_berlaku`, `akhir_berlaku`) VALUES
-('2990f07cb7bd6be4ab46e34be5a0b1ee', '98778610', '061827182871812', 'malian', 'Palembang', '2022-06-16', 'P', 'Islam', 'Belum Kawin', 170, 59, 'D3', 'Teknik komputer', 'CV DIgital Creatve', '+62812781728', 'Sumatera Selatan', 'test', '30661', 'Jl. Sekip', '804c3117bb600b7e802b4a8abb104a28_saya1.png', '804c3117bb600b7e802b4a8abb104a28_ktp1.png', '804c3117bb600b7e802b4a8abb104a28_ijazah1.png', '2022-06-15', 2, 1, 2, '2022-06-07', '2022-07-29'),
-('3abb9b3e971314762b999ad5effa937b', '62958806', 'Baseng', 'baseng', 'Palembang', '2022-06-26', 'L', 'Islam', 'Kawin', 170, 59, 'SD', 'Teknik komputer', 'CV Digital', '+62812781728', 'Sumatera Selatan', 'test', '30661', 'Jl. Sekip', 'a660a3b6be71939d70e59c35bba91172_saya.png', 'a660a3b6be71939d70e59c35bba91172_ktp.png', 'a660a3b6be71939d70e59c35bba91172_ijazah.png', '2022-05-31', 2, 1, 1, '2022-06-27', '2022-06-13'),
-('55ae8b93c382ab83610f033fa2d4904c', '54287062', '061827182871812', 'Rahman', 'Palembang', '2022-06-15', 'L', 'Islam', 'Kawin', 170, 59, 'SD', 'Teknik komputer', 'CV Digital Creative', '+62812781728', 'Sumatera Selatan', 'test', '30661', 'Jl. Sekip', '4ded4c02e97595eee68d1805b147744c_saya1.png', '4ded4c02e97595eee68d1805b147744c_ktp1.png', '4ded4c02e97595eee68d1805b147744c_ijazah1.png', '2022-06-15', 2, 1, 2, '2022-05-29', '2022-06-13'),
-('afb5ab01c26d047a96d48a108ac33216', '52458251', '0618272172617281', 'Taufiiqul Hakim', 'Palembang', '2022-05-25', 'L', 'Islam', 'Kawin', 170, 59, 'SD', 'Teknik komputer', 'CV Digital Creative', '+62812781728', 'Sumatera Selatan', 'test', '30661', 'Jl. Belanti, RT 002, RW 002, Tanjung Raja Timur, Tanjung Raja, Ogan Ilir, Sumsel 30661', '9b78bfd7606472b233e465db3571ae73_saya.jpg', '9b78bfd7606472b233e465db3571ae73_ktp.jpg', '9b78bfd7606472b233e465db3571ae73_ijazah.jpg', '2022-05-22', 2, 1, 2, '2022-06-14', '2022-08-14'),
-('c551fc8847d29dc25a23db5d2cdb941b', '70410541', '061827182871812', 'Rian', 'Palembang', '2022-06-13', 'L', 'Islam', 'Kawin', 170, 59, 'SD', 'Teknik komputer', 'CV Digital Creative', '+62812781728', 'Sumatera Selatan', 'test', '30661', 'Jl. Sekip', '3dee7bbbf175cc79c6a2660a607b33e3_saya.jpg', '3dee7bbbf175cc79c6a2660a607b33e3_ktp.jpg', '3dee7bbbf175cc79c6a2660a607b33e3_ijazah.jpg', '2022-06-14', 2, 1, 2, '2022-06-13', '2022-06-29'),
-('e2c929f4edd991d6371a719e8c72c3ec', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-17', 1, 1, 1, NULL, NULL),
-('ef6e295b553be6143f5179fd1955515f', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-18', 1, 1, 1, NULL, NULL);
+INSERT INTO `user_detail` (`id_user_detail`, `no_pendaftaran`, `nik`, `nama_lengkap`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `agama`, `status_perkawinan`, `tinggi_badan`, `berat_badan`, `pendidikan_terakhir`, `jurusan`, `pengalaman_kerja`, `no_hp`, `provinsi`, `kota`, `kode_pos`, `alamat`, `foto_saya`, `foto_ktp`, `foto_ijazah`, `foto_akte`, `foto_surat_pengalaman_kerja`, `foto_transkrip_nilai`, `date_registered`, `id_status_verifikasi`, `id_status_perpanjangan`, `id_status_aktif`, `mulai_berlaku`, `akhir_berlaku`) VALUES
+('8afecfbc3731b9a6c601ae70da706442', '24918943', '061827182871812', 'Taufiiqulhakim', 'Palembang', '2001-03-23', 'L', 'Islam', 'Kawin', 170, 59, 'SD', 'Teknik komputer', 'CV Digital Creative', '+62812781728', 'Sumatera Selatan', 'test', '30661', 'Jl. Sekip', '187f8c10a8c6254954af4765049046bd_saya.png', '187f8c10a8c6254954af4765049046bd_ktp.png', '187f8c10a8c6254954af4765049046bd_ijazah.png', '187f8c10a8c6254954af4765049046bd_akte.png', '8e429fe6ab8e2228618fd27cefdaf1c2_foto_surat_pengalaman_kerja.png', '187f8c10a8c6254954af4765049046bd_foto_transkrip_nilai.png', '2022-07-07', 1, 1, 1, NULL, NULL),
+('e2c929f4edd991d6371a719e8c72c3ec', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-17', 1, 1, 1, NULL, NULL),
+('ef6e295b553be6143f5179fd1955515f', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-18', 1, 1, 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
