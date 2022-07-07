@@ -699,7 +699,7 @@
                                                                         name="jenis_kelamin" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' OR $akhir_berlaku != NULL){
                                                                                             echo 'required';
                                                                                         }else{
-                                                                                            echo 'disabled';
+                                                                                            echo '';
                                                                                         }  ?>>
                                                                         <option value="L" <?php  if($jenis_kelamin == 'L'){
                                                                                             echo 'selected';
@@ -726,7 +726,7 @@
                                                                         name="status_perkawinan" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' OR $akhir_berlaku != NULL){
                                         echo 'required';
                                     }else{
-                                        echo 'disabled';
+                                        echo '';
                                     }  ?>>
                                                                         <option value="Kawin" <?php  if($status_perkawinan == 'Kawin'){
                                         echo 'selected';
@@ -760,7 +760,7 @@
                                                                         name="pendidikan_terakhir" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' OR $akhir_berlaku != NULL){
                                         echo 'required';
                                     }else{
-                                        echo 'disabled';
+                                        echo '';
                                     }  ?>>
                                                                         <option value="SD" <?php  if($pendidikan_terakhir == 'SD'){
                                         echo 'selected';
@@ -901,6 +901,46 @@
                                                                         id="foto_ijazah" name="foto_ijazah_old"
                                                                         value="<?=$foto_ijazah?>" hidden>
                                                                 </div>
+                                                                <div class="form-group">
+                                                                    <label for="foto_akte">Foto Akte</label>
+                                                                    <input type="file" class="form-control"
+                                                                        id="foto_akte" name="foto_akte" required>
+                                                                    <small id="foto_akte"
+                                                                        class="form-text text-muted">Masukan Ulang
+                                                                        Foto</small>
+                                                                    <small id="foto_akte"
+                                                                        class="form-text text-muted">Format PNG/JPG/JPEG
+                                                                        (Max 2MB)</small>
+                                                                    <input type="text" class="form-control"
+                                                                        id="foto_akte" name="foto_akte_old"
+                                                                        value="<?=$foto_akte?>" hidden>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="foto_surat_pengalaman_kerja">Foto Surat Pengalaman Kerja</label>
+                                                                    <input type="file" class="form-control"
+                                                                        id="foto_surat_pengalaman_kerja" name="foto_surat_pengalaman_kerja">
+                                                                    
+                                                                    <small id="foto_saya"
+                                                                        class="form-text text-muted">Format PNG/JPG/JPEG
+                                                                        (Max 2MB)</small>
+                                                                    <input type="text" class="form-control"
+                                                                        id="foto_surat_pengalaman_kerja" name="foto_surat_pengalaman_kerja_old"
+                                                                        value="<?=$foto_surat_pengalaman_kerja?>" hidden>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="foto_transkrip_nilai">Foto Transkrip Nilai</label>
+                                                                    <input type="file" class="form-control"
+                                                                        id="foto_transkrip_nilai" name="foto_transkrip_nilai" required>
+                                                                    <small id="foto_saya"
+                                                                        class="form-text text-muted">Masukan Ulang
+                                                                        Foto</small>
+                                                                    <small id="foto_saya"
+                                                                        class="form-text text-muted">Format PNG/JPG/JPEG
+                                                                        (Max 2MB)</small>
+                                                                    <input type="text" class="form-control"
+                                                                        id="foto_transkrip_nilai" name="foto_transkrip_nilai_old"
+                                                                        value="<?=$foto_transkrip_nilai?>" hidden>
+                                                                </div>
                                                                 <button type="submit"
                                                                     class="btn btn-primary mb-3">Submit</button>
                                                             </form>
@@ -938,6 +978,15 @@
                                                                             value="<?=$foto_ktp?>" hidden>
                                                                         <input type="hidden" name="foto_ijazah_old"
                                                                             value="<?=$foto_ijazah?>" hidden>
+                                                                        <input type="hidden" name="foto_akte_old"
+                                                                            value="<?=$foto_akte?>" hidden>
+                                                                        <input type="hidden"
+                                                                            name="foto_surat_pengalaman_kerja_old"
+                                                                            value="<?=$foto_surat_pengalaman_kerja?>"
+                                                                            hidden>
+                                                                        <input type="hidden"
+                                                                            name="foto_transkrip_nilai_old"
+                                                                            value="<?=$foto_transkrip_nilai?>" hidden>
 
                                                                         <p>Apakah kamu yakin ingin menghapus data
                                                                             ini?</i></b></p>
@@ -1103,6 +1152,23 @@
                             <div class="form-group">
                                 <label for="foto_ijazah">Foto Ijazah</label>
                                 <input type="file" class="form-control" id="foto_ijazah" name="foto_ijazah" required>
+                                <small id="foto_saya" class="form-text text-muted">Format PNG/JPG/JPEG (Max 2MB)</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="foto_akte">Foto Akte</label>
+                                <input type="file" class="form-control" id="foto_akte" name="foto_akte" required>
+                                <small id="foto_akte" class="form-text text-muted">Format PNG/JPG/JPEG (Max 2MB)</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="foto_surat_pengalaman_kerja">Foto Surat Pengalaman Kerja</label>
+                                <input type="file" class="form-control" id="foto_surat_pengalaman_kerja"
+                                    name="foto_surat_pengalaman_kerja">
+                                <small id="foto_saya" class="form-text text-muted">Format PNG/JPG/JPEG (Max 2MB)</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="foto_transkrip_nilai">Foto Transkrip Nilai</label>
+                                <input type="file" class="form-control" id="foto_transkrip_nilai"
+                                    name="foto_transkrip_nilai" required>
                                 <small id="foto_saya" class="form-text text-muted">Format PNG/JPG/JPEG (Max 2MB)</small>
                             </div>
                             <button type="submit" class="btn btn-primary mb-3">Submit</button>

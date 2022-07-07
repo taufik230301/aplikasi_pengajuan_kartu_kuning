@@ -206,7 +206,11 @@ class Daftar extends CI_Controller {
                 @unlink($path.$this->input->post('foto_ktp_old'));
                 @unlink($path.$this->input->post('foto_ijazah_old'));
 				@unlink($path.$this->input->post('foto_akte_old'));
-				@unlink($path.$this->input->post('foto_surat_pengalaman_kerja_old'));
+
+				if($foto_surat_pengalaman_kerja != $this->input->post('foto_surat_pengalaman_kerja_old')){
+					@unlink($path.$this->input->post('foto_surat_pengalaman_kerja_old'));
+				  }
+				  
 				@unlink($path.$this->input->post('foto_transkrip_nilai_old'));
 				$this->session->set_flashdata('input','input');
 				redirect('Daftar/view_user/'.$id);

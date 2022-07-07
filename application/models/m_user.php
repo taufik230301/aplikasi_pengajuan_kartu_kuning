@@ -126,18 +126,19 @@ class M_user extends CI_Model
     public function insert_user($id ,$username, $password, $email, $no_pendaftaran, $nik, $nama_lengkap, $tempat_lahir,
     $tanggal_lahir, $jenis_kelamin, $agama, $status_perkawinan, $tinggi_badan, $berat_badan, 
     $pendidikan_terakhir, $jurusan, $pengalaman_kerja, $no_hp, $provinsi, $kota, $kode_pos, 
-    $alamat, $foto_saya, $foto_ktp, $foto_ijazah, $id_status_verifikasi, $id_status_perpanjangan, $id_status_aktif, $id_user_level)
+    $alamat, $foto_saya, $foto_ktp, $foto_ijazah, $foto_akte, $foto_surat_pengalaman_kerja, $foto_transkrip_nilai, $id_status_verifikasi, $id_status_perpanjangan, $id_status_aktif, $id_user_level)
     {
        $this->db->trans_start();
 
        $this->db->query("INSERT INTO user(id_user, username, password, email ,id_user_level, id_user_detail) VALUES ('$id','$username','$password','$email','$id_user_level','$id')");
        $this->db->query("INSERT INTO user_detail(id_user_detail, no_pendaftaran, nik, nama_lengkap, tempat_lahir, tanggal_lahir, jenis_kelamin, 
        agama, status_perkawinan, tinggi_badan, berat_badan, pendidikan_terakhir, 
-       jurusan, pengalaman_kerja, no_hp, provinsi, kota, kode_pos, alamat, foto_saya, foto_ktp, foto_ijazah, id_status_verifikasi, id_status_aktif, id_status_perpanjangan, date_registered) 
+       jurusan, pengalaman_kerja, no_hp, provinsi, kota, kode_pos, alamat, foto_saya, foto_ktp, foto_ijazah, foto_akte, foto_surat_pengalaman_kerja, foto_transkrip_nilai, id_status_verifikasi, id_status_aktif, id_status_perpanjangan, date_registered) 
        VALUES ('$id','$no_pendaftaran','$nik','$nama_lengkap','$tempat_lahir','$tanggal_lahir',
        '$jenis_kelamin','$agama','$status_perkawinan','$tinggi_badan','$berat_badan','$pendidikan_terakhir',
        '$jurusan','$pengalaman_kerja','$no_hp','$provinsi','$kota','$kode_pos','$alamat',
-       '$foto_saya','$foto_ktp','$foto_ijazah','$id_status_verifikasi','$id_status_aktif','$id_status_perpanjangan', NOW())");
+       '$foto_saya','$foto_ktp','$foto_ijazah',
+       '$foto_akte','$foto_surat_pengalaman_kerja','$foto_transkrip_nilai','$id_status_verifikasi','$id_status_aktif','$id_status_perpanjangan', NOW())");
 
        $this->db->trans_complete();
         if($this->db->trans_status()==true)
