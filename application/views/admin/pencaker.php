@@ -220,6 +220,9 @@
                                                 <th>Foto</th>
                                                 <th>Foto KTP</th>
                                                 <th>Foto Ijazah</th>
+                                                <th>Foto Akte</th>
+                                                <th>Foto Surat Pengalaman Kerja</th>
+                                                <th>Foto Transkrip Nilai</th>
                                                 <th>Tanggal Daftar</th>
                                                 <th>Status Verifikasi</th>
                                                 <th>Status Aktif</th>
@@ -260,6 +263,9 @@
                                             $foto_saya = $i['foto_saya'];
                                             $foto_ktp = $i['foto_ktp'];
                                             $foto_ijazah = $i['foto_ijazah'];
+                                            $foto_akte = $i['foto_akte'];
+                                            $foto_surat_pengalaman_kerja = $i['foto_surat_pengalaman_kerja'];
+                                            $foto_transkrip_nilai = $i['foto_transkrip_nilai'];
                                             $date_registered = $i['date_registered'];
                                             $id_status_aktif = $i['id_status_aktif'];
                                             $id_status_perpanjangan = $i['id_status_perpanjangan'];
@@ -312,6 +318,34 @@
                                                                 src="<?= base_url();?>assets/berkas/<?php echo $foto_ijazah?>"
                                                                 style="width: 25%"> </a></center>
                                                 </td>
+                                                <td>
+                                                    <center> <a
+                                                            href="<?= base_url();?>assets/berkas/<?php echo $foto_akte?>"
+                                                            target="_blank"><img
+                                                                src="<?= base_url();?>assets/berkas/<?php echo $foto_akte?>"
+                                                                style="width: 25%"> </a></center>
+                                                </td>
+                                                <td>
+                                                    <center>
+                                                        <?php if($foto_surat_pengalaman_kerja != ""){?>
+                                                        <a href="<?= base_url();?>assets/berkas/<?php echo $foto_surat_pengalaman_kerja?>"
+                                                            target="_blank"><img
+                                                                src="<?= base_url();?>assets/berkas/<?php echo $foto_surat_pengalaman_kerja?>"
+                                                                style="width: 25%"> </a>
+                                                        <?php } else {?>
+                                                        <h3>Foto Belum Ada</h3>
+                                                        <?php } ?>
+                                                    </center>
+
+                                                </td>
+                                                <td>
+                                                    <center> <a
+                                                            href="<?= base_url();?>assets/berkas/<?php echo $foto_transkrip_nilai?>"
+                                                            target="_blank"><img
+                                                                src="<?= base_url();?>assets/berkas/<?php echo $foto_transkrip_nilai?>"
+                                                                style="width: 25%"> </a></center>
+                                                </td>
+
                                                 <td><?=$date_registered?></td>
                                                 <td><?php if($id_status_verifikasi == 1){ ?>
                                                     <div class="table-responsive">

@@ -71,7 +71,7 @@ class Daftar extends CI_Controller {
         $id_status_verifikasi = 1; 
         $id_status_perpanjangan = 1;
         $id_status_aktif = 1;
-        $foto_name = md5($nama_lengkap.$nik);
+        $foto_name = md5($nama_lengkap.$nik.rand(1, 9999));
 
         $path = './assets/berkas/';
 
@@ -127,11 +127,76 @@ class Daftar extends CI_Controller {
 			$this->session->set_flashdata('error_file_ijazah','error_file_ijazah');
 			redirect('Daftar/view_user/'.$id);
         }
+
+        $config['upload_path'] = './assets/berkas';
+		$config['allowed_types'] = 'jpg|png|jpeg|gif';
+		$config['max_size'] = '2048';  //2MB max
+		$config['max_width'] = '4480'; // pixel
+		$config['max_height'] = '4480'; // pixel
+		$config['file_name'] = $foto_name.'_akte';
+		$this->upload->initialize($config);
+		$foto_akte_upload =  $this->upload->do_upload('foto_akte');
+		if($foto_akte_upload){
+			$foto_akte = $this->upload->data();
+		}else{
+			@unlink($path.$foto_saya['file_name']);
+			@unlink($path.$foto_ktp['file_name']);
+            @unlink($path.$foto_ijazah['file_name']);
+			$this->session->set_flashdata('error_file_akte','error_file_akte');
+			redirect('Daftar/view_user/'.$id);
+        }
+
+	if($_FILES['foto_surat_pengalaman_kerja']['tmp_name'] != ""){
+
+        $config['upload_path'] = './assets/berkas';
+		$config['allowed_types'] = 'jpg|png|jpeg|gif';
+		$config['max_size'] = '2048';  //2MB max
+		$config['max_width'] = '4480'; // pixel
+		$config['max_height'] = '4480'; // pixel
+		$config['file_name'] = $foto_name.'_foto_surat_pengalaman_kerja';
+		$this->upload->initialize($config);
+		$foto_surat_pengalaman_kerja_upload =  $this->upload->do_upload('foto_surat_pengalaman_kerja');
+		if($foto_surat_pengalaman_kerja_upload){
+			$foto_surat_pengalaman_kerja_file = $this->upload->data();
+			$foto_surat_pengalaman_kerja = $foto_surat_pengalaman_kerja_file['file_name'];
+		}else{
+			@unlink($path.$foto_saya['file_name']);
+			@unlink($path.$foto_ktp['file_name']);
+            @unlink($path.$foto_ijazah['file_name']);
+            @unlink($path.$foto_akte['file_name']);
+			$this->session->set_flashdata('error_foto_surat_pengalaman_kerja','error_foto_surat_pengalaman_kerja');
+			redirect('Daftar/view_user/'.$id);
+        }
+	}else{
+		$foto_surat_pengalaman_kerja = $this->input->post('foto_surat_pengalaman_kerja_old');
+	}
+
+
+
+        $config['upload_path'] = './assets/berkas';
+		$config['allowed_types'] = 'jpg|png|jpeg|gif';
+		$config['max_size'] = '2048';  //2MB max
+		$config['max_width'] = '4480'; // pixel
+		$config['max_height'] = '4480'; // pixel
+		$config['file_name'] = $foto_name.'_foto_transkrip_nilai';
+		$this->upload->initialize($config);
+		$foto_transkrip_nilai_upload =  $this->upload->do_upload('foto_transkrip_nilai');
+		if($foto_transkrip_nilai_upload){
+			$foto_transkrip_nilai = $this->upload->data();
+		}else{
+			@unlink($path.$foto_saya['file_name']);
+			@unlink($path.$foto_ktp['file_name']);
+            @unlink($path.$foto_ijazah['file_name']);
+            @unlink($path.$foto_akte['file_name']);
+			@unlink($path.$foto_surat_pengalaman_kerja['file_name']);
+			$this->session->set_flashdata('error_foto_transkrip_nilai','error_foto_transkrip_nilai');
+			redirect('Daftar/view_user/'.$id);
+        }
         
         $hasil = $this->m_user->update_user_detail($id ,$no_pendaftaran, $nik, $nama_lengkap, $tempat_lahir,
         $tanggal_lahir, $jenis_kelamin, $agama, $status_perkawinan, $tinggi_badan, $berat_badan, 
         $pendidikan_terakhir, $jurusan, $pengalaman_kerja, $no_hp, $provinsi, $kota, $kode_pos, 
-        $alamat, $foto_saya['file_name'], $foto_ktp['file_name'], $foto_ijazah['file_name'], $id_status_verifikasi, $id_status_perpanjangan, $id_status_aktif);
+        $alamat, $foto_saya['file_name'], $foto_ktp['file_name'], $foto_ijazah['file_name'], $foto_akte['file_name'], $foto_surat_pengalaman_kerja, $foto_transkrip_nilai['file_name'], $id_status_verifikasi, $id_status_perpanjangan, $id_status_aktif);
 
 			if($hasil==false){
                 $this->session->set_flashdata('eror','eror');
@@ -140,6 +205,9 @@ class Daftar extends CI_Controller {
                 @unlink($path.$this->input->post('foto_saya_old'));
                 @unlink($path.$this->input->post('foto_ktp_old'));
                 @unlink($path.$this->input->post('foto_ijazah_old'));
+				@unlink($path.$this->input->post('foto_akte_old'));
+				@unlink($path.$this->input->post('foto_surat_pengalaman_kerja_old'));
+				@unlink($path.$this->input->post('foto_transkrip_nilai_old'));
 				$this->session->set_flashdata('input','input');
 				redirect('Daftar/view_user/'.$id);
 			}

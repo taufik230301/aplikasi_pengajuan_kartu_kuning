@@ -28,7 +28,7 @@
     <script>
     swal({
         title: "Eror!",
-        text: "Terjadi Kesalahan Dalam Proses data!",
+        text: "Terjadi Kesalahan Dalam Proses data Foto Saya!",
         icon: "error"
     });
     </script>
@@ -37,7 +37,7 @@
     <script>
     swal({
         title: "Eror!",
-        text: "Terjadi Kesalahan Dalam Proses data!",
+        text: "Terjadi Kesalahan Dalam Proses data Foto KTP!",
         icon: "error"
     });
     </script>
@@ -46,7 +46,34 @@
     <script>
     swal({
         title: "Eror!",
-        text: "Terjadi Kesalahan Dalam Proses data!",
+        text: "Terjadi Kesalahan Dalam Proses data Foto Ijazah!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+    <?php if ($this->session->flashdata('error_file_akte')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Terjadi Kesalahan Dalam Proses data Foto Akte!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+    <?php if ($this->session->flashdata('error_foto_surat_pengalaman_kerja')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Terjadi Kesalahan Dalam Proses data Foto Surat Pengalaman Kerja!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+    <?php if ($this->session->flashdata('error_foto_transkrip_nilai')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Terjadi Kesalahan Dalam Proses data Foto Transkrip Nilai!",
         icon: "error"
     });
     </script>
@@ -119,6 +146,9 @@
                                             $foto_saya = $i['foto_saya'];
                                             $foto_ktp = $i['foto_ktp'];
                                             $foto_ijazah = $i['foto_ijazah'];
+                                            $foto_akte = $i['foto_akte'];
+                                            $foto_surat_pengalaman_kerja = $i['foto_surat_pengalaman_kerja'];
+                                            $foto_transkrip_nilai = $i['foto_transkrip_nilai'];
                                             $id_status_aktif = $i['id_status_aktif'];
                                             $id_status_verifikasi = $i['id_status_verifikasi'];
                                             $id_status_perpanjangan = $i['id_status_perpanjangan'];
@@ -389,6 +419,39 @@
                                 <small id="foto_saya" class="form-text text-muted">Format PNG/JPG/JPEG (Max 2MB)</small>
                                 <input type="text" class="form-control" id="foto_ijazah" name="foto_ijazah_old"
                                     value="<?=$foto_ijazah?>" hidden>
+                            </div>
+                            <div class="form-group">
+                                <label for="foto_akte">Foto Akte</label>
+                                <input type="file" class="form-control" id="foto_akte" name="foto_akte" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' OR $akhir_berlaku != NULL){
+                                        echo 'disabled';
+                                    }else{
+                                        echo 'required';
+                                    }  ?>>
+                                <small id="foto_saya" class="form-text text-muted">Format PNG/JPG/JPEG (Max 2MB)</small>
+                                <input type="text" class="form-control" id="foto_akte" name="foto_akte_old"
+                                    value="<?=$foto_akte?>" hidden>
+                            </div>
+                            <div class="form-group">
+                                <label for="foto_surat_pengalaman_kerja">Foto Surat Pengalaman Kerja</label>
+                                <input type="file" class="form-control" id="foto_surat_pengalaman_kerja" name="foto_surat_pengalaman_kerja" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' OR $akhir_berlaku != NULL){
+                                        echo 'disabled';
+                                    }else{
+                                        echo '';
+                                    }  ?>>
+                                <small id="foto_saya" class="form-text text-muted">Format PNG/JPG/JPEG (Max 2MB)</small>
+                                <input type="text" class="form-control" id="foto_surat_pengalaman_kerja" name="foto_surat_pengalaman_kerja_old"
+                                    value="<?=$foto_surat_pengalaman_kerja?>" hidden>
+                            </div>
+                            <div class="form-group">
+                                <label for="foto_transkrip_nilai">Foto Transkrip Nilai</label>
+                                <input type="file" class="form-control" id="foto_transkrip_nilai" name="foto_transkrip_nilai" <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2' OR $akhir_berlaku != NULL){
+                                        echo 'disabled';
+                                    }else{
+                                        echo 'required';
+                                    }  ?>>
+                                <small id="foto_saya" class="form-text text-muted">Format PNG/JPG/JPEG (Max 2MB)</small>
+                                <input type="text" class="form-control" id="foto_transkrip_nilai" name="foto_transkrip_nilai_old"
+                                    value="<?=$foto_transkrip_nilai?>" hidden>
                             </div>
                             <?php  if($id_status_aktif == '2' OR $id_status_perpanjangan == '2' OR $id_status_verifikasi == '2'  OR $akhir_berlaku != NULL ){
                                         echo '';

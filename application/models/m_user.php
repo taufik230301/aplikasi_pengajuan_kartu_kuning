@@ -185,7 +185,7 @@ class M_user extends CI_Model
     $tempat_lahir, $tanggal_lahir, $jenis_kelamin, $agama, $status_perkawinan,
      $tinggi_badan, $berat_badan, 
     $pendidikan_terakhir, $jurusan, $pengalaman_kerja, $no_hp, $provinsi, $kota, 
-    $kode_pos, $alamat, $foto_saya, $foto_ktp, $foto_ijazah, $id_status_verifikasi, $id_status_perpanjangan, $id_status_aktif )
+    $kode_pos, $alamat, $foto_saya, $foto_ktp, $foto_ijazah, $foto_akte, $foto_surat_pengalaman_kerja, $foto_transkrip_nilai, $id_status_verifikasi, $id_status_perpanjangan, $id_status_aktif )
     {
 
         $this->db->trans_start();
@@ -194,7 +194,7 @@ class M_user extends CI_Model
         tempat_lahir='$tempat_lahir', tanggal_lahir='$tanggal_lahir', jenis_kelamin='$jenis_kelamin', agama='$agama', 
         status_perkawinan='$status_perkawinan', tinggi_badan='$tinggi_badan', berat_badan='$berat_badan', 
         pendidikan_terakhir='$pendidikan_terakhir', jurusan='$jurusan', pengalaman_kerja='$pengalaman_kerja', no_hp='$no_hp', provinsi='$provinsi', kota='$kota',
-        kode_pos='$kode_pos', alamat='$alamat', foto_saya='$foto_saya', foto_ktp='$foto_ktp', foto_ijazah='$foto_ijazah', id_status_verifikasi='$id_status_verifikasi' 
+        kode_pos='$kode_pos', alamat='$alamat', foto_saya='$foto_saya', foto_ktp='$foto_ktp', foto_ijazah='$foto_ijazah', foto_akte='$foto_akte' , foto_surat_pengalaman_kerja='$foto_surat_pengalaman_kerja'  , foto_transkrip_nilai='$foto_transkrip_nilai', id_status_verifikasi='$id_status_verifikasi' 
         , id_status_perpanjangan='$id_status_perpanjangan', id_status_aktif='$id_status_aktif' 
          WHERE id_user_detail='$id_user'");
 
