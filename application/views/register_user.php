@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>SISPAKER | REGISTER</title>
+    <title>A-PAKER | REGISTER</title>
 
     <!--===============================================================================================-->
     <link rel="icon" type="image/png" href="<?= base_url();?>assets/favicon.ico" />
@@ -83,9 +83,9 @@
                         </form>
                     </div>
                     <div class="signup-image">
-                        <figure><img src="<?=base_url();?>assets/login/images/signup-image.jpg" alt="sing up image">
+                        <figure><img src="<?=base_url();?>assets/login/images/registrasi.jpg" alt="sing up image">
                         </figure>
-                        <a href="#" class="signup-image-link">I am already member</a>
+                        <a href="<?=base_url();?>Login/login_user" class="signup-image-link">Saya sudah terdaftar</a>
                     </div>
                 </div>
             </div>

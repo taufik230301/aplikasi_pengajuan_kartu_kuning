@@ -3,7 +3,7 @@
     <a href="index3.html" class="brand-link">
         <img src="<?= base_url();?>assets/logo/favico.png" alt="AdminLTE Logo"
             class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">WEB-SISPAKER</span>
+        <span class="brand-text font-weight-light">WEB-A-PAKER</span>
     </a>
 
     <!-- Sidebar -->

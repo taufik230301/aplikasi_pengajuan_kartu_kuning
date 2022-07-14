@@ -1,6 +1,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>WEBSITE | SISPAKER</title>
+<title>WEBSITE | A-PAKER</title>
 
 <!--===============================================================================================-->
 <link rel="icon" type="image/png" href="<?= base_url();?>assets/favicon.ico" />

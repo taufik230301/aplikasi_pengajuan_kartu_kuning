@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>SISPAKER | LOGIN</title>
+    <title>A-PAKER | LOGIN</title>
 
     <!--===============================================================================================-->
     <link rel="icon" type="image/png" href="<?= base_url();?>assets/favicon.ico" />
@@ -97,7 +97,7 @@
             <div class="container">
                 <div class="signin-content">
                     <div class="signin-image">
-                        <figure><img src="<?=base_url();?>assets/logo/disnaker.jpg" alt="sing up image">
+                        <figure><img src="<?=base_url();?>assets/login/images/login.jpg" alt="sing up image">
                         </figure>
                         <a href="<?=base_url();?>Register/register_user" class="signup-image-link">Buat Akun User</a>
                     </div>

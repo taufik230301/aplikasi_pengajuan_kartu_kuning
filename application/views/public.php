@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>WEB - SISPAKER</title>
+    <title>WEB - A-PAKER</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -17,6 +17,9 @@
     <link
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
         rel="stylesheet">
+
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="<?= base_url();?>assets/favicon.ico" />
 
     <!-- Vendor CSS Files -->
     <link href="<?= base_url();?>assets/public/assets/vendor/aos/aos.css" rel="stylesheet">
@@ -44,7 +47,7 @@
         <div class="container d-flex align-items-center">
 
             <div class="logo me-auto">
-                <h1><a href="<?=base_url();?>Login/login_user">SISPAKER</a></h1>
+                <h1><a href="<?=base_url();?>Login/login_user">A-PAKER</a></h1>
                 <!-- Uncomment below if you prefer to use an image logo -->
                 <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
             </div>
@@ -55,17 +58,14 @@
                     <li><a class="nav-link scrollto" href="#about">Tentang</a></li>
                     <li><a class="nav-link scrollto" href="#visi_misi">Visi dan Misi</a></li>
                     <li><a class="nav-link scrollto " href="#tata_nilai">Tata Nilai</a></li>
-                    <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li>
+                    <li><a class="nav-link scrollto" href="#portfolio">Loker</a></li>
                     <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
 
             <div class="header-social-links d-flex align-items-center">
-                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
                 <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
             </div>
 
         </div>
@@ -79,7 +79,7 @@
                 <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center"
                     data-aos="fade-up">
                     <div>
-                        <h1>SISTEM INFORMASI PENCARI KERJA</h1>
+                        <h1>APLIKASI PELAYANAN KARTU PENCARI KERJA/AK1</h1>
                         <h2> Dinas Tenaga Kerja dan Transmigrasi Kabupaten
                             Ogan Ilir</h2>
                         <a href="#about" class="btn-get-started scrollto">Get Started</a>
@@ -119,7 +119,7 @@
                         </div>
                     </div>
                     <div class="col-lg-6" data-aos="zoom-in">
-                        <img src="<?= base_url();?>assets/public/assets/img/about.jpg" class="img-fluid" alt="">
+                        <img src="<?= base_url();?>assets/public/assets/img/tentang.jpg" class="img-fluid" alt="">
                     </div>
 
                 </div>
@@ -132,7 +132,7 @@
 
                 <div class="row">
                     <div class="col-lg-6" data-aos="zoom-in">
-                        <img src="<?= base_url();?>assets/public/assets/img/about.jpg" class="img-fluid" alt="">
+                        <img src="<?= base_url();?>assets/public/assets/img/6671.jpg" class="img-fluid" alt="">
                     </div>
                     <div class="col-lg-6 d-flex flex-column justify-contents-center" data-aos="fade-left">
                         <div class="content pt-4 pt-lg-0">
@@ -245,16 +245,7 @@
                     <p>Berikut Informasi terupdate Lowongan Kerja terupdate 2022.</p>
                 </div>
 
-                <div class="row">
-                    <div class="col-lg-12 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
-                        <ul id="portfolio-flters">
-                            <li data-filter="*" class="filter-active">All</li>
-                            <li data-filter=".filter-app">App</li>
-                            <li data-filter=".filter-card">Card</li>
-                            <li data-filter=".filter-web">Web</li>
-                        </ul>
-                    </div>
-                </div>
+
 
                 <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
@@ -305,13 +296,13 @@
 
                 <div class="row" data-aos="zoom-in">
                     <div class="col-lg-9 text-center text-lg-start">
-                        <h3>Call To Action</h3>
-                        <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                        <h3>Daftar Kartu Pencari Kerja/AK1</h3>
+                        <!-- <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
                             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                            mollit anim id est laborum.</p>
+                            mollit anim id est laborum.</p> -->
                     </div>
                     <div class="col-lg-3 cta-btn-container text-center">
-                        <a class="cta-btn align-middle" href="#">Call To Action</a>
+                        <a class="cta-btn align-middle" href="<?=base_url();?>Register/register_user">Daftar</a>
                     </div>
                 </div>
 
@@ -332,141 +323,7 @@
 
                 <div class="row">
 
-                    <div class="col-lg-3 col-md-6">
-                        <div class="member" data-aos="zoom-in">
-                            <div class="pic"><img src="<?= base_url();?>assets/public/assets/img/team/team-1.jpg"
-                                    class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4>Walter White</h4>
-                                <span>Chief Executive Officer</span>
-                                <div class="social">
-                                    <a href=""><i class="bi bi-twitter"></i></a>
-                                    <a href=""><i class="bi bi-facebook"></i></a>
-                                    <a href=""><i class="bi bi-instagram"></i></a>
-                                    <a href=""><i class="bi bi-linkedin"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="member" data-aos="zoom-in" data-aos-delay="100">
-                            <div class="pic"><img src="<?= base_url();?>assets/public/assets/img/team/team-2.jpg"
-                                    class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4>Sarah Jhonson</h4>
-                                <span>Product Manager</span>
-                                <div class="social">
-                                    <a href=""><i class="bi bi-twitter"></i></a>
-                                    <a href=""><i class="bi bi-facebook"></i></a>
-                                    <a href=""><i class="bi bi-instagram"></i></a>
-                                    <a href=""><i class="bi bi-linkedin"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="member" data-aos="zoom-in" data-aos-delay="200">
-                            <div class="pic"><img src="<?= base_url();?>assets/public/assets/img/team/team-3.jpg"
-                                    class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4>William Anderson</h4>
-                                <span>CTO</span>
-                                <div class="social">
-                                    <a href=""><i class="bi bi-twitter"></i></a>
-                                    <a href=""><i class="bi bi-facebook"></i></a>
-                                    <a href=""><i class="bi bi-instagram"></i></a>
-                                    <a href=""><i class="bi bi-linkedin"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="member" data-aos="zoom-in" data-aos-delay="200">
-                            <div class="pic"><img src="<?= base_url();?>assets/public/assets/img/team/team-3.jpg"
-                                    class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4>William Anderson</h4>
-                                <span>CTO</span>
-                                <div class="social">
-                                    <a href=""><i class="bi bi-twitter"></i></a>
-                                    <a href=""><i class="bi bi-facebook"></i></a>
-                                    <a href=""><i class="bi bi-instagram"></i></a>
-                                    <a href=""><i class="bi bi-linkedin"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="member" data-aos="zoom-in">
-                            <div class="pic"><img src="<?= base_url();?>assets/public/assets/img/team/team-1.jpg"
-                                    class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4>Walter White</h4>
-                                <span>Chief Executive Officer</span>
-                                <div class="social">
-                                    <a href=""><i class="bi bi-twitter"></i></a>
-                                    <a href=""><i class="bi bi-facebook"></i></a>
-                                    <a href=""><i class="bi bi-instagram"></i></a>
-                                    <a href=""><i class="bi bi-linkedin"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="member" data-aos="zoom-in" data-aos-delay="100">
-                            <div class="pic"><img src="<?= base_url();?>assets/public/assets/img/team/team-2.jpg"
-                                    class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4>Sarah Jhonson</h4>
-                                <span>Product Manager</span>
-                                <div class="social">
-                                    <a href=""><i class="bi bi-twitter"></i></a>
-                                    <a href=""><i class="bi bi-facebook"></i></a>
-                                    <a href=""><i class="bi bi-instagram"></i></a>
-                                    <a href=""><i class="bi bi-linkedin"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="member" data-aos="zoom-in" data-aos-delay="200">
-                            <div class="pic"><img src="<?= base_url();?>assets/public/assets/img/team/team-3.jpg"
-                                    class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4>William Anderson</h4>
-                                <span>CTO</span>
-                                <div class="social">
-                                    <a href=""><i class="bi bi-twitter"></i></a>
-                                    <a href=""><i class="bi bi-facebook"></i></a>
-                                    <a href=""><i class="bi bi-instagram"></i></a>
-                                    <a href=""><i class="bi bi-linkedin"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="member" data-aos="zoom-in" data-aos-delay="200">
-                            <div class="pic"><img src="<?= base_url();?>assets/public/assets/img/team/team-3.jpg"
-                                    class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4>William Anderson</h4>
-                                <span>CTO</span>
-                                <div class="social">
-                                    <a href=""><i class="bi bi-twitter"></i></a>
-                                    <a href=""><i class="bi bi-facebook"></i></a>
-                                    <a href=""><i class="bi bi-instagram"></i></a>
-                                    <a href=""><i class="bi bi-linkedin"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <img src="<?= base_url();?>assets/public/assets/img/struktur.png" alt="">
 
                 </div>
 
@@ -531,9 +388,9 @@
             <div class="container">
                 <div class="row">
 
-                    <div class="col-lg-4 col-md-7">
+                    <div class="col-lg-7 col-md-7">
                         <div class="footer-info">
-                            <h3>SISPAKER</h3>
+                            <h3>A-PAKER</h3>
                             <p>
                                 Jalan Raya Lintas Timur <br>
                                 KM.35 Indralaya Raya<br><br>
@@ -541,35 +398,24 @@
                                 <strong>Instagram:</strong> @disnaskertrans.oganilir<br>
                             </p>
                             <div class="social-links mt-3">
-                                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
                                 <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-7 footer-links">
+                    <div class="col-lg-4 col-md-8 footer-links">
                         <h4>Useful Links</h4>
                         <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#hero">Home</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#about">Tentang</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#visi_misi">Visi dan Misi</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#tata_nilai">Tata Nilai</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#portfolio">Loker</a></li>
                         </ul>
                     </div>
 
 
-                    <div class="col-lg-4 col-md-7 footer-newsletter">
-                        <h4>Our Newsletter</h4>
-                        <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-                        <form action="" method="post">
-                            <input type="email" name="email"><input type="submit" value="Subscribe">
-                        </form>
 
-                    </div>
 
                 </div>
             </div>
