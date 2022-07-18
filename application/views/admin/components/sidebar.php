@@ -40,11 +40,30 @@
                         <p class="text">Dashboard</p>
                     </a>
                 </li>
+
+
                 <li class="nav-item">
-                    <a href="<?=base_url();?>Pencaker/view_admin" class="nav-link">
-                        <i class="nav-icon fas fa-users"></i>
-                        <p>Data Pencaker</p>
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon  fas fa-users"></i>
+                        <p>
+                            Data Pencaker
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
                     </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="<?=base_url();?>Pencaker/view_admin" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Pencaker Aktif</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?=base_url();?>Pencaker/view_admin_pencaker_perpanjang" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Pencaker Perpanjang</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="nav-item">
                     <a href="<?=base_url();?>Perusahaan/view_admin" class="nav-link">

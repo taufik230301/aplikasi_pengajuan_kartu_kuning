@@ -110,6 +110,9 @@
                                             $jurusan = $i['jurusan'];
                                             $pengalaman_kerja = $i['pengalaman_kerja'];
                                             $no_hp = $i['no_hp'];
+                                            $jenis_kelamin = $i['jenis_kelamin'];
+                                            $status_perkawinan = $i['status_perkawinan'];
+                                            $pendidikan_terakhir = $i['pendidikan_terakhir'];
                                             $provinsi = $i['provinsi'];
                                             $kota = $i['kota'];
                                             $kode_pos = $i['kode_pos'];
@@ -117,6 +120,9 @@
                                             $foto_saya = $i['foto_saya'];
                                             $foto_ktp = $i['foto_ktp'];
                                             $foto_ijazah = $i['foto_ijazah'];
+                                            $foto_akte = $i['foto_akte'];
+                                            $foto_surat_pengalaman_kerja = $i['foto_surat_pengalaman_kerja'];
+                                            $foto_transkrip_nilai = $i['foto_transkrip_nilai'];
                                             
 
                                             ?>
@@ -124,9 +130,8 @@
                             method="POST">
                             <input type="text" value="<?=$this->session->userdata('id_user')?>" name="id_user" hidden>
                             <div class="form-group">
-                                <label for="no_pendaftaran">No Pendaftaran</label>
                                 <input type="text" class="form-control" id="no_pendaftaran" name="no_pendaftaran"
-                                    aria-describedby="emailHelp" value="<?=$no_pendaftaran?>" required>
+                                    aria-describedby="emailHelp" value="<?=$no_pendaftaran?>" hidden>
                             </div>
                             <div class="form-group">
                                 <label for="nik">NIK</label>
@@ -150,20 +155,39 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlSelect1">Jenis Kelamin</label>
-                                <select class="form-control" id="exampleFormControlSelect1" name="jenis_kelamin" required>
-                                    <option value="L">Laki-Laki</option>
-                                    <option value="P">Perempuan</option>
+                                <select class="form-control" id="exampleFormControlSelect1" name="jenis_kelamin"
+                                    required>
+                                    <option value="L" <?php  if($jenis_kelamin == 'L'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>Laki-Laki</option>
+                                    <option value="P" <?php  if($jenis_kelamin == 'P'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>Perempuan</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="agama">Agama</label>
-                                <input type="text" class="form-control" id="agama" name="agama" value="<?=$agama?>" required>
+                                <input type="text" class="form-control" id="agama" name="agama" value="<?=$agama?>"
+                                    required>
                             </div>
                             <div class="form-group">
                                 <label for="status_perkawinan">Status Perkawinan</label>
-                                <select class="form-control" id="exampleFormControlSelect1" name="status_perkawinan" required>
-                                    <option value="Kawin">Kawin</option>
-                                    <option value="Belum Kawin">Belum Kawin</option>
+                                <select class="form-control" id="exampleFormControlSelect1" name="status_perkawinan"
+                                    required>
+                                    <option value="Kawin" <?php  if($status_perkawinan == 'Kawin'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>Kawin</option>
+                                    <option value="Belum Kawin" <?php  if($status_perkawinan == 'Belum Kawin'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>Belum Kawin</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -178,9 +202,62 @@
                             </div>
                             <div class="form-group">
                                 <label for="pendidikan_terakhir">Pendidikan Terakhir</label>
-                                <select class="form-control" id="pendidikan_terakhir" name="pendidikan_terakhir" required>
-                                    <option value="SD">SD</option>
-                                    <option value="SMP">SMP</option>
+                                <select class="form-control" id="pendidikan_terakhir" name="pendidikan_terakhir">
+                                    <option value="SD" <?php  if($pendidikan_terakhir == 'SD'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>SD</option>
+                                    <option value="SMP" <?php  if($pendidikan_terakhir == 'SMP'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>SMP</option>
+                                    <option value="SMA" <?php  if($pendidikan_terakhir == 'SMA'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>SMA</option>
+                                    <option value="D1" <?php  if($pendidikan_terakhir == 'D1'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>D1</option>
+                                    <option value="D2" <?php  if($pendidikan_terakhir == 'D2'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>D2</option>
+                                    <option value="D3" <?php  if($pendidikan_terakhir == 'D3'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>D3</option>
+                                    <option value="S1" <?php  if($pendidikan_terakhir == 'S1'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>S1</option>
+                                    <option value="D4" <?php  if($pendidikan_terakhir == 'D4'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>D4</option>
+                                    <option value="S2" <?php  if($pendidikan_terakhir == 'S2'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>S2</option>
+                                    <option value="S3" <?php  if($pendidikan_terakhir == 'S3'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>S3</option>
+                                    <option value="Profesor" <?php  if($pendidikan_terakhir == 'Profesor'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>Profesor</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -190,12 +267,13 @@
                             </div>
                             <div class="form-group">
                                 <label for="pengalaman_kerja">Pengalaman Kerja</label>
-                                <textarea class="form-control" id="pengalaman_kerja" name="pengalaman_kerja"
-                                    rows="3" required><?=$pengalaman_kerja?></textarea>
+                                <textarea class="form-control" id="pengalaman_kerja" name="pengalaman_kerja" rows="3"
+                                    required><?=$pengalaman_kerja?></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="no_hp">No NP</label>
-                                <input type="text" class="form-control" id="no_hp" name="no_hp" value="<?=$no_hp?>" required>
+                                <input type="text" class="form-control" id="no_hp" name="no_hp" value="<?=$no_hp?>"
+                                    required>
                             </div>
                             <div class="form-group">
                                 <label for="provinsi">Provinsi</label>
@@ -204,7 +282,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="kota">Kota</label>
-                                <input type="text" class="form-control" id="kota" name="kota" value="<?=$kota?>" required>
+                                <input type="text" class="form-control" id="kota" name="kota" value="<?=$kota?>"
+                                    required>
                             </div>
                             <div class="form-group">
                                 <label for="kode_pos">Kode Pos</label>
@@ -213,26 +292,53 @@
                             </div>
                             <div class="form-group">
                                 <label for="alamat">Alamat</label>
-                                <textarea class="form-control" id="alamat" name="alamat"
-                                    rows="3" required><?=$alamat?></textarea>
+                                <textarea class="form-control" id="alamat" name="alamat" rows="3"
+                                    required><?=$alamat?></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="foto_saya">Foto</label>
                                 <input type="file" class="form-control" id="foto_saya" name="foto_saya" required>
+                                <small id="foto_saya" class="form-text text-muted">Format PNG/JPG/JPEG (Max 2MB)</small>
                                 <input type="text" class="form-control" id="foto_saya" name="foto_saya_old"
                                     value="<?=$foto_saya?>" hidden>
                             </div>
                             <div class="form-group">
                                 <label for="foto_ktp">Foto KTP</label>
                                 <input type="file" class="form-control" id="foto_ktp" name="foto_ktp" required>
+                                <small id="foto_saya" class="form-text text-muted">Format PNG/JPG/JPEG (Max 2MB)</small>
                                 <input type="text" class="form-control" id="foto_ktp" name="foto_ktp_old"
                                     value="<?=$foto_ktp?>" hidden>
                             </div>
                             <div class="form-group">
                                 <label for="foto_ijazah">Foto Ijazah</label>
                                 <input type="file" class="form-control" id="foto_ijazah" name="foto_ijazah" required>
+                                <small id="foto_saya" class="form-text text-muted">Format PNG/JPG/JPEG (Max 2MB)</small>
                                 <input type="text" class="form-control" id="foto_ijazah" name="foto_ijazah_old"
                                     value="<?=$foto_ijazah?>" hidden>
+                            </div>
+                            <div class="form-group">
+                                <label for="foto_akte">Foto Akte</label>
+                                <input type="file" class="form-control" id="foto_akte" name="foto_akte">
+                                <small id="foto_saya" class="form-text text-muted">Format PNG/JPG/JPEG (Max 2MB)</small>
+                                <input type="text" class="form-control" id="foto_akte" name="foto_akte_old"
+                                    value="<?=$foto_akte?>" hidden>
+                            </div>
+                            <div class="form-group">
+                                <label for="foto_surat_pengalaman_kerja">Foto Surat Pengalaman Kerja</label>
+                                <input type="file" class="form-control" id="foto_surat_pengalaman_kerja"
+                                    name="foto_surat_pengalaman_kerja">
+                                <small id="foto_saya" class="form-text text-muted">Format PNG/JPG/JPEG (Max 2MB)</small>
+                                <input type="text" class="form-control" id="foto_surat_pengalaman_kerja"
+                                    name="foto_surat_pengalaman_kerja_old" value="<?=$foto_surat_pengalaman_kerja?>"
+                                    hidden>
+                            </div>
+                            <div class="form-group">
+                                <label for="foto_transkrip_nilai">Foto Transkrip Nilai</label>
+                                <input type="file" class="form-control" id="foto_transkrip_nilai"
+                                    name="foto_transkrip_nilai">
+                                <small id="foto_saya" class="form-text text-muted">Format PNG/JPG/JPEG (Max 2MB)</small>
+                                <input type="text" class="form-control" id="foto_transkrip_nilai"
+                                    name="foto_transkrip_nilai_old" value="<?=$foto_transkrip_nilai?>" hidden>
                             </div>
                             <button type="submit" class="btn btn-primary mb-3">Submit</button>
                         </form>

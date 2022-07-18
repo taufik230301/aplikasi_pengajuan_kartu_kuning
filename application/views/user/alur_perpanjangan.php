@@ -29,12 +29,12 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Alur Pendaftaran</h1>
+                            <h1 class="m-0">Alur Perpanjangan</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Alur Pendaftaran Kartu Kuning</li>
+                                <li class="breadcrumb-item active">Alur Perpanjangan Kartu Kuning</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -45,7 +45,8 @@
             <!-- Main content -->
             <section class="content">
                 <div class="container-fluid mb-2">
-                    <h2 class="text-center">Alur Pendaftaran Kartu Kuning</h2>
+                    
+                    <h2 class="text-center" style="margin-top:50px;">Alur Perpanjangan Kartu Kuning</h2>
                     <div style="margin-top:50px;">
                         <div class="row">
                             <div class="col">
@@ -54,8 +55,8 @@
                                         width="200px">
                                 </div>
                                 <div class="row d-flex justify-content-center">
-                                    <p class="text-center">1. Lakukan pendaftaran akun sebagai pelamar
-                                        (Mengunjungi website...)</p>
+                                    <p class="text-center">1. Pemohon Login dan lengkapi profile anda jika ada perubahan
+                                        data dengan melampirkan syarat dan form pengajuan perpanjangan dapat diakses.</p>
                                 </div>
                             </div>
                             <div class="col mt-5">
@@ -121,10 +122,10 @@
                                         width="200px">
                                 </div>
                                 <div class="row d-flex justify-content-center">
+
                                     <p class="text-center">5. Pemohon dapat mencetak mandiri kartu AK 1</p>
                                 </div>
                             </div>
-
                             <div class="col mt-5">
                                 <div class="row d-flex justify-content-center">
                                     <img src="<?=base_url();?>assets/alur_pendaftaran/arrow_left.png" alt="Permohonan"
@@ -161,7 +162,6 @@
                             </div>
                         </div>
                     </div>
-                    
 
                     <!-- /.row (main row) -->
                 </div><!-- /.container-fluid -->

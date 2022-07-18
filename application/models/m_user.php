@@ -44,6 +44,13 @@ class M_user extends CI_Model
         return $hasil;
     }
 
+    public function get_all_user_perpanjang()
+    {
+        $hasil = $this->db->query("SELECT * FROM user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail 
+         WHERE id_user_level = 3 AND user_detail.nama_lengkap IS NOT NULL AND user_detail.id_status_verifikasi = 1 AND user_detail.id_status_perpanjangan = 2 AND user_detail.id_status_aktif = 1");
+        return $hasil;
+    }
+
     public function get_all_user_by_date_month($start, $end)
     {
         $hasil = $this->db->query("SELECT * FROM user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail 
