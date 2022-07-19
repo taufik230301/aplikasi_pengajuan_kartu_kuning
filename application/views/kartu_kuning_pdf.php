@@ -9,16 +9,16 @@
 
 <body>
     <table
-        style="height: 92px; margin-left: auto; margin-right: auto; width: 203px; border: none; background-color: white; margin-top:-60px;">
+        style="height: 92px; margin-left: auto; margin-right: auto; width: 203px; border: none; background-color: white; margin-top:-40px;">
         <tbody>
             <tr style="height: 113.575px;">
-                <img style="margin-top:40px;   margin-right:-20px;" src="<?=base_url();?>assets/logo/logo.png" alt=""
+                <img style="margin-top:20px;   margin-right:-20px;" src="<?=base_url();?>assets/logo/logo.png" alt=""
                     height="95" />
                 <td style="width: 580px; text-align: center; height: 113.575px; border: none;">
-                    <h2 style="margin-bottom:-17px;">PEMERINTAH KABUPATEN OGAN ILIR</h2>
-                    <h4 style="margin-bottom:-17px;">DINAS TENAGA KERJA DAN TRANSMIGRASI</h4>
-                    <h4 style="margin-bottom:-17px;">Jl.Raya Lintas Timur Km. 35 Telp.(0711) 580 600</h4>
-                    <h4 style="margin-bottom:-17px;">KARTU TANDA BUKTI PENDAFTARAN PENCARI KERJA</h4>
+                    <h2 style="margin-bottom:-15px;">PEMERINTAH KABUPATEN OGAN ILIR</h2>
+                    <h4 style="margin-bottom:-15px;">DINAS TENAGA KERJA DAN TRANSMIGRASI</h4>
+                    <h4 style="margin-bottom:-15px;">Jl.Raya Lintas Timur Km. 35 Telp.(0711) 580 600</h4>
+                    <h4 style="margin-bottom:-15px;">KARTU TANDA BUKTI PENDAFTARAN PENCARI KERJA</h4>
                 </td>
             </tr>
         </tbody>
