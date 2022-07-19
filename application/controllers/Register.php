@@ -34,7 +34,7 @@ class Register extends CI_Controller {
 		$id_status_verifikasi = 1;
 		$id_status_aktif = 1;
 		$id_status_perpanjangan = 1;
-        $id = md5($username.$email.$pass);
+        $id = md5($username.$email.$pass.rand(1, 999999));
 
 		if($pass == $re_pass)
         {
@@ -65,7 +65,7 @@ class Register extends CI_Controller {
 		$id_user_level = 2;
 		$id_status_verifikasi = 1;
 		$id_status_aktif = 1;
-        $id = md5($username.$email.$pass);
+        $id = md5($username.$email.$pass.rand(1, 999999));
 
 		if($pass == $re_pass)
         {
