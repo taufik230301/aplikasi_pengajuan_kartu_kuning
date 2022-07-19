@@ -104,9 +104,9 @@ class Pencaker extends CI_Controller {
 		$this->load->library('upload');
 		$config['upload_path'] = './assets/berkas';
 		$config['allowed_types'] = 'jpg|png|jpeg|gif';
-		$config['max_size'] = '2048';  //2MB max
-		$config['max_width'] = '4480'; // pixel
-		$config['max_height'] = '4480'; // pixel
+		$config['max_size'] = '20480';  //2MB max
+		$config['max_width'] = '44800'; // pixel
+		$config['max_height'] = '44800'; // pixel
 		$config['file_name'] = $foto_name.'_saya';
 		$this->upload->initialize($config);
 		$foto_saya_upload = $this->upload->do_upload('foto_saya');
@@ -122,9 +122,9 @@ class Pencaker extends CI_Controller {
 	
 		$config['upload_path'] = './assets/berkas';
 		$config['allowed_types'] = 'jpg|png|jpeg|gif';
-		$config['max_size'] = '2048';  //2MB max
-		$config['max_width'] = '4480'; // pixel
-		$config['max_height'] = '4480'; // pixel
+		$config['max_size'] = '20480';  //2MB max
+		$config['max_width'] = '44800'; // pixel
+		$config['max_height'] = '44800'; // pixel
 		$config['file_name'] = $foto_name.'_ktp';
 		$this->upload->initialize($config);
 		$foto_ktp_upload = $this->upload->do_upload('foto_ktp');
@@ -139,9 +139,9 @@ class Pencaker extends CI_Controller {
 
 		$config['upload_path'] = './assets/berkas';
 		$config['allowed_types'] = 'jpg|png|jpeg|gif';
-		$config['max_size'] = '2048';  //2MB max
-		$config['max_width'] = '4480'; // pixel
-		$config['max_height'] = '4480'; // pixel
+		$config['max_size'] = '20480';  //2MB max
+		$config['max_width'] = '44800'; // pixel
+		$config['max_height'] = '44800'; // pixel
 		$config['file_name'] = $foto_name.'_ijazah';
 		$this->upload->initialize($config);
 		$foto_ijazah_upload =  $this->upload->do_upload('foto_ijazah');
@@ -156,9 +156,9 @@ class Pencaker extends CI_Controller {
 
         $config['upload_path'] = './assets/berkas';
         $config['allowed_types'] = 'jpg|png|jpeg|gif';
-        $config['max_size'] = '2048';  //2MB max
-        $config['max_width'] = '4480'; // pixel
-        $config['max_height'] = '4480'; // pixel
+        $config['max_size'] = '20480';  //2MB max
+        $config['max_width'] = '44800'; // pixel
+        $config['max_height'] = '44800'; // pixel
         $config['file_name'] = $foto_name.'_akte';
         $this->upload->initialize($config);
         $foto_akte_upload =  $this->upload->do_upload('foto_akte');
@@ -176,9 +176,9 @@ class Pencaker extends CI_Controller {
     
             $config['upload_path'] = './assets/berkas';
         $config['allowed_types'] = 'jpg|png|jpeg|gif';
-        $config['max_size'] = '2048';  //2MB max
-        $config['max_width'] = '4480'; // pixel
-        $config['max_height'] = '4480'; // pixel
+        $config['max_size'] = '20480';  //2MB max
+        $config['max_width'] = '44800'; // pixel
+        $config['max_height'] = '44800'; // pixel
         $config['file_name'] = $foto_name.'_foto_surat_pengalaman_kerja';
         $this->upload->initialize($config);
         $foto_surat_pengalaman_kerja_upload =  $this->upload->do_upload('foto_surat_pengalaman_kerja');
@@ -201,9 +201,9 @@ class Pencaker extends CI_Controller {
     
             $config['upload_path'] = './assets/berkas';
         $config['allowed_types'] = 'jpg|png|jpeg|gif';
-        $config['max_size'] = '2048';  //2MB max
-        $config['max_width'] = '4480'; // pixel
-        $config['max_height'] = '4480'; // pixel
+        $config['max_size'] = '20480';  //2MB max
+        $config['max_width'] = '44800'; // pixel
+        $config['max_height'] = '44800'; // pixel
         $config['file_name'] = $foto_name.'_foto_transkrip_nilai';
         $this->upload->initialize($config);
         $foto_transkrip_nilai_upload =  $this->upload->do_upload('foto_transkrip_nilai');
@@ -269,9 +269,9 @@ class Pencaker extends CI_Controller {
   $this->load->library('upload');
   $config['upload_path'] = './assets/berkas';
   $config['allowed_types'] = 'jpg|png|jpeg|gif';
-  $config['max_size'] = '2048';  //2MB max
-  $config['max_width'] = '4480'; // pixel
-  $config['max_height'] = '4480'; // pixel
+  $config['max_size'] = '20480';  //2MB max
+	$config['max_width'] = '44800'; // pixel
+	$config['max_height'] = '44800'; // pixel
   $config['file_name'] = $foto_name.'_saya';
   $this->upload->initialize($config);
   $foto_saya_upload = $this->upload->do_upload('foto_saya');
@@ -287,9 +287,9 @@ class Pencaker extends CI_Controller {
 
   $config['upload_path'] = './assets/berkas';
   $config['allowed_types'] = 'jpg|png|jpeg|gif';
-  $config['max_size'] = '2048';  //2MB max
-  $config['max_width'] = '4480'; // pixel
-  $config['max_height'] = '4480'; // pixel
+  $config['max_size'] = '20480';  //2MB max
+		$config['max_width'] = '44800'; // pixel
+		$config['max_height'] = '44800'; // pixel
   $config['file_name'] = $foto_name.'_ktp';
   $this->upload->initialize($config);
   $foto_ktp_upload = $this->upload->do_upload('foto_ktp');
@@ -304,9 +304,9 @@ class Pencaker extends CI_Controller {
 
   $config['upload_path'] = './assets/berkas';
   $config['allowed_types'] = 'jpg|png|jpeg|gif';
-  $config['max_size'] = '2048';  //2MB max
-  $config['max_width'] = '4480'; // pixel
-  $config['max_height'] = '4480'; // pixel
+  $config['max_size'] = '20480';  //2MB max
+		$config['max_width'] = '44800'; // pixel
+		$config['max_height'] = '44800'; // pixel
   $config['file_name'] = $foto_name.'_ijazah';
   $this->upload->initialize($config);
   $foto_ijazah_upload =  $this->upload->do_upload('foto_ijazah');
@@ -321,9 +321,9 @@ class Pencaker extends CI_Controller {
 
       $config['upload_path'] = './assets/berkas';
       $config['allowed_types'] = 'jpg|png|jpeg|gif';
-      $config['max_size'] = '2048';  //2MB max
-      $config['max_width'] = '4480'; // pixel
-      $config['max_height'] = '4480'; // pixel
+      $config['max_size'] = '20480';  //2MB max
+		$config['max_width'] = '44800'; // pixel
+		$config['max_height'] = '44800'; // pixel
       $config['file_name'] = $foto_name.'_akte';
       $this->upload->initialize($config);
       $foto_akte_upload =  $this->upload->do_upload('foto_akte');
@@ -341,9 +341,9 @@ class Pencaker extends CI_Controller {
   
           $config['upload_path'] = './assets/berkas';
       $config['allowed_types'] = 'jpg|png|jpeg|gif';
-      $config['max_size'] = '2048';  //2MB max
-      $config['max_width'] = '4480'; // pixel
-      $config['max_height'] = '4480'; // pixel
+      $config['max_size'] = '20480';  //2MB max
+		$config['max_width'] = '44800'; // pixel
+		$config['max_height'] = '44800'; // pixel
       $config['file_name'] = $foto_name.'_foto_surat_pengalaman_kerja';
       $this->upload->initialize($config);
       $foto_surat_pengalaman_kerja_upload =  $this->upload->do_upload('foto_surat_pengalaman_kerja');
@@ -366,9 +366,9 @@ class Pencaker extends CI_Controller {
   
           $config['upload_path'] = './assets/berkas';
       $config['allowed_types'] = 'jpg|png|jpeg|gif';
-      $config['max_size'] = '2048';  //2MB max
-      $config['max_width'] = '4480'; // pixel
-      $config['max_height'] = '4480'; // pixel
+      $config['max_size'] = '20480';  //2MB max
+		$config['max_width'] = '44800'; // pixel
+		$config['max_height'] = '44800'; // pixel
       $config['file_name'] = $foto_name.'_foto_transkrip_nilai';
       $this->upload->initialize($config);
       $foto_transkrip_nilai_upload =  $this->upload->do_upload('foto_transkrip_nilai');

@@ -48,18 +48,19 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?=base_url();?>Alur_Pendaftaran/view_user_pendaftaran" class="nav-link">
-                        <i class="nav-icon fas fa-edit"></i>
-                        <p class="text">Alur Pendaftaran</p>
-                    </a>
-                </li>
-                <li class="nav-item">
                     <a href="<?=base_url();?>Daftar/view_user/<?=$this->session->userdata('id_user');?>"
                         class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p class="text">Daftar AK1</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="<?=base_url();?>Alur_Pendaftaran/view_user_pendaftaran" class="nav-link">
+                        <i class="nav-icon fas fa-edit"></i>
+                        <p class="text">Alur Pendaftaran</p>
+                    </a>
+                </li>
+
                 <li class="nav-item" style="<?php 
                          
                         //  $now = time(); // or your date as well

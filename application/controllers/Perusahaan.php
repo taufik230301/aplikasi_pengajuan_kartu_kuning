@@ -57,9 +57,9 @@ class Perusahaan extends CI_Controller {
   $this->load->library('upload');
   $config['upload_path'] = './assets/logo';
   $config['allowed_types'] = 'jpg|png|jpeg|gif';
-  $config['max_size'] = '2048';  //2MB max
-  $config['max_width'] = '4480'; // pixel
-  $config['max_height'] = '4480'; // pixel
+  $config['max_size'] = '20480';  //2MB max
+		$config['max_width'] = '44800'; // pixel
+		$config['max_height'] = '44800'; // pixel
   $config['file_name'] = $foto_name.'_logo';
   $this->upload->initialize($config);
   $logo_upload = $this->upload->do_upload('logo');
@@ -105,9 +105,9 @@ class Perusahaan extends CI_Controller {
 		$this->load->library('upload');
 		$config['upload_path'] = './assets/logo';
 		$config['allowed_types'] = 'jpg|png|jpeg|gif';
-		$config['max_size'] = '2048';  //2MB max
-		$config['max_width'] = '4480'; // pixel
-		$config['max_height'] = '4480'; // pixel
+		$config['max_size'] = '20480';  //2MB max
+		$config['max_width'] = '44800'; // pixel
+		$config['max_height'] = '44800'; // pixel
 		$config['file_name'] = $foto_name.'_logo';
 		$this->upload->initialize($config);
 		$logo_upload = $this->upload->do_upload('logo');
