@@ -163,15 +163,6 @@
                                     }  ?>><?=$deskripsi?></textarea>
                             </div>
                             <div class="form-group">
-                                <label for="nomor_telepon">Kode Pos</label>
-                                <input type="text" class="form-control" id="nomor_telepon" name="nomor_telepon"
-                                    value="<?=$nomor_telepon?>" <?php  if($id_status_verifikasi == 2 ){
-                                        echo 'disabled';
-                                    }else{
-                                        echo 'required';
-                                    }  ?>>
-                            </div>
-                            <div class="form-group">
                                 <label for="logo">Logo</label>
                                 <input type="file" class="form-control" id="logo" name="logo" <?php  if($id_status_verifikasi == 2 ){
                                         echo 'disabled';
