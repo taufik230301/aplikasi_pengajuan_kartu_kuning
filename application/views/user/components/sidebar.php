@@ -42,11 +42,12 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?=base_url();?>Alur_Pendaftaran/view_user_perpanjangan" class="nav-link">
+                    <a href="<?=base_url();?>Alur_Pendaftaran/view_user_pendaftaran" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
-                        <p class="text">Alur Perpanjangan</p>
+                        <p class="text">Alur Pendaftaran</p>
                     </a>
                 </li>
+              
                 <li class="nav-item">
                     <a href="<?=base_url();?>Daftar/view_user/<?=$this->session->userdata('id_user');?>"
                         class="nav-link">
@@ -55,11 +56,12 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?=base_url();?>Alur_Pendaftaran/view_user_pendaftaran" class="nav-link">
+                    <a href="<?=base_url();?>Alur_Pendaftaran/view_user_perpanjangan" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
-                        <p class="text">Alur Pendaftaran</p>
+                        <p class="text">Alur Perpanjangan</p>
                     </a>
                 </li>
+               
 
                 <li class="nav-item" style="<?php 
                          
@@ -101,7 +103,7 @@
                         class="nav-link" target="_blank">
                         <i class="nav-icon fas fa-book"></i>
 
-                        <p>Cetak Kartu Kuning</p>
+                        <p>Cetak Kartu AK1</p>
                     </a>
                 </li>
             </ul>

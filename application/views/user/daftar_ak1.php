@@ -105,7 +105,7 @@
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Daftar Kartu Kuning</li>
+                                <li class="breadcrumb-item active">Daftar Kartu AK1</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->

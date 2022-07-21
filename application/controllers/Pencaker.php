@@ -448,7 +448,7 @@ class Pencaker extends CI_Controller {
           
       $from = $this->config->item('smtp_user');
       
-      $subject = 'Status Verifikasi Kartu Kuning';
+      $subject = 'Status Verifikasi Kartu AK1';
       
 
       $this->email->set_newline("\r\n");
@@ -496,7 +496,7 @@ class Pencaker extends CI_Controller {
           
       $from = $this->config->item('smtp_user');
       
-      $subject = 'Status Verifikasi Kartu Kuning';
+      $subject = 'Status Verifikasi Kartu AK1';
       
 
       $this->email->set_newline("\r\n");
@@ -536,7 +536,7 @@ class Pencaker extends CI_Controller {
           
       $from = $this->config->item('smtp_user');
       
-      $subject = 'Status Verifikasi Kartu Kuning';
+      $subject = 'Status Verifikasi Kartu AK1';
       
 
       $this->email->set_newline("\r\n");

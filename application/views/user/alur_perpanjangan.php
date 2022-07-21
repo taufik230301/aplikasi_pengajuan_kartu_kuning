@@ -34,7 +34,7 @@
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Alur Perpanjangan Kartu Kuning</li>
+                                <li class="breadcrumb-item active">Alur Perpanjangan Kartu AK1</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -46,7 +46,7 @@
             <section class="content">
                 <div class="container-fluid mb-2">
                     
-                    <h2 class="text-center" style="margin-top:50px;">Alur Perpanjangan Kartu Kuning</h2>
+                    <h2 class="text-center" style="margin-top:50px;">Alur Perpanjangan Kartu AK1</h2>
                     <div style="margin-top:50px;">
                         <div class="row">
                             <div class="col">

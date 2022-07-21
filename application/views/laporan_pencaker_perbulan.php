@@ -16,6 +16,13 @@
         padding-left: 5px;
         padding-right: 0;
     }
+
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
     </style>
 </head>
 
