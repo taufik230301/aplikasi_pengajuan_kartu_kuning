@@ -80,7 +80,7 @@
                     <p style="text-align: left; margin-left: 30px; font-weight: bold;">Alamat Lengkap</p>
                 </td>
                 <td style="text-align: center; width: 300px;">
-                    <br>
+                    
                     <p style="text-align: left;"><?= $no_pendaftaran?></p>
                     <p style="text-align: left;"><?= $nik ?></p>
                     <p style="text-align: left;"><?= $nama_lengkap ?></p>
